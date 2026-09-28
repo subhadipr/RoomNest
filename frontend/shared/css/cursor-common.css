@@ -1,0 +1,112 @@
+/* =========================================================
+   ROOMNEST — SHARED COMMON CSS
+   GLOBAL CARET / DOM CURSOR CONTROL
+========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL CARET HIDE
+========================================================= */
+
+/* Hide blinking text caret everywhere */
+html,
+body,
+body * {
+    caret-color: transparent !important;
+}
+
+
+/* =========================================================
+   02. FORM ELEMENTS
+========================================================= */
+
+/* Keep all form fields usable but hide blinking caret */
+input,
+textarea,
+select,
+[contenteditable="true"] {
+    caret-color: transparent !important;
+}
+
+
+/* =========================================================
+   03. CONTENTEDITABLE
+========================================================= */
+
+[contenteditable="true"],
+[contenteditable="false"] {
+    caret-color: transparent !important;
+}
+
+
+/* =========================================================
+   04. LINKS / BUTTONS
+========================================================= */
+
+a,
+button,
+label,
+select,
+option {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   05. INPUT CURSOR
+========================================================= */
+
+input,
+textarea {
+    cursor: text;
+}
+
+
+/* =========================================================
+   06. DISABLED ELEMENTS
+========================================================= */
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   07. TEXT SELECTION
+========================================================= */
+
+::selection {
+    background: #dff6ef;
+    color: #193641;
+}
+
+
+/* =========================================================
+   08. REMOVE FOCUS OUTLINE
+========================================================= */
+
+.no-outline:focus,
+.no-outline:focus-visible {
+    outline: none !important;
+}
+
+
+/* =========================================================
+   09. OPTIONAL — COMPLETELY NON-EDITABLE ELEMENT
+========================================================= */
+
+.no-caret {
+    caret-color: transparent !important;
+}
+
+
+/* =========================================================
+   10. GLOBAL DOCUMENT SAFETY
+========================================================= */
+
+[tabindex] {
+    caret-color: transparent !important;
+}

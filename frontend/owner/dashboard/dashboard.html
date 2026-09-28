@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Dashboard | RoomNest</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         OWNER DASHBOARD
+         RoomNest
+    ====================================================== -->
+
+    <div class="owner-layout">
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="owner-sidebar" id="ownerSidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <div class="logo-icon">🏠</div>
+
+                <div class="logo-text">
+                    <strong>RoomNest</strong>
+                    <span>Owner Panel</span>
+                </div>
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <p class="nav-title">PROPERTY</p>
+
+                <a href="../properties/my-properties.html" class="nav-item">
+                    <span class="nav-icon">🏘️</span>
+                    <span>My Properties</span>
+                </a>
+
+                <a href="../rooms/rooms.html" class="nav-item">
+                    <span class="nav-icon">🚪</span>
+                    <span>Rooms</span>
+                </a>
+
+                <a href="../properties/add-property.html" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span>Add Property</span>
+                </a>
+
+
+                <p class="nav-title">MANAGEMENT</p>
+
+                <a href="../inquiries/inquiries.html" class="nav-item">
+                    <span class="nav-icon">📩</span>
+                    <span>Inquiries</span>
+                    <span class="nav-badge">5</span>
+                </a>
+
+                <a href="../bookings/bookings.html" class="nav-item">
+                    <span class="nav-icon">📅</span>
+                    <span>Bookings</span>
+                </a>
+
+                <a href="../messages/messages.html" class="nav-item">
+                    <span class="nav-icon">💬</span>
+                    <span>Messages</span>
+                    <span class="nav-badge">3</span>
+                </a>
+
+                <a href="../reviews/reviews.html" class="nav-item">
+                    <span class="nav-icon">⭐</span>
+                    <span>Reviews</span>
+                </a>
+
+
+                <p class="nav-title">ACCOUNT</p>
+
+                <a href="../profile/profile.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="../settings/settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <div class="owner-mini-profile">
+
+                    <div class="owner-avatar">
+                        AR
+                    </div>
+
+                    <div class="owner-mini-info">
+                        <strong>Arindam Roy</strong>
+                        <span>Property Owner</span>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="mini-menu-btn"
+                        id="profileMenuBtn"
+                        aria-label="Profile menu">
+                        ⋮
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="logout-btn"
+                    id="logoutBtn">
+
+                    <span>🚪</span>
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <main class="owner-main">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="owner-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Open menu">
+
+                        ☰
+
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <span class="page-label">
+                            OWNER PANEL
+                        </span>
+
+                        <h1>Dashboard</h1>
+
+                        <p>
+                            Manage your properties and track your business activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- Search -->
+                    <button
+                        type="button"
+                        class="topbar-icon-btn"
+                        id="searchBtn"
+                        title="Search">
+
+                        🔍
+
+                    </button>
+
+
+                    <!-- Notification -->
+                    <button
+                        type="button"
+                        class="topbar-icon-btn notification-btn"
+                        id="notificationBtn"
+                        title="Notifications">
+
+                        🔔
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <!-- Profile -->
+                    <div class="topbar-profile">
+
+                        <div class="topbar-avatar">
+                            AR
+                        </div>
+
+                        <div class="topbar-profile-info">
+
+                            <strong>Arindam Roy</strong>
+
+                            <span>
+                                Owner
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+
+            <section class="dashboard-content">
+
+
+                <!-- =================================================
+                     WELCOME BANNER
+                ================================================== -->
+
+                <section class="welcome-card">
+
+                    <div class="welcome-content">
+
+                        <span class="welcome-tag">
+                            👋 Welcome back
+                        </span>
+
+                        <h2>
+                            Good evening, Arindam!
+                        </h2>
+
+                        <p>
+                            Here's what's happening with your properties today.
+                        </p>
+
+                        <div class="welcome-actions">
+
+                            <button
+                                type="button"
+                                class="primary-btn"
+                                id="addPropertyBtn">
+
+                                <span>＋</span>
+                                Add New Property
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                id="viewPropertiesBtn">
+
+                                View Properties
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="welcome-illustration">
+
+                        <div class="illustration-house">
+                            🏠
+                        </div>
+
+                        <div class="illustration-shape shape-one"></div>
+                        <div class="illustration-shape shape-two"></div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     STAT CARDS
+                ================================================== -->
+
+                <section class="stats-grid">
+
+
+                    <!-- Total Properties -->
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon property-icon">
+                                🏘️
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 12%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span class="stat-label">
+                                Total Properties
+                            </span>
+
+                            <h3 id="totalProperties">
+                                12
+                            </h3>
+
+                            <small>
+                                Properties listed
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Active Listings -->
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon active-icon">
+                                ✓
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 8%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span class="stat-label">
+                                Active Listings
+                            </span>
+
+                            <h3 id="activeListings">
+                                9
+                            </h3>
+
+                            <small>
+                                Currently available
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Pending -->
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon pending-icon">
+                                ⏳
+                            </div>
+
+                            <span class="stat-change neutral">
+                                2 pending
+                            </span>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span class="stat-label">
+                                Pending Approval
+                            </span>
+
+                            <h3 id="pendingProperties">
+                                2
+                            </h3>
+
+                            <small>
+                                Waiting for admin
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Inquiries -->
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon inquiry-icon">
+                                📩
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 18%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span class="stat-label">
+                                Total Inquiries
+                            </span>
+
+                            <h3 id="totalInquiries">
+                                38
+                            </h3>
+
+                            <small>
+                                This month
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Bookings -->
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon booking-icon">
+                                📅
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 6%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span class="stat-label">
+                                Total Bookings
+                            </span>
+
+                            <h3 id="totalBookings">
+                                16
+                            </h3>
+
+                            <small>
+                                All time
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Messages -->
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon message-icon">
+                                💬
+                            </div>
+
+                            <span class="stat-change neutral">
+                                3 unread
+                            </span>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span class="stat-label">
+                                New Messages
+                            </span>
+
+                            <h3 id="newMessages">
+                                7
+                            </h3>
+
+                            <small>
+                                Need your attention
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     MIDDLE GRID
+                ================================================== -->
+
+                <section class="dashboard-grid">
+
+
+                    <!-- =================================================
+                         PROPERTY PERFORMANCE
+                    ================================================== -->
+
+                    <div class="dashboard-card performance-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    PERFORMANCE
+                                </span>
+
+                                <h3>
+                                    Property Performance
+                                </h3>
+
+                                <p>
+                                    Views and inquiries over the last 7 days
+                                </p>
+
+                            </div>
+
+
+                            <select
+                                class="period-select"
+                                id="performancePeriod">
+
+                                <option value="7">Last 7 Days</option>
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 3 Months</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-area">
+
+                            <div class="chart-y-axis">
+
+                                <span>200</span>
+                                <span>150</span>
+                                <span>100</span>
+                                <span>50</span>
+                                <span>0</span>
+
+                            </div>
+
+
+                            <div class="chart-container">
+
+                                <div class="chart-grid-lines">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+                                <div class="chart-bars">
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 68%;"></div>
+                                        <div class="bar inquiries" style="height: 25%;"></div>
+                                        <span>Mon</span>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 82%;"></div>
+                                        <div class="bar inquiries" style="height: 35%;"></div>
+                                        <span>Tue</span>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 55%;"></div>
+                                        <div class="bar inquiries" style="height: 20%;"></div>
+                                        <span>Wed</span>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 91%;"></div>
+                                        <div class="bar inquiries" style="height: 42%;"></div>
+                                        <span>Thu</span>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 73%;"></div>
+                                        <div class="bar inquiries" style="height: 31%;"></div>
+                                        <span>Fri</span>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 96%;"></div>
+                                        <div class="bar inquiries" style="height: 52%;"></div>
+                                        <span>Sat</span>
+                                    </div>
+
+                                    <div class="bar-column">
+                                        <div class="bar views" style="height: 78%;"></div>
+                                        <div class="bar inquiries" style="height: 38%;"></div>
+                                        <span>Sun</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-legend">
+
+                            <span>
+                                <i class="legend-dot views-dot"></i>
+                                Property Views
+                            </span>
+
+                            <span>
+                                <i class="legend-dot inquiries-dot"></i>
+                                Inquiries
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         QUICK ACTIONS
+                    ================================================== -->
+
+                    <div class="dashboard-card quick-actions-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    SHORTCUTS
+                                </span>
+
+                                <h3>
+                                    Quick Actions
+                                </h3>
+
+                                <p>
+                                    Manage your properties faster
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="add-property">
+
+                                <span class="quick-icon">
+                                    ➕
+                                </span>
+
+                                <span>
+                                    <strong>Add Property</strong>
+                                    <small>List a new PG or room</small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="properties">
+
+                                <span class="quick-icon">
+                                    🏘️
+                                </span>
+
+                                <span>
+                                    <strong>Manage Properties</strong>
+                                    <small>Edit your listings</small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="inquiries">
+
+                                <span class="quick-icon">
+                                    📩
+                                </span>
+
+                                <span>
+                                    <strong>View Inquiries</strong>
+                                    <small>Respond to students</small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="bookings">
+
+                                <span class="quick-icon">
+                                    📅
+                                </span>
+
+                                <span>
+                                    <strong>Manage Bookings</strong>
+                                    <small>Check reservations</small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     BOTTOM GRID
+                ================================================== -->
+
+                <section class="dashboard-grid bottom-grid">
+
+
+                    <!-- =================================================
+                         RECENT INQUIRIES
+                    ================================================== -->
+
+                    <div class="dashboard-card table-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    RECENT ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Recent Inquiries
+                                </h3>
+
+                            </div>
+
+                            <a
+                                href="../inquiries/inquiries.html"
+                                class="view-all">
+
+                                View All →
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="inquiry-list">
+
+
+                            <div class="inquiry-row">
+
+                                <div class="student-avatar">
+                                    SR
+                                </div>
+
+                                <div class="inquiry-person">
+
+                                    <strong>
+                                        Sayan Roy
+                                    </strong>
+
+                                    <span>
+                                        Green View PG
+                                    </span>
+
+                                </div>
+
+                                <div class="inquiry-date">
+                                    10 min ago
+                                </div>
+
+                                <span class="status-badge new">
+                                    New
+                                </span>
+
+                            </div>
+
+
+                            <div class="inquiry-row">
+
+                                <div class="student-avatar">
+                                    AM
+                                </div>
+
+                                <div class="inquiry-person">
+
+                                    <strong>
+                                        Ankit Mondal
+                                    </strong>
+
+                                    <span>
+                                        City Heights
+                                    </span>
+
+                                </div>
+
+                                <div class="inquiry-date">
+                                    1 hour ago
+                                </div>
+
+                                <span class="status-badge replied">
+                                    Replied
+                                </span>
+
+                            </div>
+
+
+                            <div class="inquiry-row">
+
+                                <div class="student-avatar">
+                                    PD
+                                </div>
+
+                                <div class="inquiry-person">
+
+                                    <strong>
+                                        Priya Das
+                                    </strong>
+
+                                    <span>
+                                        Lake View Residence
+                                    </span>
+
+                                </div>
+
+                                <div class="inquiry-date">
+                                    3 hours ago
+                                </div>
+
+                                <span class="status-badge new">
+                                    New
+                                </span>
+
+                            </div>
+
+
+                            <div class="inquiry-row">
+
+                                <div class="student-avatar">
+                                    RK
+                                </div>
+
+                                <div class="inquiry-person">
+
+                                    <strong>
+                                        Rahul Kumar
+                                    </strong>
+
+                                    <span>
+                                        Royal Nest PG
+                                    </span>
+
+                                </div>
+
+                                <div class="inquiry-date">
+                                    Yesterday
+                                </div>
+
+                                <span class="status-badge closed">
+                                    Closed
+                                </span>
+
+                            </div>
+
+
+                            <div class="inquiry-row">
+
+                                <div class="student-avatar">
+                                    NS
+                                </div>
+
+                                <div class="inquiry-person">
+
+                                    <strong>
+                                        Neha Sharma
+                                    </strong>
+
+                                    <span>
+                                        Green View PG
+                                    </span>
+
+                                </div>
+
+                                <div class="inquiry-date">
+                                    Yesterday
+                                </div>
+
+                                <span class="status-badge replied">
+                                    Replied
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         UPCOMING BOOKINGS
+                    ================================================== -->
+
+                    <div class="dashboard-card table-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    RESERVATIONS
+                                </span>
+
+                                <h3>
+                                    Upcoming Bookings
+                                </h3>
+
+                            </div>
+
+                            <a
+                                href="../bookings/bookings.html"
+                                class="view-all">
+
+                                View All →
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="booking-list">
+
+
+                            <div class="booking-row">
+
+                                <div class="booking-date">
+
+                                    <strong>
+                                        24
+                                    </strong>
+
+                                    <span>
+                                        SEP
+                                    </span>
+
+                                </div>
+
+
+                                <div class="booking-info">
+
+                                    <strong>
+                                        Sayan Roy
+                                    </strong>
+
+                                    <span>
+                                        Green View PG · Room 204
+                                    </span>
+
+                                </div>
+
+
+                                <span class="booking-status confirmed">
+                                    Confirmed
+                                </span>
+
+                            </div>
+
+
+                            <div class="booking-row">
+
+                                <div class="booking-date">
+
+                                    <strong>
+                                        27
+                                    </strong>
+
+                                    <span>
+                                        SEP
+                                    </span>
+
+                                </div>
+
+
+                                <div class="booking-info">
+
+                                    <strong>
+                                        Priya Das
+                                    </strong>
+
+                                    <span>
+                                        Lake View Residence · Room 102
+                                    </span>
+
+                                </div>
+
+
+                                <span class="booking-status confirmed">
+                                    Confirmed
+                                </span>
+
+                            </div>
+
+
+                            <div class="booking-row">
+
+                                <div class="booking-date">
+
+                                    <strong>
+                                        02
+                                    </strong>
+
+                                    <span>
+                                        OCT
+                                    </span>
+
+                                </div>
+
+
+                                <div class="booking-info">
+
+                                    <strong>
+                                        Ankit Mondal
+                                    </strong>
+
+                                    <span>
+                                        City Heights · Room 305
+                                    </span>
+
+                                </div>
+
+
+                                <span class="booking-status pending">
+                                    Pending
+                                </span>
+
+                            </div>
+
+
+                            <div class="booking-row">
+
+                                <div class="booking-date">
+
+                                    <strong>
+                                        05
+                                    </strong>
+
+                                    <span>
+                                        OCT
+                                    </span>
+
+                                </div>
+
+
+                                <div class="booking-info">
+
+                                    <strong>
+                                        Neha Sharma
+                                    </strong>
+
+                                    <span>
+                                        Royal Nest PG · Room 108
+                                    </span>
+
+                                </div>
+
+
+                                <span class="booking-status confirmed">
+                                    Confirmed
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     PROPERTY + REVIEWS
+                ================================================== -->
+
+                <section class="dashboard-grid property-review-grid">
+
+
+                    <!-- =================================================
+                         TOP PROPERTY
+                    ================================================== -->
+
+                    <div class="dashboard-card property-performance-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    TOP LISTING
+                                </span>
+
+                                <h3>
+                                    Best Performing Property
+                                </h3>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="more-btn"
+                                id="propertyMoreBtn">
+
+                                ⋮
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="top-property">
+
+
+                            <div class="property-image">
+
+                                <div class="property-image-placeholder">
+                                    🏠
+                                </div>
+
+                                <span class="property-type">
+                                    PG
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="property-details">
+
+                                <h4>
+                                    Green View PG
+                                </h4>
+
+                                <p>
+                                    📍 College Road, Kolkata
+                                </p>
+
+                                <div class="property-rating">
+
+                                    <span>
+                                        ⭐ 4.8
+                                    </span>
+
+                                    <small>
+                                        24 reviews
+                                    </small>
+
+                                </div>
+
+
+                                <div class="property-metrics">
+
+                                    <div>
+                                        <strong>1,248</strong>
+                                        <span>Views</span>
+                                    </div>
+
+                                    <div>
+                                        <strong>86</strong>
+                                        <span>Inquiries</span>
+                                    </div>
+
+                                    <div>
+                                        <strong>14</strong>
+                                        <span>Bookings</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         RECENT REVIEWS
+                    ================================================== -->
+
+                    <div class="dashboard-card reviews-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    FEEDBACK
+                                </span>
+
+                                <h3>
+                                    Recent Reviews
+                                </h3>
+
+                            </div>
+
+                            <a
+                                href="../reviews/reviews.html"
+                                class="view-all">
+
+                                View All →
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="review-list">
+
+
+                            <div class="review-item">
+
+                                <div class="review-avatar">
+                                    SR
+                                </div>
+
+                                <div class="review-content">
+
+                                    <div class="review-top">
+
+                                        <strong>
+                                            Sayan Roy
+                                        </strong>
+
+                                        <span>
+                                            ⭐⭐⭐⭐⭐
+                                        </span>
+
+                                    </div>
+
+                                    <p>
+                                        Very clean room and the owner is helpful.
+                                    </p>
+
+                                    <small>
+                                        Green View PG · 2 days ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="review-item">
+
+                                <div class="review-avatar">
+                                    PD
+                                </div>
+
+                                <div class="review-content">
+
+                                    <div class="review-top">
+
+                                        <strong>
+                                            Priya Das
+                                        </strong>
+
+                                        <span>
+                                            ⭐⭐⭐⭐⭐
+                                        </span>
+
+                                    </div>
+
+                                    <p>
+                                        Great location and good facilities.
+                                    </p>
+
+                                    <small>
+                                        Lake View Residence · 4 days ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="review-item">
+
+                                <div class="review-avatar">
+                                    AM
+                                </div>
+
+                                <div class="review-content">
+
+                                    <div class="review-top">
+
+                                        <strong>
+                                            Ankit Mondal
+                                        </strong>
+
+                                        <span>
+                                            ⭐⭐⭐⭐
+                                        </span>
+
+                                    </div>
+
+                                    <p>
+                                        Overall a nice place for students.
+                                    </p>
+
+                                    <small>
+                                        City Heights · 6 days ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     FOOTER
+                ================================================== -->
+
+                <footer class="dashboard-footer">
+
+                    <p>
+                        © 2026 RoomNest. Owner Dashboard.
+                    </p>
+
+                    <div>
+
+                        <span>
+                            Need Help?
+                        </span>
+
+                        <a href="#">
+                            Contact Support
+                        </a>
+
+                    </div>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast">
+
+        <span class="toast-icon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Action completed successfully.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="toastClose">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SEARCH MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="searchModal">
+
+        <div class="modal-box search-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        SEARCH
+                    </span>
+
+                    <h3>
+                        Search Dashboard
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close="searchModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div class="search-input-wrap">
+
+                <span>
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="dashboardSearch"
+                    placeholder="Search properties, inquiries, bookings...">
+
+            </div>
+
+
+            <div class="search-results" id="searchResults">
+
+                <p class="search-empty">
+                    Start typing to search.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NOTIFICATION MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="notificationModal">
+
+        <div class="modal-box notification-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        ALERTS
+                    </span>
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close="notificationModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div class="notification-list">
+
+
+                <div class="notification-item unread">
+
+                    <div class="notification-icon">
+                        📩
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New inquiry received
+                        </strong>
+
+                        <p>
+                            Sayan Roy sent an inquiry for Green View PG.
+                        </p>
+
+                        <small>
+                            10 minutes ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item unread">
+
+                    <div class="notification-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New booking request
+                        </strong>
+
+                        <p>
+                            Ankit Mondal requested Room 305.
+                        </p>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New review
+                        </strong>
+
+                        <p>
+                            Priya Das left a 5-star review.
+                        </p>
+
+                        <small>
+                            Yesterday
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-primary-btn"
+                id="markNotificationsBtn">
+
+                Mark all as read
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PROPERTY MENU
+    ====================================================== -->
+
+    <div
+        class="dropdown-menu"
+        id="propertyDropdown">
+
+        <button type="button" data-property-action="edit">
+            ✏️ Edit Property
+        </button>
+
+        <button type="button" data-property-action="view">
+            👁️ View Property
+        </button>
+
+        <button type="button" data-property-action="share">
+            🔗 Share Property
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="dashboard.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

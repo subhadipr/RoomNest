@@ -1,0 +1,224 @@
+<!-- =========================================================
+     ROOMNEST — SHARED SIDEBAR
+     File: sidebar.html
+========================================================= -->
+
+<aside class="rn-sidebar" id="rnSidebar">
+
+    <!-- Brand -->
+    <div class="rn-sidebar-brand">
+
+        <a href="#" class="rn-sidebar-logo">
+            <span class="rn-sidebar-logo-icon">🏠</span>
+
+            <span class="rn-sidebar-logo-text">
+                Room<span>Nest</span>
+            </span>
+        </a>
+
+        <button
+            type="button"
+            class="rn-sidebar-close"
+            id="rnSidebarClose"
+            aria-label="Close sidebar"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- User -->
+    <div class="rn-sidebar-user">
+
+        <div class="rn-sidebar-avatar" id="rnSidebarAvatar">
+            U
+        </div>
+
+        <div class="rn-sidebar-user-info">
+
+            <strong id="rnSidebarUserName">
+                User
+            </strong>
+
+            <span id="rnSidebarUserRole">
+                Student
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <nav class="rn-sidebar-nav">
+
+        <p class="rn-sidebar-section-title">
+            MAIN
+        </p>
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="dashboard"
+        >
+            <span class="rn-sidebar-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="properties"
+        >
+            <span class="rn-sidebar-icon">🏠</span>
+            <span>My Properties</span>
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="rooms"
+        >
+            <span class="rn-sidebar-icon">🚪</span>
+            <span>Rooms</span>
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="saved"
+        >
+            <span class="rn-sidebar-icon">❤️</span>
+            <span>Saved PGs</span>
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="inquiries"
+        >
+            <span class="rn-sidebar-icon">💬</span>
+            <span>Inquiries</span>
+
+            <span
+                class="rn-sidebar-badge"
+                id="rnSidebarInquiryBadge"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="bookings"
+        >
+            <span class="rn-sidebar-icon">📅</span>
+            <span>Bookings</span>
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="messages"
+        >
+            <span class="rn-sidebar-icon">✉️</span>
+            <span>Messages</span>
+
+            <span
+                class="rn-sidebar-badge"
+                id="rnSidebarMessageBadge"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="notifications"
+        >
+            <span class="rn-sidebar-icon">🔔</span>
+            <span>Notifications</span>
+
+            <span
+                class="rn-sidebar-badge"
+                id="rnSidebarNotificationBadge"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <p class="rn-sidebar-section-title">
+            ACCOUNT
+        </p>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="profile"
+        >
+            <span class="rn-sidebar-icon">👤</span>
+            <span>My Profile</span>
+        </a>
+
+
+        <a
+            href="#"
+            class="rn-sidebar-item"
+            data-sidebar-route="settings"
+        >
+            <span class="rn-sidebar-icon">⚙️</span>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <!-- Bottom -->
+    <div class="rn-sidebar-bottom">
+
+        <a
+            href="#"
+            class="rn-sidebar-item rn-sidebar-home"
+            data-sidebar-route="public-home"
+        >
+            <span class="rn-sidebar-icon">🌐</span>
+            <span>Visit RoomNest</span>
+        </a>
+
+
+        <button
+            type="button"
+            class="rn-sidebar-logout"
+            id="rnSidebarLogout"
+        >
+            <span class="rn-sidebar-icon">🚪</span>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- Mobile Overlay -->
+
+<div
+    class="rn-sidebar-overlay"
+    id="rnSidebarOverlay"
+>
+</div>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | RoomNest Admin</title>
+
+    <link rel="stylesheet" href="reports.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <div class="brand-icon">R</div>
+
+            <div class="brand-text">
+                <h2>RoomNest</h2>
+                <span>Admin Panel</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboard/dashboard.html">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../users/users.html">
+                <span class="nav-icon">👥</span>
+                <span>Users</span>
+            </a>
+
+            <a href="../owners/owners.html">
+                <span class="nav-icon">🏠</span>
+                <span>Owners</span>
+            </a>
+
+            <a href="../properties/properties.html">
+                <span class="nav-icon">▦</span>
+                <span>Properties</span>
+            </a>
+
+            <a href="../pending/pending-properties.html">
+                <span class="nav-icon">⏳</span>
+                <span>Pending Properties</span>
+                <span class="nav-badge">12</span>
+            </a>
+
+            <a href="../inquiries/inquiries.html">
+                <span class="nav-icon">💬</span>
+                <span>Inquiries</span>
+            </a>
+
+            <a href="../reviews/reviews.html">
+                <span class="nav-icon">★</span>
+                <span>Reviews</span>
+            </a>
+
+            <a href="reports.html" class="active">
+                <span class="nav-icon">▥</span>
+                <span>Reports</span>
+            </a>
+
+            <a href="../settings/settings.html">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-mini-profile">
+                <div class="profile-avatar">A</div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <h1>Reports & Analytics</h1>
+                <p>Monitor RoomNest performance and activity</p>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn" title="Notifications">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-profile">
+                    <div class="profile-avatar">A</div>
+
+                    <div class="top-profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+        <section class="page-content">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <h2>Overview</h2>
+                    <p>Here is your platform performance overview.</p>
+                </div>
+
+                <div class="page-actions">
+
+                    <select id="dateRange" class="range-select">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30" selected>Last 30 Days</option>
+                        <option value="90">Last 3 Months</option>
+                        <option value="365">Last 12 Months</option>
+                    </select>
+
+                    <button class="export-btn" id="exportBtn">
+                        ↓ Export Report
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STAT CARDS ================= -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon revenue">
+                        ₹
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Total Revenue</span>
+                        <h3 id="revenueValue">₹8,42,650</h3>
+
+                        <small class="positive">
+                            ↑ 12.8% <em>vs last period</em>
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon bookings">
+                        ▣
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Total Bookings</span>
+                        <h3 id="bookingValue">1,284</h3>
+
+                        <small class="positive">
+                            ↑ 8.4% <em>vs last period</em>
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon users">
+                        👥
+                    </div>
+
+                    <div class="stat-content">
+                        <span>New Users</span>
+                        <h3 id="userValue">486</h3>
+
+                        <small class="positive">
+                            ↑ 14.2% <em>vs last period</em>
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon properties">
+                        🏢
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Active Properties</span>
+                        <h3 id="propertyValue">1,842</h3>
+
+                        <small class="positive">
+                            ↑ 6.7% <em>vs last period</em>
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CHART ROW ================= -->
+            <div class="charts-grid">
+
+                <!-- REVENUE -->
+                <div class="chart-card large">
+
+                    <div class="chart-header">
+
+                        <div>
+                            <h3>Revenue Overview</h3>
+                            <p>Revenue performance during selected period</p>
+                        </div>
+
+                        <div class="chart-value">
+                            <strong>₹8.42L</strong>
+                            <span>+12.8%</span>
+                        </div>
+
+                    </div>
+
+                    <div class="line-chart">
+
+                        <div class="y-axis">
+                            <span>₹2L</span>
+                            <span>₹1.5L</span>
+                            <span>₹1L</span>
+                            <span>₹50K</span>
+                            <span>₹0</span>
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="grid-line line-1"></div>
+                            <div class="grid-line line-2"></div>
+                            <div class="grid-line line-3"></div>
+                            <div class="grid-line line-4"></div>
+                            <div class="grid-line line-5"></div>
+
+                            <svg
+                                viewBox="0 0 700 260"
+                                preserveAspectRatio="none"
+                                class="revenue-svg"
+                            >
+
+                                <defs>
+
+                                    <linearGradient
+                                        id="revenueGradient"
+                                        x1="0"
+                                        x2="0"
+                                        y1="0"
+                                        y2="1"
+                                    >
+
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#12a889"
+                                            stop-opacity=".28"
+                                        />
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#12a889"
+                                            stop-opacity="0"
+                                        />
+
+                                    </linearGradient>
+
+                                </defs>
+
+                                <path
+                                    class="chart-fill"
+                                    d="M0,210
+                                    C45,190 65,200 100,175
+                                    C140,145 160,165 200,135
+                                    C240,105 270,120 310,95
+                                    C350,70 380,100 420,80
+                                    C460,60 490,72 525,55
+                                    C570,32 600,45 650,22
+                                    C670,15 685,12 700,5
+                                    L700,260 L0,260 Z"
+                                />
+
+                                <path
+                                    class="chart-line"
+                                    d="M0,210
+                                    C45,190 65,200 100,175
+                                    C140,145 160,165 200,135
+                                    C240,105 270,120 310,95
+                                    C350,70 380,100 420,80
+                                    C460,60 490,72 525,55
+                                    C570,32 600,45 650,22
+                                    C670,15 685,12 700,5"
+                                />
+
+                                <circle cx="700" cy="5" r="5"></circle>
+
+                            </svg>
+
+                            <div class="x-axis">
+                                <span>Week 1</span>
+                                <span>Week 2</span>
+                                <span>Week 3</span>
+                                <span>Week 4</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOOKING -->
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+                            <h3>Booking Activity</h3>
+                            <p>Bookings by week</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bar-chart">
+
+                        <div class="bar-item">
+                            <div class="bar" style="height:58%"></div>
+                            <span>W1</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height:72%"></div>
+                            <span>W2</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height:48%"></div>
+                            <span>W3</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height:82%"></div>
+                            <span>W4</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height:66%"></div>
+                            <span>W5</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height:91%"></div>
+                            <span>W6</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SECOND CHART ROW ================= -->
+            <div class="bottom-grid">
+
+                <!-- USER GROWTH -->
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+                            <h3>User Growth</h3>
+                            <p>New registered users</p>
+                        </div>
+
+                        <strong class="growth-total">
+                            +486
+                        </strong>
+
+                    </div>
+
+                    <div class="growth-chart">
+
+                        <div class="growth-bars">
+
+                            <div class="growth-bar" style="height:40%">
+                                <span>54</span>
+                            </div>
+
+                            <div class="growth-bar" style="height:54%">
+                                <span>72</span>
+                            </div>
+
+                            <div class="growth-bar" style="height:68%">
+                                <span>91</span>
+                            </div>
+
+                            <div class="growth-bar" style="height:49%">
+                                <span>67</span>
+                            </div>
+
+                            <div class="growth-bar" style="height:78%">
+                                <span>104</span>
+                            </div>
+
+                            <div class="growth-bar" style="height:73%">
+                                <span>98</span>
+                            </div>
+
+                        </div>
+
+                        <div class="growth-labels">
+                            <span>Jan</span>
+                            <span>Feb</span>
+                            <span>Mar</span>
+                            <span>Apr</span>
+                            <span>May</span>
+                            <span>Jun</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROPERTY DISTRIBUTION -->
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+                            <h3>Property Distribution</h3>
+                            <p>Properties by type</p>
+                        </div>
+
+                    </div>
+
+                    <div class="property-distribution">
+
+                        <div class="donut">
+                            <div class="donut-inner">
+                                <strong>1,842</strong>
+                                <span>Total</span>
+                            </div>
+                        </div>
+
+                        <div class="distribution-list">
+
+                            <div>
+                                <span>
+                                    <i class="dot pg"></i>
+                                    PG
+                                </span>
+
+                                <strong>42%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="dot flat"></i>
+                                    Flat
+                                </span>
+
+                                <strong>28%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="dot hostel"></i>
+                                    Hostel
+                                </span>
+
+                                <strong>18%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="dot room"></i>
+                                    Room
+                                </span>
+
+                                <strong>12%</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TABLE ================= -->
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <div>
+                        <h3>Recent Transactions</h3>
+                        <p>Latest booking and payment activities</p>
+                    </div>
+
+                    <button class="view-all-btn" id="viewAllBtn">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Student</th>
+                                <th>Property</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="transactionTable">
+
+                            <tr>
+                                <td>
+                                    <strong>#RN-10482</strong>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="table-avatar">AS</div>
+                                        <span>Arjun Sen</span>
+                                    </div>
+                                </td>
+
+                                <td>Green View PG</td>
+
+                                <td>15 Sep 2026</td>
+
+                                <td>
+                                    <strong>₹8,500</strong>
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>#RN-10481</strong>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="table-avatar">RS</div>
+                                        <span>Rahul Sharma</span>
+                                    </div>
+                                </td>
+
+                                <td>City Nest Hostel</td>
+
+                                <td>15 Sep 2026</td>
+
+                                <td>
+                                    <strong>₹6,200</strong>
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>#RN-10480</strong>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="table-avatar">PD</div>
+                                        <span>Priya Das</span>
+                                    </div>
+                                </td>
+
+                                <td>Lake Side Rooms</td>
+
+                                <td>14 Sep 2026</td>
+
+                                <td>
+                                    <strong>₹7,800</strong>
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>#RN-10479</strong>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="table-avatar">SM</div>
+                                        <span>Sourav Mondal</span>
+                                    </div>
+                                </td>
+
+                                <td>Student Hub PG</td>
+
+                                <td>14 Sep 2026</td>
+
+                                <td>
+                                    <strong>₹9,000</strong>
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast">
+    <span id="toastIcon">✓</span>
+    <p id="toastMessage">Report exported successfully.</p>
+</div>
+
+
+<script src="reports.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

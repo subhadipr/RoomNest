@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bookings | RoomNest Owner</title>
+
+    <link rel="stylesheet" href="bookings.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+<aside class="owner-sidebar" id="ownerSidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-house"></i>
+        </div>
+
+        <div>
+            <h2>RoomNest</h2>
+            <span>Owner Panel</span>
+        </div>
+
+    </div>
+
+
+    <!-- OWNER MINI PROFILE -->
+    <div class="owner-mini-profile">
+
+        <div class="mini-avatar" id="sidebarAvatar">
+            AR
+        </div>
+
+        <div class="mini-info">
+
+            <strong id="sidebarOwnerName">
+                Arindam Roy
+            </strong>
+
+            <span>
+                Property Owner
+            </span>
+
+        </div>
+
+        <span class="online-dot"></span>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="sidebar-nav">
+
+        <div class="nav-section-title">
+            MAIN MENU
+        </div>
+
+
+        <a
+            href="../dashboard/dashboard.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-grid-2"></i>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+            href="../properties/properties.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-building"></i>
+            <span>My Properties</span>
+        </a>
+
+
+        <a
+            href="../add-property/add-property.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>Add Property</span>
+        </a>
+
+
+        <a
+            href="../inquiries/inquiries.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>Inquiries</span>
+        </a>
+
+
+        <a
+            href="bookings.html"
+            class="nav-item active"
+        >
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Bookings</span>
+            <span
+                class="nav-badge"
+                id="sidebarBookingBadge"
+            >
+                2
+            </span>
+        </a>
+
+
+        <a
+            href="../messages/messages.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-comments"></i>
+            <span>Messages</span>
+        </a>
+
+
+        <a
+            href="../reviews/reviews.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-star"></i>
+            <span>Reviews</span>
+        </a>
+
+
+        <div class="nav-section-title second-section">
+            ACCOUNT
+        </div>
+
+
+        <a
+            href="../profile/profile.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+
+        <a
+            href="../settings/settings.html"
+            class="nav-item"
+        >
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+
+            <div class="help-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <span>Contact RoomNest support</span>
+            </div>
+
+        </div>
+
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+<main class="main-content">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="breadcrumb">
+
+                <span>
+                    Owner Panel
+                </span>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <strong>
+                    Bookings
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button
+                class="topbar-icon-btn"
+                id="searchBtn"
+                title="Search"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+
+            <button
+                class="topbar-icon-btn notification-btn"
+                id="notificationBtn"
+                title="Notifications"
+            >
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+
+            <div
+                class="topbar-profile"
+                id="profileMenuBtn"
+            >
+
+                <div
+                    class="top-avatar"
+                    id="topAvatar"
+                >
+                    AR
+                </div>
+
+
+                <div class="top-profile-info">
+
+                    <strong id="topOwnerName">
+                        Arindam Roy
+                    </strong>
+
+                    <span>
+                        Owner
+                    </span>
+
+                </div>
+
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PAGE
+    ====================================================== -->
+    <section class="page-container">
+
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+
+            <div>
+
+                <span class="page-eyebrow">
+                    RESERVATION MANAGEMENT
+                </span>
+
+                <h1>
+                    Bookings
+                </h1>
+
+                <p>
+                    Manage student bookings, confirm reservations
+                    and track booking activity across your properties.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             STATS
+        ================================================== -->
+        <div class="stats-grid">
+
+
+            <!-- TOTAL -->
+            <div class="stat-card">
+
+                <div class="stat-icon total">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Bookings
+                    </span>
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                    <small>
+                        All reservations
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- UPCOMING -->
+            <div class="stat-card">
+
+                <div class="stat-icon upcoming">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Upcoming
+                    </span>
+
+                    <strong id="upcomingCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Future move-ins
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRMED -->
+            <div class="stat-card">
+
+                <div class="stat-icon confirmed">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Confirmed
+                    </span>
+
+                    <strong id="confirmedCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Active reservations
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- PENDING -->
+            <div class="stat-card">
+
+                <div class="stat-icon pending">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Need attention
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- CANCELLED -->
+            <div class="stat-card">
+
+                <div class="stat-icon cancelled">
+                    <i class="fa-solid fa-calendar-xmark"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Cancelled
+                    </span>
+
+                    <strong id="cancelledCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Cancelled bookings
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TOOLBAR
+        ================================================== -->
+        <div class="booking-toolbar">
+
+
+            <!-- SEARCH -->
+            <div class="toolbar-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="bookingSearch"
+                    placeholder="Search student, property or booking ID..."
+                >
+
+                <button
+                    class="clear-search"
+                    id="clearSearch"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+            <div class="toolbar-filters">
+
+
+                <div class="select-wrapper">
+
+                    <i class="fa-solid fa-filter"></i>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="cancelled">
+                            Cancelled
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="select-wrapper">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <select id="propertyFilter">
+
+                        <option value="all">
+                            All Properties
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="select-wrapper">
+
+                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                    <select id="sortFilter">
+
+                        <option value="latest">
+                            Latest First
+                        </option>
+
+                        <option value="oldest">
+                            Oldest First
+                        </option>
+
+                        <option value="movein">
+                            Move-in Date
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <div class="results-row">
+
+            <span>
+                Showing
+                <strong id="resultsCount">
+                    0
+                </strong>
+                bookings
+            </span>
+
+
+            <button
+                class="refresh-btn"
+                id="refreshBtn"
+            >
+                <i class="fa-solid fa-rotate"></i>
+                Refresh
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             BOOKINGS LIST
+        ================================================== -->
+        <div
+            class="bookings-list"
+            id="bookingsList"
+        ></div>
+
+
+        <!-- =================================================
+             EMPTY STATE
+        ================================================== -->
+        <div
+            class="empty-state"
+            id="emptyState"
+        >
+
+            <div class="empty-icon">
+
+                <i class="fa-regular fa-calendar-xmark"></i>
+
+            </div>
+
+            <h3>
+                No bookings found
+            </h3>
+
+            <p>
+                No bookings match your current search or filters.
+            </p>
+
+            <button
+                class="secondary-btn"
+                id="resetFiltersBtn"
+            >
+                <i class="fa-solid fa-filter-circle-xmark"></i>
+                Reset Filters
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     BOOKING DETAILS MODAL
+========================================================= -->
+<div
+    class="modal-overlay"
+    id="bookingModal"
+>
+
+    <div class="modal-box booking-modal">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    BOOKING DETAILS
+                </span>
+
+                <h2 id="modalBookingTitle">
+                    Booking Details
+                </h2>
+
+            </div>
+
+
+            <button
+                class="modal-close"
+                data-close-modal="bookingModal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+
+            <!-- STUDENT -->
+            <div class="student-header">
+
+                <div
+                    class="student-avatar"
+                    id="modalStudentAvatar"
+                >
+                    RD
+                </div>
+
+
+                <div class="student-info">
+
+                    <h3 id="modalStudentName">
+                        Rahul Das
+                    </h3>
+
+                    <div class="student-contact">
+
+                        <span id="modalStudentEmail">
+                            rahul@example.com
+                        </span>
+
+                        <span id="modalStudentPhone">
+                            +91 98765 12345
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    class="status-badge"
+                    id="modalStatus"
+                >
+                    Pending
+                </span>
+
+            </div>
+
+
+            <!-- BOOKING ID -->
+            <div class="booking-id-row">
+
+                <span>
+                    Booking ID
+                </span>
+
+                <strong id="modalBookingId">
+                    RN-BK-1001
+                </strong>
+
+                <button
+                    id="copyBookingIdBtn"
+                    title="Copy Booking ID"
+                >
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+
+            </div>
+
+
+            <!-- DETAILS -->
+            <div class="detail-grid">
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Property
+                    </span>
+
+                    <strong id="modalProperty">
+                        Green View PG
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Room Type
+                    </span>
+
+                    <strong id="modalRoomType">
+                        Single Room
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Booking Date
+                    </span>
+
+                    <strong id="modalBookingDate">
+                        15 Sep 2026
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Move-in Date
+                    </span>
+
+                    <strong id="modalMoveIn">
+                        01 Oct 2026
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Monthly Rent
+                    </span>
+
+                    <strong id="modalRent">
+                        ₹8,500
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Booking Amount
+                    </span>
+
+                    <strong id="modalAmount">
+                        ₹2,000
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Security Deposit
+                    </span>
+
+                    <strong id="modalDeposit">
+                        ₹8,500
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Payment Status
+                    </span>
+
+                    <strong id="modalPayment">
+                        Pending
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div class="booking-message-section">
+
+                <div class="section-label">
+
+                    <i class="fa-regular fa-message"></i>
+
+                    Student Note
+
+                </div>
+
+
+                <div
+                    class="booking-message"
+                    id="modalMessage"
+                >
+                    I would like to book this room for the
+                    upcoming academic session.
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+            <div class="booking-actions">
+
+
+                <button
+                    class="action-btn message"
+                    id="modalMessageBtn"
+                >
+                    <i class="fa-regular fa-paper-plane"></i>
+                    Message Student
+                </button>
+
+
+                <button
+                    class="action-btn confirm"
+                    id="modalConfirmBtn"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Confirm Booking
+                </button>
+
+
+                <button
+                    class="action-btn cancel"
+                    id="modalCancelBtn"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                    Cancel Booking
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
+<div
+    class="modal-overlay"
+    id="searchModal"
+>
+
+    <div class="modal-box small-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    QUICK SEARCH
+                </span>
+
+                <h2>
+                    Search Bookings
+                </h2>
+
+            </div>
+
+
+            <button
+                class="modal-close"
+                data-close-modal="searchModal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="modal-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search student, property or booking ID..."
+                >
+
+            </div>
+
+
+            <div
+                class="search-results"
+                id="globalSearchResults"
+            >
+                Start typing to search.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION MODAL
+========================================================= -->
+<div
+    class="modal-overlay"
+    id="notificationModal"
+>
+
+    <div class="modal-box small-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-eyebrow">
+                    ROOMNEST
+                </span>
+
+                <h2>
+                    Notifications
+                </h2>
+
+            </div>
+
+
+            <button
+                class="modal-close"
+                data-close-modal="notificationModal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="notification-list">
+
+
+            <div class="notification-item unread">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        New booking request
+                    </strong>
+
+                    <p>
+                        Rahul Das requested a room at Green View PG.
+                    </p>
+
+                    <small>
+                        12 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        New student message
+                    </strong>
+
+                    <p>
+                        A student sent you a message about a booking.
+                    </p>
+
+                    <small>
+                        1 hour ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        New review
+                    </strong>
+
+                    <p>
+                        Your property received a new review.
+                    </p>
+
+                    <small>
+                        Yesterday
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+<div
+    class="toast"
+    id="toast"
+>
+
+    <div
+        class="toast-icon"
+        id="toastIcon"
+    >
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+
+    <div class="toast-content">
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Action completed.
+        </p>
+
+    </div>
+
+
+    <button
+        class="toast-close"
+        id="toastClose"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+
+<script src="bookings.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

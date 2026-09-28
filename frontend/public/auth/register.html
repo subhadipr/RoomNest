@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | RoomNest</title>
+
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <body>
+
+    <!-- HOME BUTTON -->
+    <a
+        href="../home/index.html"
+        class="auth-home-button"
+    >
+        ← Home
+    </a>
+
+    <main class="auth-wrapper">
+
+    <!-- =========================
+         MAIN AUTH WRAPPER
+    ========================== -->
+    <main class="auth-wrapper">
+
+        <!-- =========================
+             LEFT SIDE
+        ========================== -->
+        <section class="auth-left">
+
+            <div class="brand">
+                <div class="brand-logo">RN</div>
+
+                <div>
+                    <h2>RoomNest</h2>
+                    <span>Find Your Perfect Stay</span>
+                </div>
+            </div>
+
+            <div class="left-content">
+
+                <span class="eyebrow">
+                    JOIN ROOMNEST
+                </span>
+
+                <h1>
+                    Find a place<br>
+                    that feels like <span>home.</span>
+                </h1>
+
+                <p>
+                    Create your RoomNest account and discover
+                    verified PGs, rooms and comfortable stays
+                    near your college or workplace.
+                </p>
+
+                <div class="benefits">
+
+                    <div class="benefit">
+                        <div class="benefit-icon">🏠</div>
+                        <div>
+                            <strong>Find Better Rooms</strong>
+                            <span>Search PGs and rooms easily.</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit-icon">🔐</div>
+                        <div>
+                            <strong>Safe & Verified</strong>
+                            <span>Discover trusted properties.</span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit-icon">💬</div>
+                        <div>
+                            <strong>Connect Directly</strong>
+                            <span>Talk with property owners.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="left-footer">
+                © 2026 RoomNest. All rights reserved.
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RIGHT SIDE
+        ========================== -->
+        <section class="auth-right">
+
+            <div class="register-container">
+
+                <!-- Mobile Logo -->
+                <div class="mobile-brand">
+                    <div class="brand-logo">RN</div>
+                    <h2>RoomNest</h2>
+                </div>
+
+                <div class="form-header">
+
+                    <span class="form-eyebrow">
+                        GET STARTED
+                    </span>
+
+                    <h1>Create your account</h1>
+
+                    <p>
+                        Join RoomNest and start your journey.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     ROLE SELECTOR
+                ========================== -->
+                <div class="role-selector">
+
+                    <button
+                        type="button"
+                        class="role-btn active"
+                        data-role="student"
+                    >
+                        <span>🎓</span>
+
+                        <div>
+                            <strong>Student</strong>
+                            <small>Find PG / Room</small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="role-btn"
+                        data-role="owner"
+                    >
+                        <span>🏠</span>
+
+                        <div>
+                            <strong>Owner</strong>
+                            <small>List your property</small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     REGISTER FORM
+                ========================== -->
+                <form id="registerForm" novalidate>
+
+                    <input
+                        type="hidden"
+                        id="selectedRole"
+                        value="student"
+                    >
+
+
+                    <!-- Name -->
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">👤</span>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="nameError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">✉️</span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                            >
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="emailError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">📱</span>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="10-digit mobile number"
+                                maxlength="10"
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="phoneError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="password"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                        <div class="password-strength">
+
+                            <div class="strength-bars">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <span id="strengthText">
+                                Enter a password
+                            </span>
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="passwordError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">🔐</span>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirmPassword"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="confirmPasswordError"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- Terms -->
+                    <div class="terms-row">
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                I agree to the
+                                <a href="#" id="termsLink">
+                                    Terms & Conditions
+                                </a>
+                                and
+                                <a href="#" id="privacyLink">
+                                    Privacy Policy
+                                </a>.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                    <small
+                        class="error-message terms-error"
+                        id="termsError"
+                    ></small>
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="register-btn"
+                        id="registerBtn"
+                    >
+                        <span class="btn-text">
+                            Create Account
+                        </span>
+
+                        <span class="btn-loader">
+                            Creating...
+                        </span>
+
+                        <span class="btn-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+
+                <!-- Google -->
+                <button
+                    type="button"
+                    class="google-btn"
+                    id="googleBtn"
+                >
+                    <span class="google-icon">G</span>
+                    <span>Continue with Google</span>
+                </button>
+
+
+                <!-- Login -->
+                <p class="login-text">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </p>
+
+
+                <!-- Owner info -->
+                <div
+                    class="owner-note"
+                    id="ownerNote"
+                >
+                    <span>🏠</span>
+
+                    <p>
+                        <strong>Want to list your property?</strong>
+                        Select <b>Owner</b> above to create an owner account.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+    <div
+        class="toast"
+        id="toast"
+    >
+        <span id="toastIcon">✓</span>
+
+        <div>
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Account created successfully.
+            </p>
+        </div>
+
+        <button id="toastClose">×</button>
+    </div>
+
+
+    <!-- =========================
+         TERMS MODAL
+    ========================== -->
+    <div
+        class="modal-overlay"
+        id="infoModal"
+    >
+
+        <div class="info-modal">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">
+                📄
+            </div>
+
+            <h2 id="modalTitle">
+                Terms & Conditions
+            </h2>
+
+            <p id="modalText">
+                RoomNest demo terms and conditions.
+            </p>
+
+            <button
+                class="modal-ok"
+                id="modalOk"
+            >
+                Got it
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="register.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

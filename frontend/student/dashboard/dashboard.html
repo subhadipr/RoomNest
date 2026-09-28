@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | RoomNest</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="student-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="student-sidebar" id="studentSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">R</div>
+
+            <div>
+                <h2>RoomNest</h2>
+                <span>Student Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-heading">MAIN</p>
+
+            <a href="dashboard.html" class="nav-item active">
+                <span>⌂</span>
+                <strong>Dashboard</strong>
+            </a>
+
+            <a href="../../public/search/search.html" class="nav-item">
+                <span>⌕</span>
+                <strong>Find PG / Room</strong>
+            </a>
+
+
+            <p class="nav-heading">MY ROOMNEST</p>
+
+            <a href="../profile/profile.html" class="nav-item">
+                <span>👤</span>
+                <strong>My Profile</strong>
+            </a>
+
+            <a href="../saved/saved-pgs.html" class="nav-item">
+                <span>♡</span>
+                <strong>Saved PGs</strong>
+                <small class="nav-count">4</small>
+            </a>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <span>💬</span>
+                <strong>My Inquiries</strong>
+                <small class="nav-count">2</small>
+            </a>
+
+            <a href="../bookings/bookings.html" class="nav-item">
+                <span>▣</span>
+                <strong>My Bookings</strong>
+            </a>
+
+            <a href="../messages/messages.html" class="nav-item">
+                <span>✉</span>
+                <strong>Messages</strong>
+                <small class="nav-count">3</small>
+            </a>
+
+            <a href="../notifications/notifications.html" class="nav-item">
+                <span>🔔</span>
+                <strong>Notifications</strong>
+                <small class="nav-count">5</small>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    SR
+                </div>
+
+                <div>
+                    <strong>Subhadip Roy</strong>
+                    <span>Student</span>
+                </div>
+
+            </div>
+
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= OVERLAY ================= -->
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="student-main">
+
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="student-topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn">
+                    ☰
+                </button>
+
+                <div>
+                    <h1>Student Dashboard</h1>
+
+                    <p>
+                        Manage your RoomNest activities
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    class="top-icon-btn"
+                    id="notificationBtn">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="student-profile-menu">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-user-info">
+                        <strong>Subhadip Roy</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <span class="profile-arrow">⌄</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+        <section class="dashboard-content">
+
+
+            <!-- ================= WELCOME ================= -->
+            <div class="welcome-card">
+
+                <div class="welcome-text">
+
+                    <span class="welcome-label">
+                        Welcome back 👋
+                    </span>
+
+                    <h2>
+                        Hello, Subhadip!
+                    </h2>
+
+                    <p>
+                        Find your perfect PG, room or hostel
+                        near your college.
+                    </p>
+
+                    <a
+                        href="../../public/search/search.html"
+                        class="find-room-btn">
+                        🔎 Find a Room
+                    </a>
+
+                </div>
+
+
+                <div class="welcome-illustration">
+                    🏠
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+            <div class="student-stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon saved">
+                        ♡
+                    </div>
+
+                    <div>
+                        <span>Saved PGs</span>
+                        <h3>4</h3>
+                        <small>Properties saved</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon inquiry">
+                        💬
+                    </div>
+
+                    <div>
+                        <span>Active Inquiries</span>
+                        <h3>2</h3>
+                        <small>Awaiting response</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon booking">
+                        ▣
+                    </div>
+
+                    <div>
+                        <span>Bookings</span>
+                        <h3>1</h3>
+                        <small>Upcoming booking</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon message">
+                        ✉
+                    </div>
+
+                    <div>
+                        <span>Unread Messages</span>
+                        <h3>3</h3>
+                        <small>New messages</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MAIN GRID ================= -->
+            <div class="dashboard-grid">
+
+
+                <!-- ================= UPCOMING BOOKING ================= -->
+                <div class="dashboard-card booking-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Upcoming Booking</h3>
+                            <p>Your next property visit</p>
+                        </div>
+
+                        <a href="../bookings/bookings.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="booking-content">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=500&q=80"
+                            alt="Green View PG"
+                            class="booking-image"
+                        >
+
+
+                        <div class="booking-details">
+
+                            <span class="booking-status">
+                                Confirmed
+                            </span>
+
+                            <h4>
+                                Green View PG
+                            </h4>
+
+                            <p>
+                                📍 Bolpur, Birbhum
+                            </p>
+
+                            <p>
+                                📅 20 September 2026
+                            </p>
+
+                            <p>
+                                🕐 11:30 AM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-footer">
+
+                        <span>
+                            Booking ID:
+                            <strong>#RN-10482</strong>
+                        </span>
+
+                        <button id="bookingDetailsBtn">
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= RECENT ACTIVITY ================= -->
+                <div class="dashboard-card activity-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recent Activity</h3>
+                            <p>Your latest RoomNest activity</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon inquiry">
+                                💬
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Inquiry sent
+                                </strong>
+
+                                <p>
+                                    You contacted Green View PG
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon saved">
+                                ♡
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Property saved
+                                </strong>
+
+                                <p>
+                                    City Nest Hostel
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon booking">
+                                ✓
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Booking confirmed
+                                </strong>
+
+                                <p>
+                                    Green View PG
+                                </p>
+
+                                <small>
+                                    2 days ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon profile">
+                                👤
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Profile updated
+                                </strong>
+
+                                <p>
+                                    Your profile information
+                                </p>
+
+                                <small>
+                                    4 days ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= LOWER GRID ================= -->
+            <div class="lower-grid">
+
+
+                <!-- ================= SAVED PROPERTIES ================= -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recently Saved</h3>
+                            <p>Properties you saved recently</p>
+                        </div>
+
+                        <a href="../saved/saved-pgs.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="saved-list">
+
+
+                        <div class="saved-property">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=300&q=80"
+                                alt="City Nest Hostel"
+                            >
+
+                            <div class="saved-info">
+
+                                <h4>City Nest Hostel</h4>
+
+                                <p>
+                                    📍 Suri, Birbhum
+                                </p>
+
+                                <strong>
+                                    ₹5,500
+                                    <small>/month</small>
+                                </strong>
+
+                            </div>
+
+                            <button
+                                class="heart-btn active">
+                                ♥
+                            </button>
+
+                        </div>
+
+
+                        <div class="saved-property">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=300&q=80"
+                                alt="Student Comfort House"
+                            >
+
+                            <div class="saved-info">
+
+                                <h4>
+                                    Student Comfort House
+                                </h4>
+
+                                <p>
+                                    📍 Durgapur, WB
+                                </p>
+
+                                <strong>
+                                    ₹7,000
+                                    <small>/month</small>
+                                </strong>
+
+                            </div>
+
+                            <button
+                                class="heart-btn active">
+                                ♥
+                            </button>
+
+                        </div>
+
+
+                        <div class="saved-property">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=300&q=80"
+                                alt="Lake Side Rooms"
+                            >
+
+                            <div class="saved-info">
+
+                                <h4>
+                                    Lake Side Rooms
+                                </h4>
+
+                                <p>
+                                    📍 Kolkata, WB
+                                </p>
+
+                                <strong>
+                                    ₹8,500
+                                    <small>/month</small>
+                                </strong>
+
+                            </div>
+
+                            <button
+                                class="heart-btn active">
+                                ♥
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= RECOMMENDED ================= -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recommended For You</h3>
+                            <p>Based on your preferences</p>
+                        </div>
+
+                        <a href="../../public/search/search.html">
+                            Explore
+                        </a>
+
+                    </div>
+
+
+                    <div class="recommended-list">
+
+
+                        <div class="recommended-property">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=300&q=80"
+                                alt="Royal Residency"
+                            >
+
+                            <div>
+
+                                <span class="property-type">
+                                    Flat
+                                </span>
+
+                                <h4>
+                                    Royal Residency
+                                </h4>
+
+                                <p>
+                                    📍 Asansol, WB
+                                </p>
+
+                                <strong>
+                                    ₹9,000
+                                    <small>/month</small>
+                                </strong>
+
+                            </div>
+
+                            <button
+                                class="view-property-btn"
+                                data-property="Royal Residency">
+                                View
+                            </button>
+
+                        </div>
+
+
+                        <div class="recommended-property">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=300&q=80"
+                                alt="Campus Corner Hostel"
+                            >
+
+                            <div>
+
+                                <span class="property-type">
+                                    Hostel
+                                </span>
+
+                                <h4>
+                                    Campus Corner Hostel
+                                </h4>
+
+                                <p>
+                                    📍 Kalyani, WB
+                                </p>
+
+                                <strong>
+                                    ₹4,800
+                                    <small>/month</small>
+                                </strong>
+
+                            </div>
+
+                            <button
+                                class="view-property-btn"
+                                data-property="Campus Corner Hostel">
+                                View
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+            <div class="quick-actions-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Quick Actions</h3>
+                        <p>Access frequently used features</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a
+                        href="../../public/search/search.html"
+                        class="quick-action">
+
+                        <span class="quick-icon search">
+                            🔎
+                        </span>
+
+                        <div>
+                            <strong>Find a PG / Room</strong>
+                            <small>
+                                Search available properties
+                            </small>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="../saved/saved-pgs.html"
+                        class="quick-action">
+
+                        <span class="quick-icon saved">
+                            ♡
+                        </span>
+
+                        <div>
+                            <strong>Saved Properties</strong>
+                            <small>
+                                View your saved properties
+                            </small>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="../inquiries/inquiries.html"
+                        class="quick-action">
+
+                        <span class="quick-icon inquiry">
+                            💬
+                        </span>
+
+                        <div>
+                            <strong>My Inquiries</strong>
+                            <small>
+                                Track your property inquiries
+                            </small>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="../messages/messages.html"
+                        class="quick-action">
+
+                        <span class="quick-icon message">
+                            ✉
+                        </span>
+
+                        <div>
+                            <strong>Messages</strong>
+                            <small>
+                                Chat with property owners
+                            </small>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+<div class="student-toast" id="studentToast">
+
+    <span>✓</span>
+
+    <p id="toastMessage">
+        Action completed.
+    </p>
+
+</div>
+
+
+<script src="dashboard.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

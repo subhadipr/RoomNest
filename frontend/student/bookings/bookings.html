@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | RoomNest</title>
+
+    <link rel="stylesheet" href="bookings.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+===================================================== -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🏠
+        </div>
+
+        <div>
+            <h2>RoomNest</h2>
+            <span>Student Panel</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../../public/search/search.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find PG / Room</span>
+        </a>
+
+
+        <p class="nav-title">MY ACCOUNT</p>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../saved/saved-pgs.html" class="nav-item">
+            <span class="nav-icon">❤️</span>
+            <span>Saved PGs</span>
+        </a>
+
+        <a href="../inquiries/inquiries.html" class="nav-item">
+            <span class="nav-icon">📩</span>
+            <span>My Inquiries</span>
+        </a>
+
+        <a href="bookings.html" class="nav-item active">
+            <span class="nav-icon">📅</span>
+            <span>My Bookings</span>
+            <span class="nav-badge" id="bookingBadge">4</span>
+        </a>
+
+        <a href="../messages/messages.html" class="nav-item">
+            <span class="nav-icon">💬</span>
+            <span>Messages</span>
+        </a>
+
+        <a href="../notifications/notifications.html" class="nav-item">
+            <span class="nav-icon">🔔</span>
+            <span>Notifications</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+
+            <div class="help-icon">
+                💡
+            </div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <p>We're here for you.</p>
+            </div>
+
+        </div>
+
+
+        <button class="logout-btn" id="logoutBtn">
+            <span>🚪</span>
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+         TOPBAR
+    ================================================== -->
+
+    <header class="topbar">
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+
+        <div class="topbar-left">
+
+            <h1>My Bookings</h1>
+
+            <p>
+                Manage your PG and room bookings
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button class="top-icon-btn">
+
+                🔔
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="user-profile">
+
+                <div class="user-avatar">
+                    S
+                </div>
+
+                <div class="user-info">
+
+                    <strong>Subhadip Roy</strong>
+
+                    <span>Student</span>
+
+                </div>
+
+                <span class="user-arrow">
+                    ⌄
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PAGE
+    ================================================== -->
+
+    <section class="page-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h2>My Bookings</h2>
+
+                <p>
+                    Track your current and previous bookings.
+                </p>
+
+            </div>
+
+
+            <a
+                href="../../public/search/search.html"
+                class="find-btn">
+
+                🔍 Find New PG
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    📅
+                </div>
+
+                <div>
+
+                    <span>Total Bookings</span>
+
+                    <strong id="totalBookings">
+                        4
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    🕐
+                </div>
+
+                <div>
+
+                    <span>Upcoming</span>
+
+                    <strong id="upcomingCount">
+                        2
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ✅
+                </div>
+
+                <div>
+
+                    <span>Confirmed</span>
+
+                    <strong id="confirmedCount">
+                        2
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">
+                    ❌
+                </div>
+
+                <div>
+
+                    <span>Cancelled</span>
+
+                    <strong id="cancelledCount">
+                        1
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTER BAR
+        ================================================== -->
+
+        <div class="filter-card">
+
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search booking or location..."
+                >
+
+            </div>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="confirmed">
+                    Confirmed
+                </option>
+
+                <option value="upcoming">
+                    Upcoming
+                </option>
+
+                <option value="cancelled">
+                    Cancelled
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+            </select>
+
+
+            <select id="typeFilter">
+
+                <option value="all">
+                    All Types
+                </option>
+
+                <option value="PG">
+                    PG
+                </option>
+
+                <option value="Room">
+                    Room
+                </option>
+
+            </select>
+
+
+            <select id="sortFilter">
+
+                <option value="latest">
+                    Latest First
+                </option>
+
+                <option value="oldest">
+                    Oldest First
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div class="result-header">
+
+            <div>
+
+                <strong id="resultCount">
+                    4
+                </strong>
+
+                <span>
+                    bookings found
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOOKING LIST
+        ================================================== -->
+
+        <div class="booking-list" id="bookingList">
+
+
+            <!-- =================================================
+                 BOOKING 1
+            ================================================== -->
+
+            <article
+                class="booking-card"
+                data-id="1"
+                data-name="Green View Premium PG"
+                data-location="Kolkata"
+                data-type="PG"
+                data-status="confirmed"
+                data-date="4"
+                data-rent="7500"
+                data-booking="15 Sep 2026"
+                data-movein="01 Oct 2026"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=700&q=80"
+                        alt="Green View Premium PG"
+                    >
+
+                    <span class="property-type">
+                        PG
+                    </span>
+
+                </div>
+
+
+                <div class="booking-content">
+
+                    <div class="booking-header">
+
+                        <div>
+
+                            <h3>
+                                Green View Premium PG
+                            </h3>
+
+                            <p>
+                                📍 Salt Lake, Kolkata
+                            </p>
+
+                        </div>
+
+                        <span class="status confirmed">
+                            Confirmed
+                        </span>
+
+                    </div>
+
+
+                    <div class="booking-details">
+
+                        <div>
+                            <span>Booking ID</span>
+                            <strong>#RN1001</strong>
+                        </div>
+
+                        <div>
+                            <span>Booking Date</span>
+                            <strong>15 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Move-in Date</span>
+                            <strong>01 Oct 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Monthly Rent</span>
+                            <strong>₹7,500</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-footer">
+
+                        <span class="room-info">
+                            🛏️ Double Sharing
+                        </span>
+
+                        <span class="owner-info">
+                            👤 Green View Homes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="booking-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="1">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn message-btn"
+                        data-id="1">
+
+                        💬 Message Owner
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BOOKING 2
+            ================================================== -->
+
+            <article
+                class="booking-card"
+                data-id="2"
+                data-name="Urban Nest Student PG"
+                data-location="Bengaluru"
+                data-type="PG"
+                data-status="upcoming"
+                data-date="3"
+                data-rent="6500"
+                data-booking="14 Sep 2026"
+                data-movein="05 Oct 2026"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80"
+                        alt="Urban Nest Student PG"
+                    >
+
+                    <span class="property-type">
+                        PG
+                    </span>
+
+                </div>
+
+
+                <div class="booking-content">
+
+                    <div class="booking-header">
+
+                        <div>
+
+                            <h3>
+                                Urban Nest Student PG
+                            </h3>
+
+                            <p>
+                                📍 Koramangala, Bengaluru
+                            </p>
+
+                        </div>
+
+                        <span class="status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+
+                    <div class="booking-details">
+
+                        <div>
+                            <span>Booking ID</span>
+                            <strong>#RN1002</strong>
+                        </div>
+
+                        <div>
+                            <span>Booking Date</span>
+                            <strong>14 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Move-in Date</span>
+                            <strong>05 Oct 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Monthly Rent</span>
+                            <strong>₹6,500</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-footer">
+
+                        <span class="room-info">
+                            🛏️ Triple Sharing
+                        </span>
+
+                        <span class="owner-info">
+                            👤 Urban Nest Homes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="booking-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="2">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn cancel-btn"
+                        data-id="2">
+
+                        Cancel Booking
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BOOKING 3
+            ================================================== -->
+
+            <article
+                class="booking-card"
+                data-id="3"
+                data-name="Comfort Stay PG"
+                data-location="Delhi"
+                data-type="PG"
+                data-status="completed"
+                data-date="2"
+                data-rent="8000"
+                data-booking="01 Aug 2026"
+                data-movein="10 Aug 2026"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80"
+                        alt="Comfort Stay PG"
+                    >
+
+                    <span class="property-type">
+                        PG
+                    </span>
+
+                </div>
+
+
+                <div class="booking-content">
+
+                    <div class="booking-header">
+
+                        <div>
+
+                            <h3>
+                                Comfort Stay PG
+                            </h3>
+
+                            <p>
+                                📍 Laxmi Nagar, Delhi
+                            </p>
+
+                        </div>
+
+                        <span class="status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="booking-details">
+
+                        <div>
+                            <span>Booking ID</span>
+                            <strong>#RN1003</strong>
+                        </div>
+
+                        <div>
+                            <span>Booking Date</span>
+                            <strong>01 Aug 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Move-in Date</span>
+                            <strong>10 Aug 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Monthly Rent</span>
+                            <strong>₹8,000</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-footer">
+
+                        <span class="room-info">
+                            🛏️ Double Sharing
+                        </span>
+
+                        <span class="owner-info">
+                            👤 Comfort Living
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="booking-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="3">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn review-btn"
+                        data-id="3">
+
+                        ⭐ Review
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BOOKING 4
+            ================================================== -->
+
+            <article
+                class="booking-card"
+                data-id="4"
+                data-name="Student Comfort Home"
+                data-location="Kolkata"
+                data-type="Room"
+                data-status="cancelled"
+                data-date="1"
+                data-rent="6000"
+                data-booking="25 Jul 2026"
+                data-movein="01 Aug 2026"
+            >
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=700&q=80"
+                        alt="Student Comfort Home"
+                    >
+
+                    <span class="property-type room">
+                        Room
+                    </span>
+
+                </div>
+
+
+                <div class="booking-content">
+
+                    <div class="booking-header">
+
+                        <div>
+
+                            <h3>
+                                Student Comfort Home
+                            </h3>
+
+                            <p>
+                                📍 Garia, Kolkata
+                            </p>
+
+                        </div>
+
+                        <span class="status cancelled">
+                            Cancelled
+                        </span>
+
+                    </div>
+
+
+                    <div class="booking-details">
+
+                        <div>
+                            <span>Booking ID</span>
+                            <strong>#RN1004</strong>
+                        </div>
+
+                        <div>
+                            <span>Booking Date</span>
+                            <strong>25 Jul 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Move-in Date</span>
+                            <strong>01 Aug 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Monthly Rent</span>
+                            <strong>₹6,000</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-footer">
+
+                        <span class="room-info">
+                            🛏️ Single Room
+                        </span>
+
+                        <span class="owner-info">
+                            👤 Comfort Home
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="booking-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="4">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =================================================
+             EMPTY STATE
+        ================================================== -->
+
+        <div class="empty-state" id="emptyState">
+
+            <div class="empty-icon">
+                📅
+            </div>
+
+            <h3>
+                No Bookings Found
+            </h3>
+
+            <p>
+                You don't have any bookings matching
+                your current filters.
+            </p>
+
+            <a
+                href="../../public/search/search.html"
+                class="find-btn">
+
+                🔍 Find PG / Room
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     BOOKING DETAILS MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="detailsModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="detailsClose">
+            ×
+        </button>
+
+
+        <div class="modal-icon">
+            📅
+        </div>
+
+
+        <h2>
+            Booking Details
+        </h2>
+
+        <p class="modal-subtitle">
+            Complete booking information
+        </p>
+
+
+        <div class="detail-list">
+
+            <div class="detail-row">
+                <span>Property</span>
+                <strong id="detailProperty">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Location</span>
+                <strong id="detailLocation">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Property Type</span>
+                <strong id="detailType">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Booking ID</span>
+                <strong id="detailBookingId">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Booking Date</span>
+                <strong id="detailBookingDate">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Move-in Date</span>
+                <strong id="detailMoveIn">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Monthly Rent</span>
+                <strong id="detailRent">
+                    -
+                </strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Status</span>
+                <strong id="detailStatus">
+                    -
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="modal-btn secondary"
+                id="modalCloseBtn">
+
+                Close
+
+            </button>
+
+            <button
+                class="modal-btn primary"
+                id="modalMessageBtn">
+
+                💬 Message Owner
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast" id="toast">
+
+    <span class="toast-icon">
+        ✓
+    </span>
+
+    <div>
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Action completed.
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="bookings.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

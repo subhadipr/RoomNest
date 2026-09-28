@@ -1,0 +1,1954 @@
+/* =========================================================
+   ROOMNEST — PROPERTY DETAIL PAGE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f7fafb;
+    color: #1b3340;
+
+    line-height: 1.5;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.page-container,
+.nav-container {
+    width: min(1200px, calc(100% - 48px));
+    margin: auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e3ebee;
+}
+
+.nav-container {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #172f3c;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: #e8f8f4;
+
+    font-size: 16px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link {
+    position: relative;
+
+    padding: 20px 13px;
+
+    color: #50636d;
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #0aa080;
+}
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 13px;
+    right: 13px;
+    bottom: 0;
+
+    height: 2px;
+
+    background: #12a889;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.login-button,
+.signup-button {
+    padding: 8px 15px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.login-button {
+    border: 1px solid #d8e4e8;
+
+    background: #ffffff;
+}
+
+.signup-button {
+    border: 1px solid #12a889;
+
+    background: #12a889;
+    color: #ffffff;
+}
+
+.mobile-menu-button {
+    display: none;
+
+    width: 37px;
+    height: 37px;
+
+    border: 1px solid #dce6e9;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    font-size: 17px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 20px 0 13px;
+
+    color: #87969c;
+
+    font-size: 8px;
+}
+
+.breadcrumb a:hover {
+    color: #0b9c7c;
+}
+
+.breadcrumb strong {
+    color: #405761;
+}
+
+
+/* =========================================================
+   PROPERTY HEADER
+========================================================= */
+
+.property-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 17px;
+}
+
+.header-left {
+    min-width: 0;
+}
+
+.verified {
+    display: inline-flex;
+
+    padding: 4px 7px;
+
+    border-radius: 4px;
+
+    background: #e8f8f3;
+
+    color: #079776;
+
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.property-header h1 {
+    margin-top: 7px;
+
+    color: #17323f;
+
+    font-size: 29px;
+    line-height: 1.15;
+
+    letter-spacing: -0.7px;
+}
+
+.location-line,
+.rating-line {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 6px;
+
+    color: #7a8b92;
+
+    font-size: 9px;
+}
+
+.rating-line {
+    gap: 5px;
+}
+
+.rating-star {
+    color: #e9a700;
+
+    font-size: 13px;
+}
+
+.rating-line strong {
+    color: #334d58;
+
+    font-size: 10px;
+}
+
+.dot {
+    color: #c0c9cc;
+}
+
+.header-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.outline-action {
+    padding: 8px 12px;
+
+    border: 1px solid #d7e3e6;
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #38515b;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.outline-action:hover,
+.outline-action.saved {
+    border-color: #12a889;
+
+    color: #0b9579;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(190px, 0.65fr);
+
+    gap: 7px;
+
+    height: 330px;
+
+    margin-bottom: 18px;
+}
+
+.main-image-wrapper {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #e8eff0;
+}
+
+.main-property-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.photo-count {
+    position: absolute;
+
+    left: 10px;
+    bottom: 10px;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: rgba(20, 39, 46, 0.75);
+    color: #ffffff;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.thumbnail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 7px;
+
+    overflow: hidden;
+}
+
+.thumbnail {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 0;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: #e8eff0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.2s ease;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.04);
+}
+
+.thumbnail.active {
+    outline: 2px solid #12a889;
+    outline-offset: -2px;
+}
+
+.thumbnail.more::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(15, 35, 43, 0.48);
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+========================================================= */
+
+.property-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        300px;
+
+    gap: 18px;
+
+    padding-bottom: 55px;
+}
+
+.property-main-content {
+    min-width: 0;
+}
+
+.property-sidebar {
+    align-self: start;
+
+    position: sticky;
+    top: 78px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   PRICE CARD
+========================================================= */
+
+.price-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px;
+
+    margin-bottom: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9eb;
+    border-radius: 8px;
+}
+
+.price-label {
+    color: #8a999f;
+
+    font-size: 7px;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+}
+
+.price-card h2 {
+    margin-top: 3px;
+
+    color: #173641;
+
+    font-size: 23px;
+}
+
+.price-card h2 small {
+    color: #8a989e;
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.security-badge {
+    padding: 5px 8px;
+
+    border-radius: 4px;
+
+    background: #eef8f5;
+
+    color: #0b9579;
+
+    font-size: 7px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.detail-card {
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9eb;
+    border-radius: 8px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.section-label {
+    color: #0b9c7d;
+
+    font-size: 7px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+.section-heading h2 {
+    margin-top: 2px;
+
+    color: #203b47;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.details-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    padding-top: 3px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #edf1f3;
+    border-radius: 6px;
+
+    background: #fbfcfc;
+}
+
+.detail-icon {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 6px;
+
+    background: #eaf8f5;
+
+    font-size: 13px;
+}
+
+.detail-item div span {
+    display: block;
+
+    color: #89979d;
+
+    font-size: 7px;
+}
+
+.detail-item strong {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #3a525c;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.amenities-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px;
+
+    border: 1px solid #e7eef0;
+    border-radius: 5px;
+
+    background: #fbfcfc;
+
+    color: #526871;
+
+    font-size: 8px;
+}
+
+.amenity-icon {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+    color: #6f8189;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+}
+
+.read-more {
+    margin-top: 8px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #0a987a;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map-box {
+    overflow: hidden;
+
+    height: 200px;
+
+    border-radius: 7px;
+
+    background: #dceee8;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6f1ed,
+            #d7ebe4
+        );
+
+    text-align: center;
+}
+
+.map-pin {
+    margin-bottom: 6px;
+
+    font-size: 31px;
+}
+
+.map-placeholder strong {
+    color: #31515b;
+
+    font-size: 11px;
+}
+
+.map-placeholder span {
+    margin-top: 2px;
+
+    color: #7b9096;
+
+    font-size: 8px;
+}
+
+.location-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top: 10px;
+
+    color: #687c84;
+
+    font-size: 8px;
+}
+
+.location-footer button {
+    padding: 6px 9px;
+
+    border: 1px solid #d9e5e7;
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #0b9277;
+
+    font-size: 7px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HOUSE RULES
+========================================================= */
+
+.rules-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 9px;
+}
+
+.rules-list div {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #63777f;
+
+    font-size: 8px;
+}
+
+.rules-list span {
+    width: 19px;
+    height: 19px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #e8f8f3;
+
+    color: #0a9779;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   OWNER CARD
+========================================================= */
+
+.owner-card {
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe9eb;
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 15px rgba(25, 60, 70, 0.045);
+}
+
+.owner-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.owner-heading h2 {
+    color: #203a46;
+
+    font-size: 15px;
+}
+
+.online-dot {
+    color: #1ab68e;
+
+    font-size: 10px;
+}
+
+.owner-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.owner-avatar {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: #dff4ee;
+
+    color: #117f6b;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.owner-profile strong {
+    display: block;
+
+    color: #2f4852;
+
+    font-size: 10px;
+}
+
+.owner-profile span {
+    display: block;
+
+    color: #829198;
+
+    font-size: 7px;
+}
+
+.owner-profile small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #0a987a;
+
+    font-size: 6.5px;
+    font-weight: 700;
+}
+
+.owner-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 5px;
+
+    margin: 15px 0;
+
+    padding: 9px 0;
+
+    border-top: 1px solid #edf1f3;
+    border-bottom: 1px solid #edf1f3;
+}
+
+.owner-stats div {
+    text-align: center;
+}
+
+.owner-stats strong {
+    display: block;
+
+    color: #304953;
+
+    font-size: 10px;
+}
+
+.owner-stats span {
+    color: #87959b;
+
+    font-size: 6.5px;
+}
+
+.owner-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 6px;
+}
+
+.call-button,
+.message-button,
+.inquiry-button {
+    padding: 9px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.call-button {
+    border: 1px solid #d5e4e2;
+
+    background: #eef9f5;
+
+    color: #0a9679;
+}
+
+.message-button {
+    border: 1px solid #d6e2e5;
+
+    background: #ffffff;
+
+    color: #31505b;
+}
+
+.inquiry-button {
+    width: 100%;
+
+    margin-top: 7px;
+
+    border: 1px solid #12a889;
+
+    background: #12a889;
+
+    color: #ffffff;
+}
+
+.call-button:hover,
+.inquiry-button:hover {
+    background: #0e967b;
+}
+
+.message-button:hover {
+    border-color: #12a889;
+
+    color: #0b9578;
+}
+
+.login-note {
+    margin-top: 9px;
+
+    color: #9aa6aa;
+
+    font-size: 6.5px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   QUICK CARD
+========================================================= */
+
+.quick-card {
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9eb;
+    border-radius: 8px;
+}
+
+.quick-card h3 {
+    margin-bottom: 12px;
+
+    color: #304953;
+
+    font-size: 11px;
+}
+
+.quick-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #edf1f3;
+}
+
+.quick-item:last-child {
+    border-bottom: 0;
+}
+
+.quick-item > span {
+    width: 21px;
+    height: 21px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 5px;
+
+    background: #eaf8f5;
+
+    color: #0a9679;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.quick-item strong {
+    display: block;
+
+    color: #405963;
+
+    font-size: 8px;
+}
+
+.quick-item small {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #8b999e;
+
+    font-size: 6.5px;
+}
+
+
+/* =========================================================
+   SAFETY
+========================================================= */
+
+.safety-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    padding: 13px;
+
+    border: 1px solid #dfeceb;
+    border-radius: 8px;
+
+    background: #f0f8f6;
+}
+
+.safety-icon {
+    font-size: 20px;
+}
+
+.safety-card h3 {
+    color: #31515b;
+
+    font-size: 10px;
+}
+
+.safety-card p {
+    margin-top: 3px;
+
+    color: #74878d;
+
+    font-size: 7px;
+
+    line-height: 1.6;
+}
+
+.safety-card button {
+    margin-top: 5px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #d05c65;
+
+    font-size: 7px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.review-summary {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.review-summary strong {
+    color: #334d57;
+
+    font-size: 14px;
+}
+
+.review-summary span {
+    color: #e8a500;
+
+    font-size: 9px;
+}
+
+.review-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    padding: 12px 0;
+
+    border-top: 1px solid #edf1f3;
+}
+
+.review-avatar {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: #e9f5f2;
+
+    color: #16806d;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.review-content {
+    min-width: 0;
+}
+
+.review-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.review-top strong {
+    color: #3b535d;
+
+    font-size: 9px;
+}
+
+.review-top span {
+    color: #99a4a8;
+
+    font-size: 7px;
+}
+
+.review-stars {
+    margin-top: 2px;
+
+    color: #e9a700;
+
+    font-size: 8px;
+}
+
+.review-content p {
+    margin-top: 4px;
+
+    color: #72848b;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+.all-reviews-button {
+    width: 100%;
+
+    margin-top: 9px;
+
+    padding: 8px;
+
+    border: 1px solid #d8e4e7;
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #3a545e;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(14, 34, 42, 0.52);
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.contact-modal {
+    position: relative;
+
+    width: min(390px, 100%);
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px rgba(10, 35, 45, 0.22);
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 29px;
+    height: 29px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f2f6f7;
+
+    color: #536a73;
+
+    font-size: 17px;
+}
+
+.modal-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 12px;
+
+    border-radius: 50%;
+
+    background: #e8f8f3;
+
+    font-size: 21px;
+}
+
+.contact-modal h2 {
+    color: #203b47;
+
+    font-size: 18px;
+}
+
+.contact-modal p {
+    margin: 7px auto 18px;
+
+    color: #7b8c92;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 7px;
+}
+
+.modal-primary,
+.modal-secondary {
+    padding: 9px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.modal-primary {
+    background: #12a889;
+    color: #ffffff;
+}
+
+.modal-secondary {
+    border: 1px solid #d7e3e6;
+
+    color: #3a535d;
+}
+
+.share-options {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 7px;
+}
+
+.share-options button {
+    padding: 9px;
+
+    border: 1px solid #d7e3e6;
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #39535d;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 5000;
+
+    width: 280px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px;
+
+    border: 1px solid #dce6e9;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(20, 55, 65, 0.15);
+
+    opacity: 0;
+
+    transform: translateY(100px);
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.toast-icon {
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #e5f8f3;
+
+    color: #0b987a;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.toast strong {
+    display: block;
+
+    color: #28414b;
+
+    font-size: 9px;
+}
+
+.toast p {
+    margin-top: 1px;
+
+    color: #829197;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #142f38;
+
+    color: #8fa7ae;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.7fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding: 45px 0;
+}
+
+.footer-logo {
+    color: #ffffff;
+}
+
+.footer-about p {
+    max-width: 280px;
+
+    margin-top: 10px;
+
+    color: #8ca5ac;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.footer-column h3 {
+    margin-bottom: 3px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+}
+
+.footer-column a {
+    color: #8da5ac;
+
+    font-size: 8px;
+}
+
+.footer-column a:hover {
+    color: #5ed3bd;
+}
+
+.footer-bottom {
+    padding: 13px 0;
+
+    border-top: 1px solid #2d4851;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+
+/* =========================================================
+   01. TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .property-content-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            270px;
+    }
+
+    .details-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .amenities-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   02. MOBILE NAV + LAYOUT
+========================================================= */
+
+@media (max-width: 800px) {
+
+    /* =====================================================
+       NAVBAR — MOBILE
+    ===================================================== */
+
+    .nav-menu,
+    .nav-buttons {
+        display: none;
+    }
+
+
+    .mobile-menu-button {
+        display: grid;
+        place-items: center;
+
+        width: 38px;
+        height: 38px;
+
+        border: 1px solid #dce5e8;
+        border-radius: 7px;
+
+        background: #ffffff;
+
+        font-size: 18px;
+        line-height: 1;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-menu {
+        display: none;
+
+        padding: 10px 25px 18px;
+
+        border-top: 1px solid #edf1f3;
+
+        background: #ffffff;
+    }
+
+
+    .mobile-menu.open {
+        display: block;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV LINKS
+    ===================================================== */
+
+    .mobile-menu .mobile-link {
+        display: block;
+
+        width: 100%;
+
+        padding: 10px;
+
+        border: none;
+        border-bottom: none;
+
+        border-radius: 5px;
+
+        background: transparent;
+
+        color: #465c66;
+
+        font-size: 11px;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        box-sizing: border-box;
+    }
+
+
+    .mobile-menu .mobile-link:hover,
+    .mobile-menu .mobile-link.active {
+        background: #edf9f6;
+
+        color: #0b977a;
+    }
+
+
+    /* =====================================================
+       MOBILE ACTIONS
+    ===================================================== */
+
+    .mobile-actions {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 8px;
+
+        margin-top: 8px;
+        padding-top: 10px;
+
+        border-top: 1px solid #edf1f3;
+    }
+
+
+    .mobile-actions a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 38px;
+
+        padding: 9px;
+
+        border: 1px solid transparent;
+        border-radius: 5px;
+
+        background: #edf8f5;
+
+        color: #0b9277;
+
+        text-align: center;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        text-decoration: none;
+
+        box-sizing: border-box;
+    }
+
+
+    .mobile-actions a:last-child {
+        background: #12a889;
+
+        color: #ffffff;
+    }
+
+
+    /* =====================================================
+       PROPERTY LAYOUT
+    ===================================================== */
+
+    .property-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .property-sidebar {
+        position: static;
+    }
+
+
+    .owner-card {
+        order: 0;
+    }
+}
+
+
+/* =========================================================
+   03. SMALL TABLET / LARGE MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .page-container,
+    .nav-container {
+        width: calc(100% - 28px);
+    }
+
+
+    /* =====================================================
+       PROPERTY HEADER
+    ===================================================== */
+
+    .property-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .header-actions {
+        width: 100%;
+    }
+
+
+    .outline-action {
+        flex: 1;
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+
+    .gallery-section {
+        grid-template-columns: 1fr;
+
+        height: auto;
+    }
+
+
+    .main-image-wrapper {
+        height: 280px;
+    }
+
+
+    .thumbnail-grid {
+        height: 100px;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .thumbnail:nth-child(n + 5) {
+        display: none;
+    }
+
+
+    /* =====================================================
+       DETAILS / AMENITIES
+    ===================================================== */
+
+    .details-grid,
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rules-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV SPACING
+    ===================================================== */
+
+    .mobile-menu {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+/* =========================================================
+   04. MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* =====================================================
+       BREADCRUMB
+    ===================================================== */
+
+    .breadcrumb {
+        padding-top: 15px;
+    }
+
+
+    /* =====================================================
+       PROPERTY HEADER
+    ===================================================== */
+
+    .property-header h1 {
+        font-size: 24px;
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+
+    .main-image-wrapper {
+        height: 235px;
+    }
+
+
+    .thumbnail-grid {
+        height: 75px;
+    }
+
+
+    /* =====================================================
+       PRICE
+    ===================================================== */
+
+    .price-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* =====================================================
+       DETAIL CARD
+    ===================================================== */
+
+    .detail-card {
+        padding: 14px;
+    }
+
+
+    /* =====================================================
+       OWNER ACTIONS
+    ===================================================== */
+
+    .owner-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       MODAL / SHARE
+    ===================================================== */
+
+    .modal-actions,
+    .share-options {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       TOAST
+    ===================================================== */
+
+    .toast {
+        left: 14px;
+        right: 14px;
+
+        width: auto;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 28px 18px;
+    }
+
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   05. VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav-container {
+        width: calc(100% - 30px);
+    }
+
+
+    .mobile-menu {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

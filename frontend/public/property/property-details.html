@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="View property details, rooms, facilities, pricing and owner information on RoomNest."
+    >
+
+    <title>Property Details | RoomNest</title>
+
+    <link rel="stylesheet" href="property-details.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="../home/index.html" class="logo">
+            <span class="logo-icon">🏠</span>
+            <span>RoomNest</span>
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="../home/index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="../search/search.html" class="nav-link active">
+                Find PG
+            </a>
+
+            <a
+                href="../property/property-details.html"
+                class="nav-link"
+            >
+                List Property
+            </a>
+
+            <a href="../about/about.html" class="nav-link">
+                About
+            </a>
+
+            <a href="../contact/contact.html" class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <a
+                href="../auth/login.html"
+                class="login-button"
+            >
+                Login
+            </a>
+
+            <a
+                href="../auth/register.html"
+                class="signup-button"
+            >
+                Sign Up
+            </a>
+
+        </div>
+
+        <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+
+    <a
+        href="../home/index.html"
+        class="mobile-link"
+    >
+        Home
+    </a>
+
+    <a
+        href="../search/search.html"
+        class="mobile-link active"
+    >
+        Find PG
+    </a>
+
+    <a
+        href="../property/property-details.html"
+        class="mobile-link"
+    >
+        List Property
+    </a>
+
+    <a
+        href="../about/about.html"
+        class="mobile-link"
+    >
+        About
+    </a>
+
+    <a
+        href="../contact/contact.html"
+        class="mobile-link"
+    >
+        Contact
+    </a>
+
+    <div class="mobile-actions">
+
+        <a href="../auth/login.html">
+            Login
+        </a>
+
+        <a href="../auth/register.html">
+            Sign Up
+        </a>
+
+    </div>
+
+</div>
+</header>
+
+
+<!-- =========================================================
+     PAGE
+========================================================= -->
+
+<main class="page-container">
+
+    <!-- Breadcrumb -->
+
+    <div class="breadcrumb">
+
+        <a href="../home/index.html">
+            Home
+        </a>
+
+        <span>›</span>
+
+        <a href="../search/search.html">
+            Find PG
+        </a>
+
+        <span>›</span>
+
+        <strong>
+            Property Details
+        </strong>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROPERTY HEADER
+    ====================================================== -->
+
+    <section class="property-header">
+
+        <div class="header-left">
+
+            <div class="verified">
+                ✓ Verified Listing
+            </div>
+
+            <h1 id="propertyName">
+                Green View PG
+            </h1>
+
+            <div class="location-line">
+
+                <span>📍</span>
+
+                <span id="propertyLocation">
+                    Salt Lake, Kolkata
+                </span>
+
+            </div>
+
+            <div class="rating-line">
+
+                <span class="rating-star">
+                    ★
+                </span>
+
+                <strong id="propertyRating">
+                    4.5
+                </strong>
+
+                <span id="propertyReviews">
+                    (120 reviews)
+                </span>
+
+                <span class="dot">
+                    •
+                </span>
+
+                <span id="propertyType">
+                    PG
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="outline-action"
+                id="saveButton"
+            >
+                ♡ Save
+            </button>
+
+            <button
+                type="button"
+                class="outline-action"
+                id="shareButton"
+            >
+                ↗ Share
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         IMAGE GALLERY
+    ====================================================== -->
+
+    <section class="gallery-section">
+
+        <div class="main-image-wrapper">
+
+            <img
+                id="mainPropertyImage"
+                class="main-property-image"
+                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=90"
+                alt="Property"
+            >
+
+            <span class="photo-count">
+                📷 <span id="photoCount">6</span> Photos
+            </span>
+
+        </div>
+
+
+        <div
+            class="thumbnail-grid"
+            id="thumbnailGrid"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENT GRID
+    ====================================================== -->
+
+    <section class="property-content-grid">
+
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+        <div class="property-main-content">
+
+
+            <!-- PRICE -->
+
+            <div class="price-card">
+
+                <div>
+
+                    <span class="price-label">
+                        MONTHLY RENT
+                    </span>
+
+                    <h2>
+                        ₹<span id="propertyPrice">7,500</span>
+                        <small>/ month</small>
+                    </h2>
+
+                </div>
+
+                <span class="security-badge">
+                    🛡️ Verified
+                </span>
+
+            </div>
+
+
+            <!-- ROOM DETAILS -->
+
+            <section class="detail-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            PROPERTY INFORMATION
+                        </span>
+
+                        <h2>
+                            Room Details
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details-grid">
+
+                    <div class="detail-item">
+
+                        <span class="detail-icon">
+                            🏠
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Property Type
+                            </span>
+
+                            <strong id="detailPropertyType">
+                                PG
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-icon">
+                            🛏️
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Room Type
+                            </span>
+
+                            <strong id="detailRoomType">
+                                Single Room
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-icon">
+                            👥
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Suitable For
+                            </span>
+
+                            <strong id="detailGender">
+                                Anyone
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-icon">
+                            📅
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Available From
+                            </span>
+
+                            <strong>
+                                Immediately
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-icon">
+                            💰
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Security Deposit
+                            </span>
+
+                            <strong>
+                                ₹10,000
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-icon">
+                            🏢
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Floor
+                            </span>
+
+                            <strong>
+                                2nd Floor
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FACILITIES -->
+
+            <section class="detail-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            WHAT'S INCLUDED
+                        </span>
+
+                        <h2>
+                            Facilities & Amenities
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="amenities-grid"
+                    id="amenitiesGrid"
+                ></div>
+
+            </section>
+
+
+            <!-- DESCRIPTION -->
+
+            <section class="detail-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ABOUT THIS PROPERTY
+                        </span>
+
+                        <h2>
+                            Description
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="description"
+                    id="propertyDescription"
+                >
+                    Fully furnished PG for students and working
+                    professionals. The property is located in a
+                    convenient area with easy access to transport,
+                    markets, restaurants and educational institutions.
+                    The rooms are clean, comfortable and maintained
+                    regularly.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="read-more"
+                    id="readMoreButton"
+                >
+                    Read More
+                </button>
+
+            </section>
+
+
+            <!-- LOCATION -->
+
+            <section class="detail-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            LOCATION
+                        </span>
+
+                        <h2>
+                            Where you'll stay
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="map-box">
+
+                    <div class="map-placeholder">
+
+                        <div class="map-pin">
+                            📍
+                        </div>
+
+                        <strong id="mapLocation">
+                            Salt Lake, Kolkata
+                        </strong>
+
+                        <span>
+                            Property location
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-footer">
+
+                    <span>
+                        📍 <span id="locationText">
+                            Salt Lake, Kolkata
+                        </span>
+                    </span>
+
+                    <button
+                        type="button"
+                        id="mapButton"
+                    >
+                        View on Google Maps
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- HOUSE RULES -->
+
+            <section class="detail-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            BEFORE YOU BOOK
+                        </span>
+
+                        <h2>
+                            House Rules
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rules-list">
+
+                    <div>
+                        <span>✓</span>
+                        No smoking inside the room
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Maintain cleanliness
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Visitors allowed during permitted hours
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Follow property quiet hours
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REVIEWS -->
+
+            <section class="detail-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            STUDENT EXPERIENCES
+                        </span>
+
+                        <h2>
+                            Reviews
+                        </h2>
+
+                    </div>
+
+                    <div class="review-summary">
+
+                        <strong id="reviewAverage">
+                            4.5
+                        </strong>
+
+                        <span>
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-list">
+
+                    <article class="review-item">
+
+                        <div class="review-avatar">
+                            R
+                        </div>
+
+                        <div class="review-content">
+
+                            <div class="review-top">
+
+                                <strong>
+                                    Rahul Das
+                                </strong>
+
+                                <span>
+                                    2 weeks ago
+                                </span>
+
+                            </div>
+
+                            <div class="review-stars">
+                                ★★★★★
+                            </div>
+
+                            <p>
+                                Very clean room and the owner is
+                                helpful. Location is also excellent.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="review-item">
+
+                        <div class="review-avatar">
+                            S
+                        </div>
+
+                        <div class="review-content">
+
+                            <div class="review-top">
+
+                                <strong>
+                                    Sneha Mukherjee
+                                </strong>
+
+                                <span>
+                                    1 month ago
+                                </span>
+
+                            </div>
+
+                            <div class="review-stars">
+                                ★★★★☆
+                            </div>
+
+                            <p>
+                                Good place for students. Food quality
+                                is decent and the surroundings are safe.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="all-reviews-button"
+                    id="allReviewsButton"
+                >
+                    View All Reviews
+                </button>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SIDEBAR
+        ================================================== -->
+
+        <aside class="property-sidebar">
+
+
+            <!-- CONTACT OWNER -->
+
+            <div class="owner-card">
+
+                <div class="owner-heading">
+
+                    <h2>
+                        Contact Owner
+                    </h2>
+
+                    <span class="online-dot">
+                        ●
+                    </span>
+
+                </div>
+
+
+                <div class="owner-profile">
+
+                    <div
+                        class="owner-avatar"
+                        id="ownerAvatar"
+                    >
+                        RS
+                    </div>
+
+                    <div>
+
+                        <strong id="ownerName">
+                            Rahul Sharma
+                        </strong>
+
+                        <span>
+                            Property Owner
+                        </span>
+
+                        <small>
+                            ✓ Verified Owner
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="owner-stats">
+
+                    <div>
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <span>
+                            Properties
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            4.8
+                        </strong>
+
+                        <span>
+                            Rating
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            96%
+                        </strong>
+
+                        <span>
+                            Response
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="owner-actions">
+
+                    <button
+                        type="button"
+                        class="call-button"
+                        id="callOwnerButton"
+                    >
+                        ☎ Call
+                    </button>
+
+                    <button
+                        type="button"
+                        class="message-button"
+                        id="messageOwnerButton"
+                    >
+                        💬 Message
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="inquiry-button"
+                    id="inquiryButton"
+                >
+                    Send Inquiry
+                </button>
+
+
+                <p class="login-note">
+                    You may need to login before contacting
+                    the property owner.
+                </p>
+
+            </div>
+
+
+            <!-- QUICK INFO -->
+
+            <div class="quick-card">
+
+                <h3>
+                    Why choose this property?
+                </h3>
+
+                <div class="quick-item">
+
+                    <span>✓</span>
+
+                    <div>
+
+                        <strong>
+                            Verified Listing
+                        </strong>
+
+                        <small>
+                            Property information checked
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-item">
+
+                    <span>₹</span>
+
+                    <div>
+
+                        <strong>
+                            No Brokerage
+                        </strong>
+
+                        <small>
+                            Contact owner directly
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-item">
+
+                    <span>⚡</span>
+
+                    <div>
+
+                        <strong>
+                            Quick Response
+                        </strong>
+
+                        <small>
+                            Owner usually responds quickly
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAFETY -->
+
+            <div class="safety-card">
+
+                <div class="safety-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Stay Safe
+                    </h3>
+
+                    <p>
+                        Never transfer money before visiting
+                        the property and verifying the owner.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="reportButton"
+                    >
+                        Report this listing
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     CONTACT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="contactModal"
+>
+
+    <div class="contact-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="contactModalClose"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            💬
+        </div>
+
+        <h2>
+            Login to continue
+        </h2>
+
+        <p>
+            Please login to your RoomNest account
+            to contact this property owner.
+        </p>
+
+        <div class="modal-actions">
+
+            <a
+                href="../auth/login.html"
+                class="modal-primary"
+            >
+                Login
+            </a>
+
+            <a
+                href="../auth/register.html"
+                class="modal-secondary"
+            >
+                Create Account
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SHARE MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="shareModal"
+>
+
+    <div class="contact-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="shareModalClose"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            ↗
+        </div>
+
+        <h2>
+            Share Property
+        </h2>
+
+        <p>
+            Share this RoomNest property with friends
+            or family.
+        </p>
+
+        <div class="share-options">
+
+            <button
+                type="button"
+                data-share="whatsapp"
+            >
+                WhatsApp
+            </button>
+
+            <button
+                type="button"
+                data-share="copy"
+            >
+                Copy Link
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <span class="toast-icon">
+        ✓
+    </span>
+
+    <div>
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Done successfully.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="page-container footer-grid">
+
+        <div class="footer-about">
+
+            <a
+                href="../home/index.html"
+                class="logo footer-logo"
+            >
+                <span class="logo-icon">
+                    🏠
+                </span>
+
+                RoomNest
+            </a>
+
+            <p>
+                Find comfortable, affordable and
+                student-friendly accommodation.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="../home/index.html">
+                Home
+            </a>
+
+            <a href="../search/search.html">
+                Find PG
+            </a>
+
+            <a href="../about/about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Students
+            </h3>
+
+            <a href="../auth/register.html">
+                Sign Up
+            </a>
+
+            <a href="../auth/login.html">
+                Login
+            </a>
+
+            <a href="../search/search.html">
+                Browse Properties
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Owners
+            </h3>
+
+            <a href="../property/property-details.html">
+                List Property
+            </a>
+
+            <a href="../auth/login.html">
+                Owner Login
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="page-container">
+            © 2026 RoomNest. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/js/navbar.js"></script>
+<script src="../../shared/js/footer.js"></script>
+<script src="../../shared/js/toast.js"></script>
+<script src="../../shared/js/loader.js"></script>
+
+<script src="property-details.js"></script>
+
+</body>
+</html>

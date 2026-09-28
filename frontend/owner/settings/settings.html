@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | RoomNest Owner</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="owner-sidebar" id="ownerSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>RoomNest</h2>
+                <span>Owner Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a href="../dashboard/dashboard.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="../properties/properties.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-building"></i>
+                <span>My Properties</span>
+
+            </a>
+
+
+            <a href="../rooms/rooms.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-door-open"></i>
+                <span>Rooms</span>
+
+            </a>
+
+
+            <a href="../add-property/add-property.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-plus-circle"></i>
+                <span>Add Property</span>
+
+            </a>
+
+
+            <a href="../inquiries/inquiries.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Inquiries</span>
+
+            </a>
+
+
+            <a href="../bookings/bookings.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Bookings</span>
+
+            </a>
+
+
+            <a href="../messages/messages.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+
+                <b class="nav-badge">
+                    3
+                </b>
+
+            </a>
+
+
+            <a href="../reviews/reviews.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+
+            </a>
+
+
+            <p class="nav-title second-title">
+                ACCOUNT
+            </p>
+
+
+            <a href="../profile/profile.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="settings.html"
+                class="nav-item active">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="owner-mini-profile">
+
+                <div class="mini-avatar"
+                    id="sidebarAvatar">
+                    SR
+                </div>
+
+                <div class="mini-info">
+
+                    <strong id="sidebarOwnerName">
+                        Subhadip Roy
+                    </strong>
+
+                    <span>
+                        Property Owner
+                    </span>
+
+                </div>
+
+                <button
+                    class="logout-btn"
+                    id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+        <header class="topbar">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="topbar-left">
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your RoomNest owner account
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="top-icon-btn"
+                    id="searchBtn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <button
+                    class="top-icon-btn notification-btn"
+                    id="notificationBtn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div
+                    class="top-profile"
+                    id="profileMenuBtn">
+
+                    <div
+                        class="top-avatar"
+                        id="topAvatar">
+
+                        SR
+
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong id="topOwnerName">
+                            Subhadip Roy
+                        </strong>
+
+                        <span>
+                            Owner
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             SETTINGS PAGE
+        ================================================== -->
+        <section class="settings-page">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Account Settings
+                    </h2>
+
+                    <p>
+                        Configure your account, notifications and security.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SETTINGS LAYOUT
+            ================================================== -->
+            <div class="settings-layout">
+
+
+                <!-- =============================================
+                     SETTINGS MENU
+                ============================================== -->
+                <aside class="settings-menu">
+
+                    <button
+                        class="settings-menu-item active"
+                        data-section="account">
+
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        <span>
+                            Account
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="settings-menu-item"
+                        data-section="notifications">
+
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-bell"></i>
+                        </span>
+
+                        <span>
+                            Notifications
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="settings-menu-item"
+                        data-section="security">
+
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </span>
+
+                        <span>
+                            Security
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="settings-menu-item"
+                        data-section="privacy">
+
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+
+                        <span>
+                            Privacy
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="settings-menu-item"
+                        data-section="preferences">
+
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-sliders"></i>
+                        </span>
+
+                        <span>
+                            Preferences
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="settings-menu-item"
+                        data-section="danger">
+
+                        <span class="menu-icon danger-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </span>
+
+                        <span>
+                            Danger Zone
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </aside>
+
+
+                <!-- =============================================
+                     SETTINGS CONTENT
+                ============================================== -->
+                <div class="settings-content">
+
+
+                    <!-- =========================================
+                         ACCOUNT
+                    ========================================== -->
+                    <div
+                        class="settings-section active"
+                        id="section-account">
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Account Information
+                                </h2>
+
+                                <p>
+                                    Manage your basic owner account details.
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+
+                        <div class="profile-settings-card">
+
+                            <div class="profile-avatar-large"
+                                id="settingsAvatar">
+
+                                SR
+
+                            </div>
+
+                            <div class="profile-summary">
+
+                                <h3 id="settingsOwnerName">
+                                    Subhadip Roy
+                                </h3>
+
+                                <span id="settingsOwnerEmail">
+                                    owner@roomnest.com
+                                </span>
+
+                                <div class="verified-label">
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                    Verified Owner
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="outline-btn"
+                                id="editProfileBtn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                                Edit Profile
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Your full name">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Email address">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="Phone number">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    placeholder="City">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="section-footer">
+
+                            <button
+                                class="primary-btn"
+                                id="saveAccountBtn">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Save Changes
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         NOTIFICATIONS
+                    ========================================== -->
+                    <div
+                        class="settings-section"
+                        id="section-notifications">
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Notification Settings
+                                </h2>
+
+                                <p>
+                                    Choose which updates you want to receive.
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-bell"></i>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    New Inquiries
+                                </strong>
+
+                                <p>
+                                    Get notified when a student sends a new inquiry.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="newInquiryToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    New Bookings
+                                </strong>
+
+                                <p>
+                                    Receive alerts when a student requests a booking.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="newBookingToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Messages
+                                </strong>
+
+                                <p>
+                                    Get notified when students send messages.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="messageToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Reviews
+                                </strong>
+
+                                <p>
+                                    Get notified about new property reviews.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="reviewToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    System Updates
+                                </strong>
+
+                                <p>
+                                    Important RoomNest platform notifications.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="systemToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="section-footer">
+
+                            <button
+                                class="primary-btn"
+                                id="saveNotificationsBtn">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Save Preferences
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         SECURITY
+                    ========================================== -->
+                    <div
+                        class="settings-section"
+                        id="section-security">
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Security
+                                </h2>
+
+                                <p>
+                                    Protect your RoomNest owner account.
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+
+                        <div class="security-card">
+
+                            <div class="security-icon">
+
+                                <i class="fa-solid fa-key"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Password
+                                </strong>
+
+                                <p>
+                                    Change your account password regularly.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="outline-btn"
+                                id="changePasswordBtn">
+
+                                Change Password
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="security-card">
+
+                            <div class="security-icon">
+
+                                <i class="fa-solid fa-mobile-screen"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Two-Factor Authentication
+                                </strong>
+
+                                <p id="twoFactorText">
+                                    Add an extra layer of security to your account.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="twoFactorToggle">
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="security-card">
+
+                            <div class="security-icon">
+
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Login Activity
+                                </strong>
+
+                                <p>
+                                    Review recent login sessions.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="outline-btn"
+                                id="loginActivityBtn">
+
+                                View Activity
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         PRIVACY
+                    ========================================== -->
+                    <div
+                        class="settings-section"
+                        id="section-privacy">
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Privacy
+                                </h2>
+
+                                <p>
+                                    Control how your information is used.
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Show Phone Number
+                                </strong>
+
+                                <p>
+                                    Allow students to see your phone number on property listings.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="phoneVisibilityToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Show Email Address
+                                </strong>
+
+                                <p>
+                                    Display your email to verified students.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailVisibilityToggle">
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Profile Visibility
+                                </strong>
+
+                                <p>
+                                    Allow your owner profile to appear in search results.
+                                </p>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="profileVisibilityToggle"
+                                    checked>
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="section-footer">
+
+                            <button
+                                class="primary-btn"
+                                id="savePrivacyBtn">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Save Privacy Settings
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         PREFERENCES
+                    ========================================== -->
+                    <div
+                        class="settings-section"
+                        id="section-preferences">
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Preferences
+                                </h2>
+
+                                <p>
+                                    Customize your RoomNest experience.
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-sliders"></i>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Language
+                                </label>
+
+                                <select id="languageSelect">
+
+                                    <option value="english">
+                                        English
+                                    </option>
+
+                                    <option value="bengali">
+                                        Bengali
+                                    </option>
+
+                                    <option value="hindi">
+                                        Hindi
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Currency
+                                </label>
+
+                                <select id="currencySelect">
+
+                                    <option value="INR">
+                                        Indian Rupee (₹)
+                                    </option>
+
+                                    <option value="USD">
+                                        US Dollar ($)
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Date Format
+                                </label>
+
+                                <select id="dateFormatSelect">
+
+                                    <option value="dd-mm-yyyy">
+                                        DD-MM-YYYY
+                                    </option>
+
+                                    <option value="mm-dd-yyyy">
+                                        MM-DD-YYYY
+                                    </option>
+
+                                    <option value="yyyy-mm-dd">
+                                        YYYY-MM-DD
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Default Property View
+                                </label>
+
+                                <select id="propertyViewSelect">
+
+                                    <option value="grid">
+                                        Grid View
+                                    </option>
+
+                                    <option value="list">
+                                        List View
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="theme-box">
+
+                            <div>
+
+                                <strong>
+                                    Dashboard Theme
+                                </strong>
+
+                                <p>
+                                    Select your preferred dashboard appearance.
+                                </p>
+
+                            </div>
+
+
+                            <div class="theme-options">
+
+                                <button
+                                    class="theme-option active"
+                                    data-theme="light">
+
+                                    <i class="fa-solid fa-sun"></i>
+
+                                    Light
+
+                                </button>
+
+
+                                <button
+                                    class="theme-option"
+                                    data-theme="dark">
+
+                                    <i class="fa-solid fa-moon"></i>
+
+                                    Dark
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="section-footer">
+
+                            <button
+                                class="primary-btn"
+                                id="savePreferencesBtn">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Save Preferences
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         DANGER ZONE
+                    ========================================== -->
+                    <div
+                        class="settings-section"
+                        id="section-danger">
+
+                        <div class="section-header danger-header">
+
+                            <div>
+
+                                <h2>
+                                    Danger Zone
+                                </h2>
+
+                                <p>
+                                    These actions can affect your account permanently.
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        </div>
+
+
+                        <div class="danger-card">
+
+                            <div>
+
+                                <strong>
+                                    Log Out From All Devices
+                                </strong>
+
+                                <p>
+                                    End all active RoomNest sessions.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="danger-outline-btn"
+                                id="logoutAllBtn">
+
+                                Log Out All
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="danger-card">
+
+                            <div>
+
+                                <strong>
+                                    Deactivate Account
+                                </strong>
+
+                                <p>
+                                    Temporarily disable your owner account.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="danger-outline-btn"
+                                id="deactivateBtn">
+
+                                Deactivate
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="danger-card delete-card">
+
+                            <div>
+
+                                <strong>
+                                    Delete Owner Account
+                                </strong>
+
+                                <p>
+                                    Permanently delete your RoomNest owner account and associated data.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="danger-btn"
+                                id="deleteAccountBtn">
+
+                                Delete Account
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         EDIT PROFILE MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="editProfileModal">
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                id="closeEditProfile">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-title">
+
+                <div class="modal-icon">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>
+                        Edit Profile
+                    </h2>
+
+                    <p>
+                        Update your owner information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="editProfileForm">
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Phone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="editPhone">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        City
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editCity">
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelEditProfile">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Save Profile
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CHANGE PASSWORD MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="passwordModal">
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                id="closePasswordModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-title">
+
+                <div class="modal-icon">
+
+                    <i class="fa-solid fa-key"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>
+                        Change Password
+                    </h2>
+
+                    <p>
+                        Create a strong new password.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="passwordForm">
+
+                <div class="form-group">
+
+                    <label>
+                        Current Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="currentPassword"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        New Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Confirm New Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        required>
+
+                </div>
+
+
+                <div class="password-hint">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Use at least 8 characters.
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelPassword">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Update Password
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SEARCH MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="searchModal">
+
+        <div class="search-modal">
+
+            <button
+                class="modal-close"
+                id="closeSearchModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <h2>
+                Search Settings
+            </h2>
+
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="settingsSearch"
+                    placeholder="Search settings...">
+
+            </div>
+
+
+            <div
+                class="search-results"
+                id="searchResults">
+
+                <p>
+                    Search account, notifications, security or privacy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATION MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="notificationModal">
+
+        <div class="notification-modal">
+
+            <button
+                class="modal-close"
+                id="closeNotificationModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="notification-title">
+
+                <div>
+
+                    <h2>
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent RoomNest updates
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-bell"></i>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon green">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        New booking request
+                    </strong>
+
+                    <span>
+                        Room 204 has received a new booking request.
+                    </span>
+
+                    <small>
+                        15 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon blue">
+
+                    <i class="fa-solid fa-message"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        New student message
+                    </strong>
+
+                    <span>
+                        You have a new message from Rahul Das.
+                    </span>
+
+                    <small>
+                        1 hour ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon orange">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        New review
+                    </strong>
+
+                    <span>
+                        Your property received a 5-star review.
+                    </span>
+
+                    <small>
+                        Yesterday
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGIN ACTIVITY MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="activityModal">
+
+        <div class="activity-modal">
+
+            <button
+                class="modal-close"
+                id="closeActivityModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-title">
+
+                <div class="modal-icon">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>
+                        Login Activity
+                    </h2>
+
+                    <p>
+                        Recent account sessions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-desktop"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Windows • Chrome
+                    </strong>
+
+                    <span>
+                        Current session
+                    </span>
+
+                    <small>
+                        Today
+                    </small>
+
+                </div>
+
+                <b class="current-label">
+                    Current
+                </b>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Android Device
+                    </strong>
+
+                    <span>
+                        RoomNest Mobile Session
+                    </span>
+
+                    <small>
+                        Yesterday
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+
+                    <i class="fa-solid fa-laptop"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Windows • Edge
+                    </strong>
+
+                    <span>
+                        Previous session
+                    </span>
+
+                    <small>
+                        3 days ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+    <div
+        class="toast"
+        id="toast">
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <span id="toastMessage">
+                Changes saved successfully.
+            </span>
+
+        </div>
+
+
+        <button id="toastClose">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <script src="settings.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+
+</html>

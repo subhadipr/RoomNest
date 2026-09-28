@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | RoomNest</title>
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="student-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="student-sidebar" id="studentSidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">R</div>
+
+            <div>
+                <h2>RoomNest</h2>
+                <span>Student Panel</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-heading">MAIN</p>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <span>⌂</span>
+                <strong>Dashboard</strong>
+            </a>
+
+            <a href="../../public/search/search.html" class="nav-item">
+                <span>⌕</span>
+                <strong>Find PG / Room</strong>
+            </a>
+
+
+            <p class="nav-heading">MY ROOMNEST</p>
+
+            <a href="profile.html" class="nav-item active">
+                <span>👤</span>
+                <strong>My Profile</strong>
+            </a>
+
+            <a href="../saved/saved-pgs.html" class="nav-item">
+                <span>♡</span>
+                <strong>Saved PGs</strong>
+                <small class="nav-count">4</small>
+            </a>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <span>💬</span>
+                <strong>My Inquiries</strong>
+                <small class="nav-count">2</small>
+            </a>
+
+            <a href="../bookings/bookings.html" class="nav-item">
+                <span>▣</span>
+                <strong>My Bookings</strong>
+            </a>
+
+            <a href="../messages/messages.html" class="nav-item">
+                <span>✉</span>
+                <strong>Messages</strong>
+                <small class="nav-count">3</small>
+            </a>
+
+            <a href="../notifications/notifications.html" class="nav-item">
+                <span>🔔</span>
+                <strong>Notifications</strong>
+                <small class="nav-count">5</small>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    SR
+                </div>
+
+                <div>
+                    <strong>Subhadip Roy</strong>
+                    <span>Student</span>
+                </div>
+
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= OVERLAY ================= -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="student-main">
+
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="student-topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn">
+                    ☰
+                </button>
+
+                <div>
+                    <h1>My Profile</h1>
+
+                    <p>
+                        Manage your personal information
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    class="top-icon-btn"
+                    id="notificationBtn">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="student-profile-menu">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-user-info">
+                        <strong>Subhadip Roy</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <span class="profile-arrow">⌄</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+        <section class="profile-content">
+
+
+            <!-- ================= PROFILE HERO ================= -->
+            <div class="profile-hero">
+
+                <div class="profile-main-info">
+
+                    <div class="profile-avatar-large">
+                        SR
+
+                        <button
+                            class="avatar-edit-btn"
+                            id="avatarEditBtn">
+                            ✎
+                        </button>
+                    </div>
+
+
+                    <div class="profile-identity">
+
+                        <span class="account-badge">
+                            ✓ Verified Student
+                        </span>
+
+                        <h2 id="profileDisplayName">
+                            Subhadip Roy
+                        </h2>
+
+                        <p>
+                            student@roomnest.com
+                        </p>
+
+                        <small>
+                            Member since September 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>Account Active</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROFILE GRID ================= -->
+            <div class="profile-grid">
+
+
+                <!-- ================= PERSONAL INFORMATION ================= -->
+                <div class="profile-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Personal Information</h3>
+
+                            <p>
+                                Your basic personal details
+                            </p>
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            data-section="personal">
+                            ✎ Edit
+                        </button>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+                        <div class="detail-item">
+
+                            <span>Full Name</span>
+
+                            <strong id="displayName">
+                                Subhadip Roy
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Email Address</span>
+
+                            <strong id="displayEmail">
+                                student@roomnest.com
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Phone Number</span>
+
+                            <strong id="displayPhone">
+                                +91 98765 43210
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Date of Birth</span>
+
+                            <strong id="displayDob">
+                                25 July 2002
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Gender</span>
+
+                            <strong id="displayGender">
+                                Male
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>City</span>
+
+                            <strong id="displayCity">
+                                Suri, West Bengal
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= EDUCATION ================= -->
+                <div class="profile-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Education</h3>
+
+                            <p>
+                                Your academic information
+                            </p>
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            data-section="education">
+                            ✎ Edit
+                        </button>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+                        <div class="detail-item full-width">
+
+                            <span>College / University</span>
+
+                            <strong id="displayCollege">
+                                Maulana Abul Kalam Azad University
+                                of Technology
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Course</span>
+
+                            <strong id="displayCourse">
+                                B.Tech — Computer Science
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Year of Study</span>
+
+                            <strong id="displayYear">
+                                Graduate
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Student ID</span>
+
+                            <strong id="displayStudentId">
+                                RN-STU-10482
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Education Status</span>
+
+                            <strong class="success-text">
+                                Completed
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ROOM PREFERENCES ================= -->
+                <div class="profile-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Room Preferences</h3>
+
+                            <p>
+                                Help us find suitable properties
+                            </p>
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            data-section="preferences">
+                            ✎ Edit
+                        </button>
+
+                    </div>
+
+
+                    <div class="preference-list">
+
+                        <div class="preference-item">
+
+                            <div class="preference-icon">
+                                ₹
+                            </div>
+
+                            <div>
+                                <span>Monthly Budget</span>
+
+                                <strong id="displayBudget">
+                                    ₹5,000 — ₹8,000
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preference-item">
+
+                            <div class="preference-icon">
+                                🏠
+                            </div>
+
+                            <div>
+                                <span>Room Type</span>
+
+                                <strong id="displayRoomType">
+                                    Single / Double
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preference-item">
+
+                            <div class="preference-icon">
+                                📍
+                            </div>
+
+                            <div>
+                                <span>Preferred Location</span>
+
+                                <strong id="displayLocation">
+                                    Bolpur, Suri
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="preference-item">
+
+                            <div class="preference-icon">
+                                🍴
+                            </div>
+
+                            <div>
+                                <span>Food Preference</span>
+
+                                <strong id="displayFood">
+                                    Both Veg & Non-Veg
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ACCOUNT SECURITY ================= -->
+                <div class="profile-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h3>Account & Security</h3>
+
+                            <p>
+                                Manage your account security
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-list">
+
+                        <div class="security-item">
+
+                            <div class="security-left">
+
+                                <div class="security-icon">
+                                    🔐
+                                </div>
+
+                                <div>
+                                    <strong>Password</strong>
+
+                                    <span>
+                                        Last changed recently
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="outline-btn"
+                                id="changePasswordBtn">
+                                Change
+                            </button>
+
+                        </div>
+
+
+                        <div class="security-item">
+
+                            <div class="security-left">
+
+                                <div class="security-icon">
+                                    ✉
+                                </div>
+
+                                <div>
+                                    <strong>Email Verification</strong>
+
+                                    <span class="verified">
+                                        ✓ Verified
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <span class="verified-badge">
+                                Verified
+                            </span>
+
+                        </div>
+
+
+                        <div class="security-item">
+
+                            <div class="security-left">
+
+                                <div class="security-icon">
+                                    📱
+                                </div>
+
+                                <div>
+                                    <strong>Phone Verification</strong>
+
+                                    <span class="verified">
+                                        ✓ Verified
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <span class="verified-badge">
+                                Verified
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROFILE COMPLETION ================= -->
+            <div class="completion-card">
+
+                <div class="completion-info">
+
+                    <div class="completion-circle">
+                        <span>85%</span>
+                    </div>
+
+                    <div>
+                        <h3>Profile Completion</h3>
+
+                        <p>
+                            Complete your profile to get better
+                            property recommendations.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="completion-progress">
+
+                    <div class="progress-top">
+                        <span>Profile strength</span>
+                        <strong>85%</strong>
+                    </div>
+
+                    <div class="progress-bar">
+                        <span style="width: 85%;"></span>
+                    </div>
+
+                    <small>
+                        Add your preferred move-in date to reach 100%.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FORM ================= -->
+            <div
+                class="profile-card edit-profile-card"
+                id="editProfileCard">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h3>Edit Profile</h3>
+
+                        <p>
+                            Update your profile information
+                        </p>
+                    </div>
+
+                    <button
+                        class="close-edit-btn"
+                        id="closeEditBtn">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="form-section-title">
+                        Personal Information
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Full Name</label>
+
+                            <input
+                                type="text"
+                                id="nameInput"
+                                value="Subhadip Roy"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Email Address</label>
+
+                            <input
+                                type="email"
+                                id="emailInput"
+                                value="student@roomnest.com"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="phoneInput"
+                                value="+91 98765 43210"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Date of Birth</label>
+
+                            <input
+                                type="date"
+                                id="dobInput"
+                                value="2002-07-25">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Gender</label>
+
+                            <select id="genderInput">
+
+                                <option value="Male" selected>
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                                <option value="Prefer not to say">
+                                    Prefer not to say
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>City</label>
+
+                            <input
+                                type="text"
+                                id="cityInput"
+                                value="Suri, West Bengal">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-section-title">
+                        Education
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label>
+                                College / University
+                            </label>
+
+                            <input
+                                type="text"
+                                id="collegeInput"
+                                value="Maulana Abul Kalam Azad University of Technology">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Course</label>
+
+                            <input
+                                type="text"
+                                id="courseInput"
+                                value="B.Tech — Computer Science">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Year of Study</label>
+
+                            <select id="yearInput">
+
+                                <option>
+                                    1st Year
+                                </option>
+
+                                <option>
+                                    2nd Year
+                                </option>
+
+                                <option>
+                                    3rd Year
+                                </option>
+
+                                <option>
+                                    4th Year
+                                </option>
+
+                                <option selected>
+                                    Graduate
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-section-title">
+                        Room Preferences
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Minimum Budget</label>
+
+                            <select id="minBudgetInput">
+
+                                <option>₹3,000</option>
+                                <option>₹4,000</option>
+                                <option selected>₹5,000</option>
+                                <option>₹6,000</option>
+                                <option>₹7,000</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Maximum Budget</label>
+
+                            <select id="maxBudgetInput">
+
+                                <option>₹6,000</option>
+                                <option selected>₹8,000</option>
+                                <option>₹10,000</option>
+                                <option>₹12,000</option>
+                                <option>₹15,000</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Room Type</label>
+
+                            <select id="roomTypeInput">
+
+                                <option>
+                                    Single
+                                </option>
+
+                                <option selected>
+                                    Single / Double
+                                </option>
+
+                                <option>
+                                    Double
+                                </option>
+
+                                <option>
+                                    Triple
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Food Preference</label>
+
+                            <select id="foodInput">
+
+                                <option>
+                                    Vegetarian
+                                </option>
+
+                                <option>
+                                    Non-Vegetarian
+                                </option>
+
+                                <option selected>
+                                    Both Veg & Non-Veg
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Preferred Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="locationInput"
+                                value="Bolpur, Suri">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            id="cancelEditBtn">
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="save-btn">
+                            ✓ Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= PASSWORD MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="passwordModal">
+
+    <div class="password-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h3>Change Password</h3>
+
+                <p>
+                    Create a new password for your account.
+                </p>
+            </div>
+
+            <button
+                id="closePasswordModal"
+                class="modal-close">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="passwordForm">
+
+            <div class="form-group">
+
+                <label>Current Password</label>
+
+                <input
+                    type="password"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>New Password</label>
+
+                <input
+                    type="password"
+                    id="newPassword"
+                    minlength="6"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Confirm New Password</label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    minlength="6"
+                    required>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelPasswordBtn">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+                    Update Password
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="profile-toast" id="profileToast">
+
+    <span>✓</span>
+
+    <p id="toastMessage">
+        Profile updated successfully.
+    </p>
+
+</div>
+
+
+<script src="profile.js"></script>
+
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

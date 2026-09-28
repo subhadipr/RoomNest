@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Inquiries | RoomNest</title>
+
+    <link rel="stylesheet" href="inquiries.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">🏠</div>
+
+        <div>
+            <h2>RoomNest</h2>
+            <span>Student Panel</span>
+        </div>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../../public/search/search.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find PG / Room</span>
+        </a>
+
+
+        <p class="nav-title">MY ACCOUNT</p>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../saved/saved-pgs.html" class="nav-item">
+            <span class="nav-icon">❤️</span>
+            <span>Saved PGs</span>
+        </a>
+
+        <a href="inquiries.html" class="nav-item active">
+            <span class="nav-icon">📩</span>
+            <span>My Inquiries</span>
+            <span class="nav-badge" id="inquiryBadge">5</span>
+        </a>
+
+        <a href="../bookings/bookings.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>My Bookings</span>
+        </a>
+
+        <a href="../messages/messages.html" class="nav-item">
+            <span class="nav-icon">💬</span>
+            <span>Messages</span>
+        </a>
+
+        <a href="../notifications/notifications.html" class="nav-item">
+            <span class="nav-icon">🔔</span>
+            <span>Notifications</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+
+            <div class="help-icon">💡</div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <p>We're here for you.</p>
+            </div>
+
+        </div>
+
+
+        <button class="logout-btn" id="logoutBtn">
+            <span>🚪</span>
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+
+        <div class="topbar-left">
+
+            <h1>My Inquiries</h1>
+
+            <p>
+                Track and manage your property inquiries
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button class="top-icon-btn">
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+
+            <div class="user-profile">
+
+                <div class="user-avatar">
+                    S
+                </div>
+
+                <div class="user-info">
+                    <strong>Subhadip Roy</strong>
+                    <span>Student</span>
+                </div>
+
+                <span class="user-arrow">⌄</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================== -->
+
+    <section class="page-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h2>My Property Inquiries</h2>
+
+                <p>
+                    View your conversations and inquiry status.
+                </p>
+
+            </div>
+
+
+            <a
+                href="../../public/search/search.html"
+                class="find-btn">
+
+                🔍 Find More PGs
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             STATS
+        ================================================== -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    📩
+                </div>
+
+                <div>
+                    <span>Total Inquiries</span>
+                    <strong id="totalInquiries">5</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ⏳
+                </div>
+
+                <div>
+                    <span>Pending</span>
+                    <strong id="pendingCount">2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    💬
+                </div>
+
+                <div>
+                    <span>Replied</span>
+                    <strong id="repliedCount">2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ✅
+                </div>
+
+                <div>
+                    <span>Closed</span>
+                    <strong id="closedCount">1</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTER
+        ================================================== -->
+
+        <div class="filter-card">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search property or location..."
+                >
+
+            </div>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="replied">
+                    Replied
+                </option>
+
+                <option value="closed">
+                    Closed
+                </option>
+
+            </select>
+
+
+            <select id="typeFilter">
+
+                <option value="all">
+                    All Types
+                </option>
+
+                <option value="PG">
+                    PG
+                </option>
+
+                <option value="Room">
+                    Room
+                </option>
+
+            </select>
+
+
+            <select id="sortFilter">
+
+                <option value="latest">
+                    Latest First
+                </option>
+
+                <option value="oldest">
+                    Oldest First
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- RESULT HEADER -->
+
+        <div class="result-header">
+
+            <div>
+                <strong id="resultCount">5</strong>
+                <span>inquiries found</span>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             INQUIRY LIST
+        ================================================== -->
+
+        <div class="inquiry-list" id="inquiryList">
+
+
+            <!-- INQUIRY 1 -->
+
+            <article
+                class="inquiry-card"
+                data-id="1"
+                data-name="Green View Premium PG"
+                data-location="Kolkata"
+                data-type="PG"
+                data-status="replied"
+                data-date="5">
+
+                <div class="property-mini-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=500&q=80"
+                        alt="Green View Premium PG"
+                    >
+
+                </div>
+
+
+                <div class="inquiry-main">
+
+                    <div class="inquiry-top">
+
+                        <div>
+
+                            <span class="property-type">
+                                PG
+                            </span>
+
+                            <h3>
+                                Green View Premium PG
+                            </h3>
+
+                            <p>
+                                📍 Salt Lake, Kolkata
+                            </p>
+
+                        </div>
+
+
+                        <span class="status replied">
+                            Replied
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-preview">
+
+                        <strong>Your inquiry:</strong>
+
+                        <p>
+                            Is a double sharing room available
+                            from next month?
+                        </p>
+
+                    </div>
+
+
+                    <div class="inquiry-meta">
+
+                        <span>
+                            🗓️ 15 Sep 2026
+                        </span>
+
+                        <span>
+                            💰 ₹7,500/month
+                        </span>
+
+                        <span>
+                            👤 Owner replied
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="1">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn message-btn"
+                        data-id="1">
+
+                        💬 Message
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- INQUIRY 2 -->
+
+            <article
+                class="inquiry-card"
+                data-id="2"
+                data-name="Urban Nest Student PG"
+                data-location="Bengaluru"
+                data-type="PG"
+                data-status="pending"
+                data-date="4">
+
+                <div class="property-mini-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80"
+                        alt="Urban Nest Student PG"
+                    >
+
+                </div>
+
+
+                <div class="inquiry-main">
+
+                    <div class="inquiry-top">
+
+                        <div>
+
+                            <span class="property-type">
+                                PG
+                            </span>
+
+                            <h3>
+                                Urban Nest Student PG
+                            </h3>
+
+                            <p>
+                                📍 Koramangala, Bengaluru
+                            </p>
+
+                        </div>
+
+
+                        <span class="status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-preview">
+
+                        <strong>Your inquiry:</strong>
+
+                        <p>
+                            I want to know about food and
+                            security facilities.
+                        </p>
+
+                    </div>
+
+
+                    <div class="inquiry-meta">
+
+                        <span>
+                            🗓️ 14 Sep 2026
+                        </span>
+
+                        <span>
+                            💰 ₹6,500/month
+                        </span>
+
+                        <span>
+                            ⏳ Waiting for owner
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="2">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn cancel-btn"
+                        data-id="2">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- INQUIRY 3 -->
+
+            <article
+                class="inquiry-card"
+                data-id="3"
+                data-name="Comfort Stay PG"
+                data-location="Delhi"
+                data-type="PG"
+                data-status="replied"
+                data-date="3">
+
+                <div class="property-mini-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=500&q=80"
+                        alt="Comfort Stay PG"
+                    >
+
+                </div>
+
+
+                <div class="inquiry-main">
+
+                    <div class="inquiry-top">
+
+                        <div>
+
+                            <span class="property-type">
+                                PG
+                            </span>
+
+                            <h3>
+                                Comfort Stay PG
+                            </h3>
+
+                            <p>
+                                📍 Laxmi Nagar, Delhi
+                            </p>
+
+                        </div>
+
+
+                        <span class="status replied">
+                            Replied
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-preview">
+
+                        <strong>Your inquiry:</strong>
+
+                        <p>
+                            Can I visit the property this
+                            weekend?
+                        </p>
+
+                    </div>
+
+
+                    <div class="inquiry-meta">
+
+                        <span>
+                            🗓️ 13 Sep 2026
+                        </span>
+
+                        <span>
+                            💰 ₹8,000/month
+                        </span>
+
+                        <span>
+                            👤 Owner replied
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="3">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn message-btn"
+                        data-id="3">
+
+                        💬 Message
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- INQUIRY 4 -->
+
+            <article
+                class="inquiry-card"
+                data-id="4"
+                data-name="Lake View Student Residence"
+                data-location="Hyderabad"
+                data-type="Room"
+                data-status="pending"
+                data-date="2">
+
+                <div class="property-mini-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=500&q=80"
+                        alt="Lake View Student Residence"
+                    >
+
+                </div>
+
+
+                <div class="inquiry-main">
+
+                    <div class="inquiry-top">
+
+                        <div>
+
+                            <span class="property-type room">
+                                Room
+                            </span>
+
+                            <h3>
+                                Lake View Student Residence
+                            </h3>
+
+                            <p>
+                                📍 Madhapur, Hyderabad
+                            </p>
+
+                        </div>
+
+
+                        <span class="status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-preview">
+
+                        <strong>Your inquiry:</strong>
+
+                        <p>
+                            Is the single room available
+                            for students?
+                        </p>
+
+                    </div>
+
+
+                    <div class="inquiry-meta">
+
+                        <span>
+                            🗓️ 12 Sep 2026
+                        </span>
+
+                        <span>
+                            💰 ₹7,000/month
+                        </span>
+
+                        <span>
+                            ⏳ Waiting for owner
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="4">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="action-btn cancel-btn"
+                        data-id="4">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- INQUIRY 5 -->
+
+            <article
+                class="inquiry-card"
+                data-id="5"
+                data-name="Student Comfort Home"
+                data-location="Kolkata"
+                data-type="Room"
+                data-status="closed"
+                data-date="1">
+
+                <div class="property-mini-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=500&q=80"
+                        alt="Student Comfort Home"
+                    >
+
+                </div>
+
+
+                <div class="inquiry-main">
+
+                    <div class="inquiry-top">
+
+                        <div>
+
+                            <span class="property-type room">
+                                Room
+                            </span>
+
+                            <h3>
+                                Student Comfort Home
+                            </h3>
+
+                            <p>
+                                📍 Garia, Kolkata
+                            </p>
+
+                        </div>
+
+
+                        <span class="status closed">
+                            Closed
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-preview">
+
+                        <strong>Your inquiry:</strong>
+
+                        <p>
+                            I was looking for a single room
+                            near the college.
+                        </p>
+
+                    </div>
+
+
+                    <div class="inquiry-meta">
+
+                        <span>
+                            🗓️ 10 Sep 2026
+                        </span>
+
+                        <span>
+                            💰 ₹6,000/month
+                        </span>
+
+                        <span>
+                            ✓ Inquiry closed
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-actions">
+
+                    <button
+                        class="action-btn primary view-btn"
+                        data-id="5">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- =================================================
+             EMPTY STATE
+        ================================================== -->
+
+        <div class="empty-state" id="emptyState">
+
+            <div class="empty-icon">
+                📩
+            </div>
+
+            <h3>No Inquiries Found</h3>
+
+            <p>
+                You don't have any inquiries matching
+                your current filters.
+            </p>
+
+            <a
+                href="../../public/search/search.html"
+                class="find-btn">
+
+                🔍 Find PG / Room
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     DETAILS MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="detailsModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="detailsClose">
+            ×
+        </button>
+
+        <div class="modal-icon">
+            📩
+        </div>
+
+        <h2 id="modalTitle">
+            Inquiry Details
+        </h2>
+
+        <p class="modal-subtitle">
+            Property inquiry information
+        </p>
+
+
+        <div class="detail-list">
+
+            <div class="detail-row">
+                <span>Property</span>
+                <strong id="detailProperty">-</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Location</span>
+                <strong id="detailLocation">-</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Type</span>
+                <strong id="detailType">-</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Rent</span>
+                <strong id="detailRent">-</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Status</span>
+                <strong id="detailStatus">-</strong>
+            </div>
+
+        </div>
+
+
+        <div class="modal-message">
+
+            <span>Your Message</span>
+
+            <p id="detailMessage">
+                -
+            </p>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="modal-btn secondary"
+                id="modalCloseBtn">
+                Close
+            </button>
+
+            <button
+                class="modal-btn primary"
+                id="modalMessageBtn">
+                💬 Message Owner
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast" id="toast">
+
+    <span class="toast-icon">✓</span>
+
+    <div>
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Action completed.
+        </p>
+    </div>
+
+</div>
+
+
+<script src="inquiries.js"></script>
+
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

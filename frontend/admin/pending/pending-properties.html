@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pending Properties | RoomNest Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/components.css">
+    <link rel="stylesheet" href="../../shared/css/responsive.css">
+
+    <link rel="stylesheet" href="pending-properties.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="pending-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="pending-sidebar" id="pendingSidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div>
+                <h2>RoomNest</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../users/users.html" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <a href="../owners/owners.html" class="nav-item">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Owners</span>
+            </a>
+
+            <a href="../properties/properties.html" class="nav-item">
+                <i class="fa-solid fa-building"></i>
+                <span>Properties</span>
+            </a>
+
+            <a href="pending-properties.html" class="nav-item active">
+                <i class="fa-solid fa-clock"></i>
+                <span>Pending Properties</span>
+                <span class="nav-badge" id="sidebarPendingCount">0</span>
+            </a>
+
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <i class="fa-solid fa-message"></i>
+                <span>Inquiries</span>
+            </a>
+
+            <a href="../reviews/reviews.html" class="nav-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+            </a>
+
+            <a href="../reports/reports.html" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="../settings/settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-mini-profile">
+
+                <div class="admin-avatar">
+                    SR
+                </div>
+
+                <div class="admin-info">
+                    <strong>Super Admin</strong>
+                    <small>Administrator</small>
+                </div>
+
+            </div>
+
+
+            <button class="logout-btn" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="pending-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="pending-topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div>
+
+                    <h1>Pending Properties</h1>
+
+                    <p>
+                        Review and approve property submissions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="top-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search..."
+                    >
+
+                </div>
+
+
+                <button
+                    class="top-icon-btn"
+                    id="notificationBtn"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong>Subhadip Roy</strong>
+
+                        <span>Super Admin</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="pending-content">
+
+
+            <!-- STATS -->
+
+            <div class="pending-stats">
+
+
+                <div class="pending-stat-card">
+
+                    <div class="stat-icon waiting">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Awaiting Review</span>
+
+                        <h2 id="waitingCount">0</h2>
+
+                        <small>Currently pending</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pending-stat-card">
+
+                    <div class="stat-icon today">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Submitted Today</span>
+
+                        <h2 id="todayCount">0</h2>
+
+                        <small>New submissions</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pending-stat-card">
+
+                    <div class="stat-icon approved">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Approved Today</span>
+
+                        <h2 id="approvedCount">0</h2>
+
+                        <small>Successfully approved</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pending-stat-card">
+
+                    <div class="stat-icon rejected">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Rejected Today</span>
+
+                        <h2 id="rejectedCount">0</h2>
+
+                        <small>Submission rejected</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+
+            <div class="pending-toolbar">
+
+                <div class="toolbar-left">
+
+                    <div class="pending-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="pendingSearch"
+                            placeholder="Search property, owner or location..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="typeFilter"
+                        class="pending-filter"
+                    >
+
+                        <option value="all">
+                            All Types
+                        </option>
+
+                        <option value="PG">
+                            PG
+                        </option>
+
+                        <option value="Hostel">
+                            Hostel
+                        </option>
+
+                        <option value="Flat">
+                            Flat
+                        </option>
+
+                        <option value="Room">
+                            Room
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="reset-btn"
+                    id="resetFilters"
+                >
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+
+            <!-- PROPERTY CARD -->
+
+            <div class="pending-card">
+
+
+                <div class="pending-card-header">
+
+                    <div>
+
+                        <h3>
+                            Properties Waiting for Approval
+                        </h3>
+
+                        <p>
+                            Verify property information before publishing.
+                        </p>
+
+                    </div>
+
+
+                    <div class="pending-count-label">
+
+                        <span id="resultCount">0</span>
+                        pending
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIST -->
+
+                <div
+                    class="pending-list"
+                    id="pendingList"
+                ></div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                    <h3>
+                        No Pending Properties
+                    </h3>
+
+                    <p>
+                        All submitted properties have been reviewed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= REVIEW MODAL ================= -->
+
+<div
+    class="review-overlay"
+    id="reviewOverlay"
+>
+
+    <div class="review-modal">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div id="reviewContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= REJECT MODAL ================= -->
+
+<div
+    class="reject-overlay"
+    id="rejectOverlay"
+>
+
+    <div class="reject-modal">
+
+        <button
+            class="modal-close"
+            id="rejectClose"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="reject-icon">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+
+        <h2>Reject Property?</h2>
+
+        <p>
+            Please provide a reason for rejecting this property.
+        </p>
+
+
+        <textarea
+            id="rejectReason"
+            placeholder="Enter rejection reason..."
+        ></textarea>
+
+
+        <div class="reject-actions">
+
+            <button
+                class="cancel-btn"
+                id="cancelReject"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="confirm-reject-btn"
+                id="confirmReject"
+            >
+                Reject Property
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+    class="pending-toast"
+    id="pendingToast"
+>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Action completed.
+    </span>
+
+</div>
+
+
+<script src="pending-properties.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

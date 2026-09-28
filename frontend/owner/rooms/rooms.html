@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rooms | RoomNest Owner</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="rooms.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="owner-sidebar" id="ownerSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>RoomNest</h2>
+                <span>Owner Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="../dashboard/dashboard.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="../properties/properties.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-building"></i>
+                <span>My Properties</span>
+
+            </a>
+
+
+            <a href="rooms.html"
+                class="nav-item active">
+
+                <i class="fa-solid fa-door-open"></i>
+                <span>Rooms</span>
+
+            </a>
+
+
+            <a href="../add-property/add-property.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-plus-circle"></i>
+                <span>Add Property</span>
+
+            </a>
+
+
+            <a href="../inquiries/inquiries.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Inquiries</span>
+
+            </a>
+
+
+            <a href="../bookings/bookings.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Bookings</span>
+
+            </a>
+
+
+            <a href="../messages/messages.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+
+                <b class="nav-badge">
+                    3
+                </b>
+
+            </a>
+
+
+            <a href="../reviews/reviews.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+
+            </a>
+
+
+            <p class="nav-title second-title">
+                ACCOUNT
+            </p>
+
+
+            <a href="../profile/profile.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="../settings/settings.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="owner-mini-profile">
+
+                <div class="mini-avatar"
+                    id="sidebarAvatar">
+                    SR
+                </div>
+
+                <div class="mini-info">
+
+                    <strong id="sidebarOwnerName">
+                        Subhadip Roy
+                    </strong>
+
+                    <span>
+                        Property Owner
+                    </span>
+
+                </div>
+
+                <button
+                    class="logout-btn"
+                    id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+        <header class="topbar">
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="topbar-left">
+
+                <h1>
+                    Rooms
+                </h1>
+
+                <p>
+                    Manage rooms, availability and occupants
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="top-icon-btn"
+                    id="searchBtn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <button
+                    class="top-icon-btn notification-btn"
+                    id="notificationBtn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div
+                    class="top-profile"
+                    id="profileMenuBtn">
+
+                    <div
+                        class="top-avatar"
+                        id="topAvatar">
+
+                        SR
+
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong id="topOwnerName">
+                            Subhadip Roy
+                        </strong>
+
+                        <span>
+                            Owner
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE
+        ================================================== -->
+        <section class="rooms-page">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+            <div class="page-header">
+
+                <div>
+
+                    <h2>
+                        Room Management
+                    </h2>
+
+                    <p>
+                        Track every room across your properties
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-room-btn"
+                    id="addRoomBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Room
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 STATS
+            ================================================== -->
+            <div class="room-stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+
+                        <i class="fa-solid fa-door-open"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Rooms
+                        </span>
+
+                        <strong id="totalRooms">
+                            18
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+
+                        <i class="fa-solid fa-check-circle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Available
+                        </span>
+
+                        <strong id="availableRooms">
+                            8
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Occupied
+                        </span>
+
+                        <strong id="occupiedRooms">
+                            8
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Maintenance
+                        </span>
+
+                        <strong id="maintenanceRooms">
+                            2
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTER TOOLBAR
+            ================================================== -->
+            <div class="filter-card">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="roomSearch"
+                        placeholder="Search room, property or occupant...">
+
+                </div>
+
+
+                <div class="filters">
+
+                    <select id="propertyFilter">
+
+                        <option value="all">
+                            All Properties
+                        </option>
+
+                    </select>
+
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="available">
+                            Available
+                        </option>
+
+                        <option value="occupied">
+                            Occupied
+                        </option>
+
+                        <option value="maintenance">
+                            Maintenance
+                        </option>
+
+                    </select>
+
+
+                    <select id="typeFilter">
+
+                        <option value="all">
+                            All Room Types
+                        </option>
+
+                        <option value="single">
+                            Single
+                        </option>
+
+                        <option value="double">
+                            Double
+                        </option>
+
+                        <option value="triple">
+                            Triple
+                        </option>
+
+                        <option value="shared">
+                            Shared
+                        </option>
+
+                    </select>
+
+
+                    <select id="sortFilter">
+
+                        <option value="roomAsc">
+                            Room A-Z
+                        </option>
+
+                        <option value="roomDesc">
+                            Room Z-A
+                        </option>
+
+                        <option value="rentHigh">
+                            Rent High-Low
+                        </option>
+
+                        <option value="rentLow">
+                            Rent Low-High
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 LIST HEADER
+            ================================================== -->
+            <div class="list-header">
+
+                <div>
+
+                    <h2>
+                        All Rooms
+                    </h2>
+
+                    <span id="resultsCount">
+                        Showing 0 rooms
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="view-toggle active"
+                    id="gridViewBtn">
+
+                    <i class="fa-solid fa-grid-2"></i>
+
+                </button>
+
+
+                <button
+                    class="view-toggle"
+                    id="listViewBtn">
+
+                    <i class="fa-solid fa-list"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 ROOM LIST
+            ================================================== -->
+            <div
+                class="rooms-grid"
+                id="roomsGrid">
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         ADD / EDIT ROOM MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="roomModal">
+
+        <div class="room-modal">
+
+            <button
+                class="modal-close"
+                id="closeRoomModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-heading">
+
+                <div class="modal-heading-icon">
+
+                    <i class="fa-solid fa-door-open"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="roomModalTitle">
+                        Add Room
+                    </h2>
+
+                    <p>
+                        Add room information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="roomForm">
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Room Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="roomNumber"
+                            placeholder="e.g. 101"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Floor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="roomFloor"
+                            placeholder="e.g. 1st Floor"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Property
+                    </label>
+
+                    <select
+                        id="roomProperty"
+                        required>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Room Type
+                        </label>
+
+                        <select
+                            id="roomType"
+                            required>
+
+                            <option value="single">
+                                Single
+                            </option>
+
+                            <option value="double">
+                                Double
+                            </option>
+
+                            <option value="triple">
+                                Triple
+                            </option>
+
+                            <option value="shared">
+                                Shared
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Monthly Rent
+                        </label>
+
+                        <input
+                            type="number"
+                            id="roomRent"
+                            min="0"
+                            placeholder="₹ 0"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Capacity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="roomCapacity"
+                            min="1"
+                            placeholder="e.g. 2"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Status
+                        </label>
+
+                        <select
+                            id="roomStatus">
+
+                            <option value="available">
+                                Available
+                            </option>
+
+                            <option value="occupied">
+                                Occupied
+                            </option>
+
+                            <option value="maintenance">
+                                Maintenance
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Current Occupant
+                    </label>
+
+                    <input
+                        type="text"
+                        id="roomOccupant"
+                        placeholder="Leave blank if available">
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelRoomBtn">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-room-btn">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Save Room
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ROOM DETAILS MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="detailsModal">
+
+        <div class="details-modal">
+
+            <button
+                class="modal-close"
+                id="closeDetailsModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="room-details-top">
+
+                <div
+                    class="room-big-icon"
+                    id="detailsRoomIcon">
+
+                    <i class="fa-solid fa-door-open"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="detailsRoomNumber">
+                        Room 101
+                    </h2>
+
+                    <span id="detailsProperty">
+                        Green View PG
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="details-status"
+                id="detailsStatus">
+                Available
+            </div>
+
+
+            <div class="details-grid">
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Room Type
+                    </span>
+
+                    <strong id="detailsType">
+                        Single
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Floor
+                    </span>
+
+                    <strong id="detailsFloor">
+                        1st Floor
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Monthly Rent
+                    </span>
+
+                    <strong id="detailsRent">
+                        ₹5,000
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Capacity
+                    </span>
+
+                    <strong id="detailsCapacity">
+                        1 Person
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Occupant
+                    </span>
+
+                    <strong id="detailsOccupant">
+                        Available
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Room ID
+                    </span>
+
+                    <strong id="detailsId">
+                        RN-RM-1001
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="details-actions">
+
+                <button
+                    class="edit-details-btn"
+                    id="editDetailsBtn">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Edit Room
+
+                </button>
+
+
+                <button
+                    class="delete-details-btn"
+                    id="deleteDetailsBtn">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SEARCH MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="searchModal">
+
+        <div class="search-modal">
+
+            <button
+                class="modal-close"
+                id="closeSearchModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <h2>
+                Search Rooms
+            </h2>
+
+
+            <div class="global-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalRoomSearch"
+                    placeholder="Search rooms...">
+
+            </div>
+
+
+            <div
+                class="global-results"
+                id="globalResults">
+
+                <p>
+                    Start typing to search rooms.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATION MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="notificationModal">
+
+        <div class="notification-modal">
+
+            <button
+                class="modal-close"
+                id="closeNotificationModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="notification-heading">
+
+                <div>
+
+                    <h2>
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent room updates
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-bell"></i>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon orange">
+
+                    <i class="fa-solid fa-door-open"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Room 204 is now available
+                    </strong>
+
+                    <span>
+                        Lake View Residence
+                    </span>
+
+                    <small>
+                        10 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon red">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Maintenance reminder
+                    </strong>
+
+                    <span>
+                        Room 302 needs attention
+                    </span>
+
+                    <small>
+                        2 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+    <div
+        class="toast"
+        id="toast">
+
+        <div class="toast-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <span id="toastMessage">
+                Action completed.
+            </span>
+
+        </div>
+
+
+        <button id="toastClose">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <script src="rooms.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+
+</html>

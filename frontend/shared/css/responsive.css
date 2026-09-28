@@ -1,0 +1,250 @@
+/* =========================================================
+   ROOMNEST — GLOBAL RESPONSIVE HELPERS
+   File: responsive.css
+========================================================= */
+
+
+/* =========================================================
+   01. CONTAINER
+========================================================= */
+
+.rn-container {
+
+    width:
+        min(
+            var(--rn-container),
+            calc(100% - 40px)
+        );
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   02. DISPLAY HELPERS
+========================================================= */
+
+.rn-desktop-only {
+
+    display: block;
+
+}
+
+
+.rn-mobile-only {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   03. GRID
+========================================================= */
+
+.rn-grid {
+
+    display: grid;
+
+    gap:
+        var(--rn-space-6);
+
+}
+
+
+.rn-grid-2 {
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+}
+
+
+.rn-grid-3 {
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+}
+
+
+.rn-grid-4 {
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+}
+
+
+/* =========================================================
+   04. FLEX
+========================================================= */
+
+.rn-flex {
+
+    display: flex;
+
+}
+
+
+.rn-flex-center {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.rn-flex-between {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.rn-flex-wrap {
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =========================================================
+   05. TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .rn-grid-4 {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .rn-grid-3 {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   06. TABLET / SMALL
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .rn-container {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .rn-desktop-only {
+
+        display: none !important;
+
+    }
+
+
+    .rn-mobile-only {
+
+        display: block !important;
+
+    }
+
+
+    .rn-grid-4,
+    .rn-grid-3 {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   07. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .rn-container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .rn-grid-2,
+    .rn-grid-3,
+    .rn-grid-4 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rn-flex-between {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            var(--rn-space-4);
+
+    }
+
+
+    .rn-flex-mobile-column {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rn-full-mobile {
+
+        width: 100% !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   08. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .rn-container {
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+}

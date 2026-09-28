@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | RoomNest Owner</title>
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         OWNER PROFILE LAYOUT
+    ====================================================== -->
+
+    <div class="owner-layout">
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="owner-sidebar" id="ownerSidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🏠
+                </div>
+
+                <div class="logo-text">
+
+                    <strong>RoomNest</strong>
+
+                    <span>
+                        Owner Panel
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">
+                    MAIN
+                </p>
+
+                <a
+                    href="../dashboard/dashboard.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <p class="nav-title">
+                    PROPERTY
+                </p>
+
+                <a
+                    href="../properties/properties.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        🏘️
+                    </span>
+
+                    <span>
+                        My Properties
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../add-property/add-property.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        ➕
+                    </span>
+
+                    <span>
+                        Add Property
+                    </span>
+
+                </a>
+
+
+                <p class="nav-title">
+                    MANAGEMENT
+                </p>
+
+                <a
+                    href="../inquiries/inquiries.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        📩
+                    </span>
+
+                    <span>
+                        Inquiries
+                    </span>
+
+                    <span class="nav-badge">
+                        5
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../bookings/bookings.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        📅
+                    </span>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../messages/messages.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        💬
+                    </span>
+
+                    <span>
+                        Messages
+                    </span>
+
+                    <span class="nav-badge">
+                        3
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../reviews/reviews.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        ⭐
+                    </span>
+
+                    <span>
+                        Reviews
+                    </span>
+
+                </a>
+
+
+                <p class="nav-title">
+                    ACCOUNT
+                </p>
+
+                <a
+                    href="profile.html"
+                    class="nav-item active">
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="../settings/settings.html"
+                    class="nav-item">
+
+                    <span class="nav-icon">
+                        ⚙️
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <div class="owner-mini-profile">
+
+                    <div
+                        class="owner-avatar"
+                        id="sidebarAvatar">
+
+                        AR
+
+                    </div>
+
+
+                    <div class="owner-mini-info">
+
+                        <strong id="sidebarOwnerName">
+                            Arindam Roy
+                        </strong>
+
+                        <span>
+                            Property Owner
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="mini-menu-btn"
+                        id="profileMenuBtn">
+
+                        ⋮
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="logout-btn"
+                    id="logoutBtn">
+
+                    <span>
+                        🚪
+                    </span>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN AREA
+        ================================================== -->
+
+        <main class="owner-main">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="owner-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn">
+
+                        ☰
+
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <span class="page-label">
+                            ACCOUNT
+                        </span>
+
+                        <h1>
+                            My Profile
+                        </h1>
+
+                        <p>
+                            Manage your personal information and owner account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <button
+                        type="button"
+                        class="topbar-icon-btn"
+                        id="searchBtn">
+
+                        🔍
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="topbar-icon-btn notification-btn"
+                        id="notificationBtn">
+
+                        🔔
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="topbar-profile">
+
+                        <div
+                            class="topbar-avatar"
+                            id="topbarAvatar">
+
+                            AR
+
+                        </div>
+
+
+                        <div class="topbar-profile-info">
+
+                            <strong id="topbarOwnerName">
+                                Arindam Roy
+                            </strong>
+
+                            <span>
+                                Owner
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PROFILE CONTENT
+            ================================================== -->
+
+            <section class="profile-content">
+
+
+                <!-- =================================================
+                     PROFILE HERO
+                ================================================== -->
+
+                <section class="profile-hero">
+
+                    <div class="profile-hero-background"></div>
+
+
+                    <div class="profile-hero-content">
+
+                        <div class="large-profile-avatar">
+
+                            <span id="profileInitials">
+                                AR
+                            </span>
+
+                            <button
+                                type="button"
+                                class="avatar-edit-btn"
+                                id="avatarEditBtn"
+                                title="Change profile photo">
+
+                                📷
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="profile-hero-info">
+
+                            <span class="profile-role">
+                                VERIFIED PROPERTY OWNER
+                            </span>
+
+                            <h2 id="profileDisplayName">
+                                Arindam Roy
+                            </h2>
+
+                            <p>
+                                📍 Kolkata, West Bengal
+                            </p>
+
+                            <div class="profile-badges">
+
+                                <span class="verified-badge">
+                                    ✓ Verified Owner
+                                </span>
+
+                                <span class="member-badge">
+                                    Member since 2025
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-hero-action">
+
+                            <button
+                                type="button"
+                                class="primary-btn"
+                                id="editProfileBtn">
+
+                                ✏️ Edit Profile
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     PROFILE STATS
+                ================================================== -->
+
+                <section class="profile-stats">
+
+                    <div class="profile-stat-card">
+
+                        <div class="profile-stat-icon property">
+                            🏘️
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                12
+                            </strong>
+
+                            <span>
+                                Properties
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="profile-stat-icon booking">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                16
+                            </strong>
+
+                            <span>
+                                Bookings
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="profile-stat-icon review">
+                            ⭐
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                4.8
+                            </strong>
+
+                            <span>
+                                Average Rating
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="profile-stat-icon response">
+                            ⚡
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                96%
+                            </strong>
+
+                            <span>
+                                Response Rate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     MAIN PROFILE GRID
+                ================================================== -->
+
+                <div class="profile-grid">
+
+
+                    <!-- =================================================
+                         PERSONAL INFORMATION
+                    ================================================== -->
+
+                    <section class="profile-card personal-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    PERSONAL DETAILS
+                                </span>
+
+                                <h3>
+                                    Personal Information
+                                </h3>
+
+                                <p>
+                                    Your basic account information.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="card-edit-btn"
+                                data-edit-section="personal">
+
+                                ✏️ Edit
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="information-grid">
+
+
+                            <div class="info-item">
+
+                                <span class="info-label">
+                                    Full Name
+                                </span>
+
+                                <strong id="fullName">
+                                    Arindam Roy
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span class="info-label">
+                                    Email Address
+                                </span>
+
+                                <strong id="emailAddress">
+                                    arindam.roy@example.com
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span class="info-label">
+                                    Phone Number
+                                </span>
+
+                                <strong id="phoneNumber">
+                                    +91 98765 43210
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span class="info-label">
+                                    Date of Birth
+                                </span>
+
+                                <strong id="dateOfBirth">
+                                    15 March 1994
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span class="info-label">
+                                    Gender
+                                </span>
+
+                                <strong id="gender">
+                                    Male
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span class="info-label">
+                                    City
+                                </span>
+
+                                <strong id="city">
+                                    Kolkata
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         ACCOUNT STATUS
+                    ================================================== -->
+
+                    <section class="profile-card account-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    ACCOUNT
+                                </span>
+
+                                <h3>
+                                    Account Status
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-status-list">
+
+
+                            <div class="account-status-item">
+
+                                <div class="status-icon verified">
+                                    ✓
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Identity Verified
+                                    </strong>
+
+                                    <span>
+                                        Your identity has been verified.
+                                    </span>
+
+                                </div>
+
+                                <b>
+                                    Verified
+                                </b>
+
+                            </div>
+
+
+                            <div class="account-status-item">
+
+                                <div class="status-icon verified">
+                                    ✓
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Email Verified
+                                    </strong>
+
+                                    <span>
+                                        Your email address is verified.
+                                    </span>
+
+                                </div>
+
+                                <b>
+                                    Verified
+                                </b>
+
+                            </div>
+
+
+                            <div class="account-status-item">
+
+                                <div class="status-icon verified">
+                                    ✓
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Phone Verified
+                                    </strong>
+
+                                    <span>
+                                        Your phone number is verified.
+                                    </span>
+
+                                </div>
+
+                                <b>
+                                    Verified
+                                </b>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         CONTACT INFORMATION
+                    ================================================== -->
+
+                    <section class="profile-card contact-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    CONTACT
+                                </span>
+
+                                <h3>
+                                    Contact Information
+                                </h3>
+
+                                <p>
+                                    Contact details visible to students.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="card-edit-btn"
+                                data-edit-section="contact">
+
+                                ✏️ Edit
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="contact-list">
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    📞
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Phone
+                                    </span>
+
+                                    <strong>
+                                        +91 98765 43210
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    ✉️
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Email
+                                    </span>
+
+                                    <strong>
+                                        arindam.roy@example.com
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    📍
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Address
+                                    </span>
+
+                                    <strong>
+                                        Kolkata, West Bengal, India
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         SECURITY
+                    ================================================== -->
+
+                    <section class="profile-card security-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    SECURITY
+                                </span>
+
+                                <h3>
+                                    Account Security
+                                </h3>
+
+                                <p>
+                                    Keep your account protected.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-list">
+
+
+                            <button
+                                type="button"
+                                class="security-item"
+                                id="changePasswordBtn">
+
+                                <div class="security-icon">
+                                    🔑
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Change Password
+                                    </strong>
+
+                                    <span>
+                                        Update your account password.
+                                    </span>
+
+                                </div>
+
+                                <b>
+                                    →
+                                </b>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="security-item"
+                                id="twoFactorBtn">
+
+                                <div class="security-icon">
+                                    🛡️
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Two-Factor Authentication
+                                    </strong>
+
+                                    <span>
+                                        Add an extra layer of security.
+                                    </span>
+
+                                </div>
+
+                                <span class="security-status">
+                                    OFF
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="security-item"
+                                id="loginActivityBtn">
+
+                                <div class="security-icon">
+                                    🔐
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Login Activity
+                                    </strong>
+
+                                    <span>
+                                        Review recent account activity.
+                                    </span>
+
+                                </div>
+
+                                <b>
+                                    →
+                                </b>
+
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         OWNER PREFERENCES
+                    ================================================== -->
+
+                    <section class="profile-card preferences-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    PREFERENCES
+                                </span>
+
+                                <h3>
+                                    Owner Preferences
+                                </h3>
+
+                                <p>
+                                    Manage how you use RoomNest.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="preference-list">
+
+
+                            <div class="preference-item">
+
+                                <div>
+
+                                    <strong>
+                                        Accept New Inquiries
+                                    </strong>
+
+                                    <span>
+                                        Allow students to contact you.
+                                    </span>
+
+                                </div>
+
+                                <label class="toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        id="inquiryToggle"
+                                        checked>
+
+                                    <span class="toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="preference-item">
+
+                                <div>
+
+                                    <strong>
+                                        Booking Requests
+                                    </strong>
+
+                                    <span>
+                                        Receive new booking requests.
+                                    </span>
+
+                                </div>
+
+                                <label class="toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        id="bookingToggle"
+                                        checked>
+
+                                    <span class="toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="preference-item">
+
+                                <div>
+
+                                    <strong>
+                                        Email Notifications
+                                    </strong>
+
+                                    <span>
+                                        Receive important updates by email.
+                                    </span>
+
+                                </div>
+
+                                <label class="toggle">
+
+                                    <input
+                                        type="checkbox"
+                                        id="emailToggle"
+                                        checked>
+
+                                    <span class="toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         PROFILE COMPLETION
+                    ================================================== -->
+
+                    <section class="profile-card completion-card">
+
+                        <div class="completion-top">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    PROFILE HEALTH
+                                </span>
+
+                                <h3>
+                                    Profile Completion
+                                </h3>
+
+                            </div>
+
+                            <strong id="completionPercentage">
+                                85%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-container">
+
+                            <div
+                                class="progress-bar"
+                                id="profileProgress"
+                                style="width: 85%;">
+                            </div>
+
+                        </div>
+
+
+                        <p>
+                            Complete your profile to build more trust with students.
+                        </p>
+
+
+                        <div class="completion-items">
+
+                            <span class="completed">
+                                ✓ Basic information
+                            </span>
+
+                            <span class="completed">
+                                ✓ Contact details
+                            </span>
+
+                            <span class="completed">
+                                ✓ Identity verification
+                            </span>
+
+                            <span>
+                                ○ Add profile bio
+                            </span>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FOOTER
+                ================================================== -->
+
+                <footer class="profile-footer">
+
+                    <p>
+                        © 2026 RoomNest. Owner Panel.
+                    </p>
+
+                    <div>
+
+                        <span>
+                            Need Help?
+                        </span>
+
+                        <a href="#">
+                            Contact Support
+                        </a>
+
+                    </div>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast">
+
+        <span class="toast-icon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Action completed successfully.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="toastClose">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EDIT PROFILE MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="editProfileModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        PROFILE
+                    </span>
+
+                    <h3>
+                        Edit Profile
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close="editProfileModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <form id="profileForm">
+
+                <div class="form-group">
+
+                    <label for="editName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        value="Arindam Roy"
+                        required>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="editEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            value="arindam.roy@example.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="editPhone"
+                            value="+91 98765 43210"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="editCity">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editCity"
+                            value="Kolkata">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editGender">
+                            Gender
+                        </label>
+
+                        <select id="editGender">
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editBio">
+                        Bio
+                    </label>
+
+                    <textarea
+                        id="editBio"
+                        rows="4"
+                        placeholder="Tell students something about yourself...">Property owner providing comfortable and student-friendly accommodation in Kolkata.</textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        data-close="editProfileModal">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CHANGE PASSWORD MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="passwordModal">
+
+        <div class="modal-box small-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        SECURITY
+                    </span>
+
+                    <h3>
+                        Change Password
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close="passwordModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <form id="passwordForm">
+
+                <div class="form-group">
+
+                    <label for="currentPassword">
+                        Current Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="currentPassword"
+                        placeholder="Enter current password"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+                        New Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Enter new password"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm new password"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        data-close="passwordModal">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        Update Password
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SEARCH MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="searchModal">
+
+        <div class="modal-box small-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        SEARCH
+                    </span>
+
+                    <h3>
+                        Search Owner Panel
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close="searchModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div class="search-input-wrap">
+
+                <span>
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="dashboardSearch"
+                    placeholder="Search dashboard...">
+
+            </div>
+
+
+            <div
+                class="search-results"
+                id="searchResults">
+
+                <p>
+                    Search properties, inquiries, bookings or settings.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NOTIFICATION MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="notificationModal">
+
+        <div class="modal-box small-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        NOTIFICATIONS
+                    </span>
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close="notificationModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div class="notification-list">
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon">
+                        📩
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New inquiry received
+                        </strong>
+
+                        <p>
+                            Sayan Roy sent an inquiry about Green View PG.
+                        </p>
+
+                        <small>
+                            10 minutes ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Booking request received
+                        </strong>
+
+                        <p>
+                            Ankit Mondal requested Room 305.
+                        </p>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New review received
+                        </strong>
+
+                        <p>
+                            Priya Das left a 5-star review.
+                        </p>
+
+                        <small>
+                            Yesterday
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         AVATAR FILE INPUT
+    ====================================================== -->
+
+    <input
+        type="file"
+        id="avatarInput"
+        accept="image/*"
+        hidden>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="profile.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Property | RoomNest</title>
+
+    <link rel="stylesheet" href="edit-property.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="ownerSidebar">
+
+    <div class="sidebar-header">
+
+        <a href="../dashboard/dashboard.html" class="logo">
+            <span class="logo-icon">🏠</span>
+            <span>Room<span>Nest</span></span>
+        </a>
+
+        <button class="sidebar-close" id="sidebarClose">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="owner-mini-profile">
+
+        <div class="owner-avatar" id="sidebarAvatar">
+            AR
+        </div>
+
+        <div class="owner-mini-info">
+
+            <strong id="sidebarOwnerName">
+                Arindam Roy
+            </strong>
+
+            <span>
+                Property Owner
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-section-title">
+            MAIN MENU
+        </div>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../properties/properties.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>My Properties</span>
+        </a>
+
+        <a href="../add-property/add-property.html" class="nav-item">
+            <span class="nav-icon">➕</span>
+            <span>Add Property</span>
+        </a>
+
+        <a href="../inquiries/inquiries.html" class="nav-item">
+            <span class="nav-icon">💬</span>
+            <span>Inquiries</span>
+            <span class="nav-count green">6</span>
+        </a>
+
+        <a href="../bookings/bookings.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Bookings</span>
+            <span class="nav-count blue">3</span>
+        </a>
+
+        <a href="../messages/messages.html" class="nav-item">
+            <span class="nav-icon">✉️</span>
+            <span>Messages</span>
+            <span class="nav-count red">2</span>
+        </a>
+
+
+        <div class="nav-section-title">
+            MANAGEMENT
+        </div>
+
+        <a href="../reviews/reviews.html" class="nav-item">
+            <span class="nav-icon">⭐</span>
+            <span>Reviews</span>
+        </a>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../settings/settings.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+
+            <div class="help-icon">
+                💡
+            </div>
+
+            <strong>
+                Need Help?
+            </strong>
+
+            <p>
+                Our support team is ready to help you.
+            </p>
+
+            <button id="supportBtn">
+                Contact Support
+            </button>
+
+        </div>
+
+
+        <button class="logout-btn" id="logoutBtn">
+            <span>🚪</span>
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+
+            <div>
+
+                <h1>
+                    Edit Property
+                </h1>
+
+                <p>
+                    Update your property information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button class="topbar-btn" id="searchBtn">
+                🔍
+            </button>
+
+            <button class="topbar-btn notification-btn" id="notificationBtn">
+
+                🔔
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="topbar-profile" id="profileMenuBtn">
+
+                <div class="top-avatar" id="topAvatar">
+                    AR
+                </div>
+
+                <div class="top-profile-info">
+
+                    <strong id="topOwnerName">
+                        Arindam Roy
+                    </strong>
+
+                    <span>
+                        Owner
+                    </span>
+
+                </div>
+
+                <span class="profile-arrow">
+                    ▾
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE -->
+
+    <section class="page-content">
+
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PROPERTY MANAGEMENT
+                </span>
+
+                <h2>
+                    Edit Property
+                </h2>
+
+                <p id="propertySubtitle">
+                    Update your property details.
+                </p>
+
+            </div>
+
+
+            <a
+                href="../properties/properties.html"
+                class="back-btn"
+            >
+                ← Back to Properties
+            </a>
+
+        </div>
+
+
+        <!-- NOT FOUND -->
+
+        <div class="not-found" id="notFound">
+
+            <div>
+                🏠
+            </div>
+
+            <h3>
+                Property Not Found
+            </h3>
+
+            <p>
+                The property you are trying to edit could not be found.
+            </p>
+
+            <a
+                href="../properties/properties.html"
+                class="primary-btn"
+            >
+                Go to My Properties
+            </a>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="editPropertyForm">
+
+
+            <!-- =================================================
+                 BASIC INFO
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        🏠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Basic Information
+                        </h3>
+
+                        <p>
+                            Update the main information of your property.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Property Name
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="propertyTitle"
+                            required
+                        >
+
+                        <small
+                            class="field-error"
+                            id="titleError"
+                        ></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Property Type
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="propertyType"
+                            required
+                        >
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option value="PG">
+                                PG
+                            </option>
+
+                            <option value="Room">
+                                Room
+                            </option>
+
+                            <option value="Flat">
+                                Flat
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Suitable For
+                        </label>
+
+                        <select id="gender">
+
+                            <option value="Boys">
+                                Boys
+                            </option>
+
+                            <option value="Girls">
+                                Girls
+                            </option>
+
+                            <option value="Both">
+                                Boys & Girls
+                            </option>
+
+                            <option value="Family">
+                                Family
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Total Rooms
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="totalRooms"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Available Rooms
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="availableRooms"
+                            min="0"
+                            required
+                        >
+
+                        <small
+                            class="field-error"
+                            id="roomsError"
+                        ></small>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Description
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="description"
+                            rows="5"
+                            maxlength="500"
+                            required
+                        ></textarea>
+
+                        <div class="textarea-footer">
+
+                            <small
+                                class="field-error"
+                                id="descriptionError"
+                            ></small>
+
+                            <span id="characterCount">
+                                0 / 500
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOCATION
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <p>
+                            Update your property's location.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Area / Locality
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="area"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Full Address
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="address"
+                            rows="3"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            PIN Code
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            maxlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Nearby Landmark
+                        </label>
+
+                        <input
+                            type="text"
+                            id="landmark"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 AMENITIES
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Amenities
+                        </h3>
+
+                        <p>
+                            Select the facilities available.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="amenities-grid">
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Wi-Fi">
+                        <span>📶</span>
+                        <strong>Wi-Fi</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Food">
+                        <span>🍛</span>
+                        <strong>Food</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="AC">
+                        <span>❄️</span>
+                        <strong>AC</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Parking">
+                        <span>🅿️</span>
+                        <strong>Parking</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Laundry">
+                        <span>🧺</span>
+                        <strong>Laundry</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Security">
+                        <span>🔐</span>
+                        <strong>Security</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="CCTV">
+                        <span>📹</span>
+                        <strong>CCTV</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Power Backup">
+                        <span>🔋</span>
+                        <strong>Power Backup</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Attached Bathroom">
+                        <span>🚿</span>
+                        <strong>Attached Bathroom</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Housekeeping">
+                        <span>🧹</span>
+                        <strong>Housekeeping</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Common Kitchen">
+                        <span>🍳</span>
+                        <strong>Common Kitchen</strong>
+                    </label>
+
+
+                    <label class="amenity-item">
+                        <input type="checkbox" name="amenities" value="Study Area">
+                        <span>📚</span>
+                        <strong>Study Area</strong>
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRICING
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Pricing
+                        </h3>
+
+                        <p>
+                            Update rent and payment details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Monthly Rent
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="rent"
+                                min="0"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Security Deposit
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="securityDeposit"
+                                min="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Maintenance / Month
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="maintenance"
+                                min="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Booking Amount
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="bookingAmount"
+                                min="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Available From
+                        </label>
+
+                        <input
+                            type="date"
+                            id="availabilityDate"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Notice Period
+                        </label>
+
+                        <select id="noticePeriod">
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="15 Days">
+                                15 Days
+                            </option>
+
+                            <option value="30 Days">
+                                30 Days
+                            </option>
+
+                            <option value="60 Days">
+                                60 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 COVER IMAGE
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        📸
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Property Cover Image
+                        </h3>
+
+                        <p>
+                            Change the main image of your property.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cover-image-section">
+
+                    <div class="current-image">
+
+                        <img
+                            id="coverPreview"
+                            src=""
+                            alt="Property image"
+                        >
+
+                    </div>
+
+
+                    <div class="image-control">
+
+                        <input
+                            type="file"
+                            id="coverImage"
+                            accept="image/*"
+                            hidden
+                        >
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="changeImageBtn"
+                        >
+                            📷 Change Image
+                        </button>
+
+                        <p>
+                            Recommended image ratio: 16:9
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STATUS
+            ================================================= -->
+
+            <div class="form-card status-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        ⚙️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Listing Status
+                        </h3>
+
+                        <p>
+                            Manage the visibility of your property.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-options">
+
+                    <label class="status-option">
+
+                        <input
+                            type="radio"
+                            name="status"
+                            value="active"
+                        >
+
+                        <span class="status-dot active"></span>
+
+                        <div>
+                            <strong>Active</strong>
+                            <small>Property is visible to students.</small>
+                        </div>
+
+                    </label>
+
+
+                    <label class="status-option">
+
+                        <input
+                            type="radio"
+                            name="status"
+                            value="inactive"
+                        >
+
+                        <span class="status-dot inactive"></span>
+
+                        <div>
+                            <strong>Inactive</strong>
+                            <small>Hide property from search results.</small>
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="form-actions">
+
+                <a
+                    href="../properties/properties.html"
+                    class="cancel-btn"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="saveDraftBtn"
+                >
+                    💾 Save Draft
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    ✓ Save Changes
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+        <!-- FOOTER -->
+
+        <footer class="page-footer">
+
+            <span>
+                © 2026 RoomNest. All rights reserved.
+            </span>
+
+            <div>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Help</a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     SEARCH MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="searchModal">
+
+    <div class="modal search-modal">
+
+        <button
+            class="modal-close"
+            data-close="searchModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-heading">
+
+            <span>🔍</span>
+
+            <div>
+
+                <h3>
+                    Search RoomNest
+                </h3>
+
+                <p>
+                    Quickly find dashboard pages.
+                </p>
+
+            </div>
+
+        </div>
+
+        <input
+            type="text"
+            id="globalSearch"
+            class="modal-input"
+            placeholder="Search..."
+        >
+
+        <div
+            id="globalSearchResults"
+            class="search-results"
+        >
+            Start typing to search.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NOTIFICATION MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="notificationModal">
+
+    <div class="modal notification-modal">
+
+        <button
+            class="modal-close"
+            data-close="notificationModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-heading">
+
+            <span>
+                🔔
+            </span>
+
+            <div>
+
+                <h3>
+                    Notifications
+                </h3>
+
+                <p>
+                    Recent property updates.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-list">
+
+            <div class="notification-item unread">
+
+                <span>✓</span>
+
+                <div>
+
+                    <strong>
+                        Property approved
+                    </strong>
+
+                    <p>
+                        Your property has been approved.
+                    </p>
+
+                    <small>
+                        2 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <span>💬</span>
+
+                <div>
+
+                    <strong>
+                        New inquiry
+                    </strong>
+
+                    <p>
+                        A student sent a new inquiry.
+                    </p>
+
+                    <small>
+                        5 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast" id="toast">
+
+    <div class="toast-icon" id="toastIcon">
+        ✓
+    </div>
+
+    <div class="toast-content">
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Operation completed.
+        </p>
+
+    </div>
+
+    <button id="toastClose">
+        ×
+    </button>
+
+</div>
+
+
+<script src="edit-property.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

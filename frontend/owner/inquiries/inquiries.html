@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inquiries | RoomNest Owner</title>
+
+    <link rel="stylesheet" href="inquiries.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+<aside class="owner-sidebar" id="ownerSidebar">
+
+    <div class="sidebar-brand">
+        <div class="brand-icon">
+            <i class="fa-solid fa-house"></i>
+        </div>
+
+        <div>
+            <h2>RoomNest</h2>
+            <span>Owner Panel</span>
+        </div>
+    </div>
+
+
+    <div class="owner-mini-profile">
+        <div class="mini-avatar" id="sidebarAvatar">
+            AR
+        </div>
+
+        <div class="mini-info">
+            <strong id="sidebarOwnerName">Arindam Roy</strong>
+            <span>Property Owner</span>
+        </div>
+
+        <span class="online-dot"></span>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-section-title">
+            MAIN MENU
+        </div>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <i class="fa-solid fa-grid-2"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../properties/properties.html" class="nav-item">
+            <i class="fa-solid fa-building"></i>
+            <span>My Properties</span>
+        </a>
+
+        <a href="../add-property/add-property.html" class="nav-item">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>Add Property</span>
+        </a>
+
+        <a href="inquiries.html" class="nav-item active">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>Inquiries</span>
+            <span class="nav-badge" id="sidebarInquiryBadge">3</span>
+        </a>
+
+        <a href="../bookings/bookings.html" class="nav-item">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Bookings</span>
+        </a>
+
+        <a href="../messages/messages.html" class="nav-item">
+            <i class="fa-solid fa-comments"></i>
+            <span>Messages</span>
+        </a>
+
+        <a href="../reviews/reviews.html" class="nav-item">
+            <i class="fa-solid fa-star"></i>
+            <span>Reviews</span>
+        </a>
+
+
+        <div class="nav-section-title second-section">
+            ACCOUNT
+        </div>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../settings/settings.html" class="nav-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+            <div class="help-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <span>Contact RoomNest support</span>
+            </div>
+        </div>
+
+        <button class="logout-btn" id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+<main class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="breadcrumb">
+                <span>Owner Panel</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <strong>Inquiries</strong>
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button class="topbar-icon-btn" id="searchBtn" title="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="topbar-icon-btn notification-btn" id="notificationBtn" title="Notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+
+            <div class="topbar-profile" id="profileMenuBtn">
+
+                <div class="top-avatar" id="topAvatar">
+                    AR
+                </div>
+
+                <div class="top-profile-info">
+                    <strong id="topOwnerName">Arindam Roy</strong>
+                    <span>Owner</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE -->
+    <section class="page-container">
+
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+
+            <div class="page-header-content">
+
+                <div>
+                    <span class="page-eyebrow">
+                        COMMUNICATION
+                    </span>
+
+                    <h1>Inquiries</h1>
+
+                    <p>
+                        Manage questions and requests from students interested in your properties.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             STATS
+        ====================================================== -->
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon total">
+                    <i class="fa-solid fa-inbox"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Total Inquiries</span>
+                    <strong id="totalCount">0</strong>
+                    <small>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        All inquiries
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon pending">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Pending</span>
+                    <strong id="pendingCount">0</strong>
+                    <small>Need your response</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon replied">
+                    <i class="fa-solid fa-reply"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Replied</span>
+                    <strong id="repliedCount">0</strong>
+                    <small>Responded inquiries</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon closed">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="stat-content">
+                    <span>Closed</span>
+                    <strong id="closedCount">0</strong>
+                    <small>Completed inquiries</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             TOOLBAR
+        ====================================================== -->
+        <div class="inquiry-toolbar">
+
+            <div class="toolbar-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="inquirySearch"
+                    placeholder="Search student, property or message..."
+                >
+
+                <button id="clearSearch" class="clear-search">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="toolbar-filters">
+
+                <div class="select-wrapper">
+                    <i class="fa-solid fa-filter"></i>
+
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="replied">Replied</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+
+
+                <div class="select-wrapper">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="room">Room Inquiry</option>
+                        <option value="property">Property Inquiry</option>
+                        <option value="booking">Booking Inquiry</option>
+                        <option value="general">General</option>
+                    </select>
+
+                </div>
+
+
+                <div class="select-wrapper sort-wrapper">
+
+                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                    <select id="sortFilter">
+                        <option value="latest">Latest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS INFO -->
+        <div class="results-row">
+
+            <div>
+                Showing
+                <strong id="resultsCount">0</strong>
+                inquiries
+            </div>
+
+            <button class="refresh-btn" id="refreshBtn">
+                <i class="fa-solid fa-rotate"></i>
+                Refresh
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             INQUIRY LIST
+        ====================================================== -->
+        <div class="inquiries-list" id="inquiriesList"></div>
+
+
+        <!-- =====================================================
+             EMPTY STATE
+        ====================================================== -->
+        <div class="empty-state" id="emptyState">
+
+            <div class="empty-icon">
+                <i class="fa-regular fa-envelope-open"></i>
+            </div>
+
+            <h3>No inquiries found</h3>
+
+            <p>
+                There are no inquiries matching your current filters.
+            </p>
+
+            <button class="secondary-btn" id="resetFiltersBtn">
+                <i class="fa-solid fa-filter-circle-xmark"></i>
+                Reset Filters
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     INQUIRY DETAILS MODAL
+========================================================= -->
+<div class="modal-overlay" id="inquiryModal">
+
+    <div class="modal-box inquiry-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="modal-eyebrow">INQUIRY DETAILS</span>
+                <h2 id="modalInquiryTitle">Inquiry Details</h2>
+            </div>
+
+            <button class="modal-close" data-close-modal="inquiryModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="student-detail-header">
+
+                <div class="student-avatar" id="modalStudentAvatar">
+                    SR
+                </div>
+
+                <div class="student-info">
+
+                    <h3 id="modalStudentName">Student Name</h3>
+
+                    <div class="student-contact">
+                        <span id="modalStudentEmail">
+                            email@example.com
+                        </span>
+
+                        <span id="modalStudentPhone">
+                            +91 00000 00000
+                        </span>
+                    </div>
+
+                </div>
+
+                <span class="status-badge" id="modalStatus">
+                    Pending
+                </span>
+
+            </div>
+
+
+            <div class="detail-grid">
+
+                <div class="detail-item">
+                    <span>Property</span>
+                    <strong id="modalProperty">
+                        Property Name
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Inquiry Type</span>
+                    <strong id="modalType">
+                        Room Inquiry
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Submitted</span>
+                    <strong id="modalDate">
+                        15 Sep 2026
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Preferred Move-in</span>
+                    <strong id="modalMoveIn">
+                        01 Oct 2026
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="message-section">
+
+                <div class="section-label">
+                    <i class="fa-regular fa-message"></i>
+                    Student Message
+                </div>
+
+                <div class="student-message" id="modalMessage">
+                    Message goes here.
+                </div>
+
+            </div>
+
+
+            <div class="inquiry-actions">
+
+                <button class="action-btn message" id="modalMessageBtn">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    Message Student
+                </button>
+
+                <button class="action-btn reply" id="modalReplyBtn">
+                    <i class="fa-solid fa-reply"></i>
+                    Mark as Replied
+                </button>
+
+                <button class="action-btn close" id="modalCloseInquiryBtn">
+                    <i class="fa-solid fa-check"></i>
+                    Close Inquiry
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
+<div class="modal-overlay" id="searchModal">
+
+    <div class="modal-box small-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="modal-eyebrow">QUICK SEARCH</span>
+                <h2>Search Inquiries</h2>
+            </div>
+
+            <button class="modal-close" data-close-modal="searchModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="modal-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search inquiries..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <div class="search-results" id="globalSearchResults">
+                Start typing to search.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION MODAL
+========================================================= -->
+<div class="modal-overlay" id="notificationModal">
+
+    <div class="modal-box small-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="modal-eyebrow">ROOMNEST</span>
+                <h2>Notifications</h2>
+            </div>
+
+            <button class="modal-close" data-close-modal="notificationModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body notification-list">
+
+            <div class="notification-item unread">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <strong>New inquiry received</strong>
+                    <p>Rahul Das sent an inquiry about Green View PG.</p>
+                    <small>10 minutes ago</small>
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+                    <strong>Booking request</strong>
+                    <p>A new booking request needs your attention.</p>
+                    <small>2 hours ago</small>
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+                    <strong>New review</strong>
+                    <p>You received a new property review.</p>
+                    <small>Yesterday</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+<div class="toast" id="toast">
+
+    <div class="toast-icon" id="toastIcon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div class="toast-content">
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Action completed.</p>
+    </div>
+
+    <button class="toast-close" id="toastClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+
+<script src="inquiries.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

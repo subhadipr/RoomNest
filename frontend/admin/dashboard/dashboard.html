@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="RoomNest Admin Dashboard">
+
+    <title>RoomNest — Admin Dashboard</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet"
+          href="../../shared/css/reset.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/variables.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/components.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/responsive.css">
+
+    <!-- Admin Dashboard CSS -->
+    <link rel="stylesheet"
+          href="dashboard.css">
+
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">      
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ADMIN APP
+    ====================================================== -->
+
+    <div class="admin-app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo">
+
+                <a href="#" class="logo-link">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        RoomNest
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Admin Profile -->
+            <div class="sidebar-admin">
+
+                <div class="admin-avatar">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="admin-info">
+
+                    <h4>Administrator</h4>
+
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        Online
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="admin-navigation">
+
+                <p class="nav-title">
+                    MAIN MENU
+                </p>
+
+
+                <a href="../dashboard/dashboard.html"
+                   class="admin-nav-link active">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="../users/users.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a href="../owners/owners.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Owners
+                    </span>
+
+                </a>
+
+
+                <a href="../properties/properties.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Properties
+                    </span>
+
+                </a>
+
+
+                <a href="../pending/pending-properties.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Pending Properties
+                    </span>
+
+                    <span class="nav-badge">
+                        8
+                    </span>
+
+                </a>
+
+
+                <a href="../inquiries/inquiries.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Inquiries
+                    </span>
+
+                    <span class="nav-badge">
+                        12
+                    </span>
+
+                </a>
+
+
+                <a href="../reviews/reviews.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Reviews
+                    </span>
+
+                </a>
+
+
+                <p class="nav-title nav-title-space">
+                    MANAGEMENT
+                </p>
+
+
+                <a href="../reports/reports.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <a href="../settings/settings.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="../../public/home/index.html"
+                   class="admin-nav-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        View Website
+                    </span>
+
+                </a>
+
+
+                <button type="button"
+                        class="admin-nav-link logout-btn"
+                        id="logoutBtn">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <span class="nav-text">
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- =============================================
+                 TOPBAR
+            ============================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="topbar-left">
+
+                    <button type="button"
+                            class="sidebar-toggle"
+                            id="sidebarToggle"
+                            aria-label="Toggle Sidebar">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <h1>
+                            Dashboard
+                        </h1>
+
+                        <p>
+                            Welcome back, Administrator
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <!-- Search -->
+                    <div class="admin-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="adminSearch"
+                            placeholder="Search...">
+
+                    </div>
+
+
+                    <!-- Notification -->
+                    <button type="button"
+                            class="topbar-action notification-btn"
+                            id="notificationBtn"
+                            aria-label="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <!-- Admin -->
+                    <div class="topbar-profile">
+
+                        <div class="topbar-avatar">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div class="topbar-user">
+
+                            <strong>
+                                Administrator
+                            </strong>
+
+                            <span>
+                                Admin
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =============================================
+                 DASHBOARD CONTENT
+            ============================================== -->
+
+            <section class="dashboard-content">
+
+
+                <!-- Page Intro -->
+                <div class="dashboard-intro">
+
+                    <div>
+
+                        <h2>
+                            Overview
+                        </h2>
+
+                        <p>
+                            Here's what's happening on RoomNest today.
+                        </p>
+
+                    </div>
+
+                    <button class="date-filter"
+                            type="button">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <span>
+                            Today
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================================
+                     STATISTICS
+                ========================================== -->
+
+                <div class="stats-grid">
+
+
+                    <!-- Users -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon users-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <span class="stat-change positive">
+                                +12.5%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Total Users
+                            </span>
+
+                            <h3 data-stat="users">
+                                2,486
+                            </h3>
+
+                            <p>
+                                <i class="fa-solid fa-arrow-up"></i>
+                                186 new this month
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Owners -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon owners-icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+
+                            <span class="stat-change positive">
+                                +8.2%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Property Owners
+                            </span>
+
+                            <h3 data-stat="owners">
+                                348
+                            </h3>
+
+                            <p>
+                                <i class="fa-solid fa-arrow-up"></i>
+                                24 new this month
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Properties -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon properties-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+
+                            <span class="stat-change positive">
+                                +15.4%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Total Properties
+                            </span>
+
+                            <h3 data-stat="properties">
+                                1,284
+                            </h3>
+
+                            <p>
+                                <i class="fa-solid fa-arrow-up"></i>
+                                96 new this month
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pending -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon pending-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <span class="stat-change neutral">
+                                Needs Action
+                            </span>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Pending Approval
+                            </span>
+
+                            <h3 data-stat="pending">
+                                28
+                            </h3>
+
+                            <p>
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                Requires your attention
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     MAIN GRID
+                ========================================== -->
+
+                <div class="dashboard-grid">
+
+
+                    <!-- =====================================
+                         RECENT PROPERTIES
+                    ====================================== -->
+
+                    <div class="dashboard-card properties-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Recent Properties
+                                </h3>
+
+                                <p>
+                                    Recently listed properties
+                                </p>
+
+                            </div>
+
+                            <a href="../properties/properties.html"
+                               class="view-all">
+
+                                View All
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Property
+                                        </th>
+
+                                        <th>
+                                            Owner
+                                        </th>
+
+                                        <th>
+                                            Location
+                                        </th>
+
+                                        <th>
+                                            Price
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+
+                                            <div class="property-cell">
+
+                                                <div class="property-thumb">
+                                                    <i class="fa-solid fa-house"></i>
+                                                </div>
+
+                                                <div>
+
+                                                    <strong>
+                                                        Green View PG
+                                                    </strong>
+
+                                                    <span>
+                                                        PG • Single Room
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Rahul Sharma
+                                        </td>
+
+                                        <td>
+                                            Salt Lake, Kolkata
+                                        </td>
+
+                                        <td>
+                                            ₹7,500
+                                        </td>
+
+                                        <td>
+                                            <span class="status approved">
+                                                Approved
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+
+                                            <div class="property-cell">
+
+                                                <div class="property-thumb">
+                                                    <i class="fa-solid fa-house"></i>
+                                                </div>
+
+                                                <div>
+
+                                                    <strong>
+                                                        Comfort Stay
+                                                    </strong>
+
+                                                    <span>
+                                                        PG • Shared Room
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Priya Sen
+                                        </td>
+
+                                        <td>
+                                            New Town, Kolkata
+                                        </td>
+
+                                        <td>
+                                            ₹6,000
+                                        </td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Pending
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+
+                                            <div class="property-cell">
+
+                                                <div class="property-thumb">
+                                                    <i class="fa-solid fa-house"></i>
+                                                </div>
+
+                                                <div>
+
+                                                    <strong>
+                                                        Students Home
+                                                    </strong>
+
+                                                    <span>
+                                                        PG • Single Room
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Amit Kumar
+                                        </td>
+
+                                        <td>
+                                            Garia, Kolkata
+                                        </td>
+
+                                        <td>
+                                            ₹9,000
+                                        </td>
+
+                                        <td>
+                                            <span class="status approved">
+                                                Approved
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         PENDING APPROVAL
+                    ====================================== -->
+
+                    <div class="dashboard-card pending-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Pending Approval
+                                </h3>
+
+                                <p>
+                                    Properties waiting for review
+                                </p>
+
+                            </div>
+
+                            <span class="count-badge">
+                                8
+                            </span>
+
+                        </div>
+
+
+                        <div class="pending-list">
+
+
+                            <div class="pending-item">
+
+                                <div class="pending-icon-box">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+
+                                <div class="pending-info">
+
+                                    <strong>
+                                        Lake View Stay
+                                    </strong>
+
+                                    <span>
+                                        Kolkata • 2 hours ago
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    class="small-review-btn"
+                                    type="button">
+
+                                    Review
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="pending-item">
+
+                                <div class="pending-icon-box">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+
+                                <div class="pending-info">
+
+                                    <strong>
+                                        Happy Homes
+                                    </strong>
+
+                                    <span>
+                                        Howrah • 4 hours ago
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    class="small-review-btn"
+                                    type="button">
+
+                                    Review
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="pending-item">
+
+                                <div class="pending-icon-box">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+
+                                <div class="pending-info">
+
+                                    <strong>
+                                        Student Nest
+                                    </strong>
+
+                                    <span>
+                                        Durgapur • 6 hours ago
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    class="small-review-btn"
+                                    type="button">
+
+                                    Review
+
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <a href="../pending/pending-properties.html"
+                           class="card-footer-link">
+
+                            View all pending properties
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     SECOND GRID
+                ========================================== -->
+
+                <div class="dashboard-grid secondary-grid">
+
+
+                    <!-- Recent Users -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Recent Users
+                                </h3>
+
+                                <p>
+                                    Newly registered students
+                                </p>
+
+                            </div>
+
+                            <a href="../users/users.html"
+                               class="view-all">
+
+                                View All
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="users-list">
+
+
+                            <div class="user-row">
+
+                                <div class="user-avatar">
+                                    RS
+                                </div>
+
+                                <div class="user-details">
+
+                                    <strong>
+                                        Riya Sen
+                                    </strong>
+
+                                    <span>
+                                        riya@example.com
+                                    </span>
+
+                                </div>
+
+                                <span class="user-date">
+                                    Today
+                                </span>
+
+                            </div>
+
+
+                            <div class="user-row">
+
+                                <div class="user-avatar">
+                                    AK
+                                </div>
+
+                                <div class="user-details">
+
+                                    <strong>
+                                        Ankit Kumar
+                                    </strong>
+
+                                    <span>
+                                        ankit@example.com
+                                    </span>
+
+                                </div>
+
+                                <span class="user-date">
+                                    Yesterday
+                                </span>
+
+                            </div>
+
+
+                            <div class="user-row">
+
+                                <div class="user-avatar">
+                                    SP
+                                </div>
+
+                                <div class="user-details">
+
+                                    <strong>
+                                        Sayan Paul
+                                    </strong>
+
+                                    <span>
+                                        sayan@example.com
+                                    </span>
+
+                                </div>
+
+                                <span class="user-date">
+                                    2 days ago
+                                </span>
+
+                            </div>
+
+
+                            <div class="user-row">
+
+                                <div class="user-avatar">
+                                    AD
+                                </div>
+
+                                <div class="user-details">
+
+                                    <strong>
+                                        Arjun Das
+                                    </strong>
+
+                                    <span>
+                                        arjun@example.com
+                                    </span>
+
+                                </div>
+
+                                <span class="user-date">
+                                    3 days ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Recent Inquiries -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Recent Inquiries
+                                </h3>
+
+                                <p>
+                                    Latest student inquiries
+                                </p>
+
+                            </div>
+
+                            <a href="../inquiries/inquiries.html"
+                               class="view-all">
+
+                                View All
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="inquiry-list">
+
+
+                            <div class="inquiry-item">
+
+                                <div class="inquiry-avatar">
+                                    RS
+                                </div>
+
+                                <div class="inquiry-info">
+
+                                    <strong>
+                                        Riya Sen
+                                    </strong>
+
+                                    <span>
+                                        Interested in Green View PG
+                                    </span>
+
+                                </div>
+
+                                <span class="inquiry-time">
+                                    2h
+                                </span>
+
+                            </div>
+
+
+                            <div class="inquiry-item">
+
+                                <div class="inquiry-avatar">
+                                    PS
+                                </div>
+
+                                <div class="inquiry-info">
+
+                                    <strong>
+                                        Priya Sen
+                                    </strong>
+
+                                    <span>
+                                        Asked about Comfort Stay
+                                    </span>
+
+                                </div>
+
+                                <span class="inquiry-time">
+                                    5h
+                                </span>
+
+                            </div>
+
+
+                            <div class="inquiry-item">
+
+                                <div class="inquiry-avatar">
+                                    AK
+                                </div>
+
+                                <div class="inquiry-info">
+
+                                    <strong>
+                                        Ankit Kumar
+                                    </strong>
+
+                                    <span>
+                                        Interested in Student Nest
+                                    </span>
+
+                                </div>
+
+                                <span class="inquiry-time">
+                                    1d
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =============================================
+                 FOOTER
+            ============================================== -->
+
+            <footer class="admin-footer">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    RoomNest. All rights reserved.
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        Privacy
+                    </a>
+
+                    <a href="#">
+                        Terms
+                    </a>
+
+                    <a href="#">
+                        Help
+                    </a>
+
+                </div>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay"
+         id="sidebarOverlay">
+    </div>
+
+
+    <!-- Admin Dashboard JS -->
+    <script src="dashboard.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

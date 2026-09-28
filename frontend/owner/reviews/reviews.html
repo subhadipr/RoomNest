@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reviews | RoomNest Owner</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="reviews.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="owner-sidebar" id="ownerSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>RoomNest</h2>
+                <span>Owner Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../properties/properties.html" class="nav-item">
+                <i class="fa-solid fa-building"></i>
+                <span>My Properties</span>
+            </a>
+
+            <a href="../add-property/add-property.html" class="nav-item">
+                <i class="fa-solid fa-plus-circle"></i>
+                <span>Add Property</span>
+            </a>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Inquiries</span>
+            </a>
+
+            <a href="../bookings/bookings.html" class="nav-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Bookings</span>
+            </a>
+
+            <a href="../messages/messages.html" class="nav-item">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+                <b class="nav-badge">3</b>
+            </a>
+
+            <a href="reviews.html" class="nav-item active">
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+            </a>
+
+
+            <p class="nav-title second-title">ACCOUNT</p>
+
+            <a href="../profile/profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="../settings/settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="owner-mini-profile">
+
+                <div class="mini-avatar" id="sidebarAvatar">
+                    SR
+                </div>
+
+                <div class="mini-info">
+
+                    <strong id="sidebarOwnerName">
+                        Subhadip Roy
+                    </strong>
+
+                    <span>
+                        Property Owner
+                    </span>
+
+                </div>
+
+                <button class="logout-btn" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+        <header class="topbar">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="topbar-left">
+
+                <h1>Reviews</h1>
+
+                <p>
+                    Manage student reviews and feedback
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="top-icon-btn" id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="top-icon-btn notification-btn"
+                    id="notificationBtn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="top-profile" id="profileMenuBtn">
+
+                    <div class="top-avatar" id="topAvatar">
+                        SR
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong id="topOwnerName">
+                            Subhadip Roy
+                        </strong>
+
+                        <span>
+                            Owner
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE
+        ================================================== -->
+        <section class="reviews-page">
+
+
+            <!-- =================================================
+                 REVIEW OVERVIEW
+            ================================================== -->
+            <div class="review-overview">
+
+
+                <!-- Average Rating -->
+                <div class="rating-summary card">
+
+                    <div class="rating-summary-top">
+
+                        <div>
+
+                            <span class="section-label">
+                                Overall Rating
+                            </span>
+
+                            <div class="big-rating">
+                                <strong id="averageRating">
+                                    4.8
+                                </strong>
+
+                                <span>/ 5</span>
+                            </div>
+
+                        </div>
+
+                        <div class="rating-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stars-large" id="averageStars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+
+                    <p class="rating-caption">
+                        Based on
+                        <strong id="totalReviewsSmall">
+                            24
+                        </strong>
+                        student reviews
+                    </p>
+
+                </div>
+
+
+                <!-- Rating Breakdown -->
+                <div class="rating-breakdown card">
+
+                    <div class="card-title-row">
+
+                        <div>
+
+                            <h2>
+                                Rating Breakdown
+                            </h2>
+
+                            <span>
+                                Student ratings
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="rating-bars">
+
+                        <div class="rating-bar-row">
+
+                            <span>5</span>
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <div class="bar">
+                                <div
+                                    class="bar-fill"
+                                    id="bar5">
+                                </div>
+                            </div>
+
+                            <strong id="count5">
+                                18
+                            </strong>
+
+                        </div>
+
+
+                        <div class="rating-bar-row">
+
+                            <span>4</span>
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <div class="bar">
+                                <div
+                                    class="bar-fill"
+                                    id="bar4">
+                                </div>
+                            </div>
+
+                            <strong id="count4">
+                                4
+                            </strong>
+
+                        </div>
+
+
+                        <div class="rating-bar-row">
+
+                            <span>3</span>
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <div class="bar">
+                                <div
+                                    class="bar-fill"
+                                    id="bar3">
+                                </div>
+                            </div>
+
+                            <strong id="count3">
+                                1
+                            </strong>
+
+                        </div>
+
+
+                        <div class="rating-bar-row">
+
+                            <span>2</span>
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <div class="bar">
+                                <div
+                                    class="bar-fill"
+                                    id="bar2">
+                                </div>
+                            </div>
+
+                            <strong id="count2">
+                                1
+                            </strong>
+
+                        </div>
+
+
+                        <div class="rating-bar-row">
+
+                            <span>1</span>
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <div class="bar">
+                                <div
+                                    class="bar-fill"
+                                    id="bar1">
+                                </div>
+                            </div>
+
+                            <strong id="count1">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Review Stats -->
+                <div class="review-mini-stats card">
+
+                    <div class="mini-stat-row">
+
+                        <div class="mini-stat-icon green">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Reviews
+                            </span>
+
+                            <strong id="totalReviews">
+                                24
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-stat-row">
+
+                        <div class="mini-stat-icon blue">
+                            <i class="fa-solid fa-reply"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Replied
+                            </span>
+
+                            <strong id="repliedReviews">
+                                20
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-stat-row">
+
+                        <div class="mini-stat-icon orange">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Need Reply
+                            </span>
+
+                            <strong id="pendingReplies">
+                                4
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-stat-row">
+
+                        <div class="mini-stat-icon purple">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Helpful Votes
+                            </span>
+
+                            <strong id="helpfulVotes">
+                                86
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTER BAR
+            ================================================== -->
+            <div class="review-toolbar card">
+
+                <div class="toolbar-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="reviewSearch"
+                        placeholder="Search reviews, students or properties..."
+                    >
+
+                </div>
+
+
+                <div class="toolbar-filters">
+
+                    <select id="ratingFilter">
+
+                        <option value="all">
+                            All Ratings
+                        </option>
+
+                        <option value="5">
+                            5 Stars
+                        </option>
+
+                        <option value="4">
+                            4 Stars
+                        </option>
+
+                        <option value="3">
+                            3 Stars
+                        </option>
+
+                        <option value="2">
+                            2 Stars
+                        </option>
+
+                        <option value="1">
+                            1 Star
+                        </option>
+
+                    </select>
+
+
+                    <select id="propertyFilter">
+
+                        <option value="all">
+                            All Properties
+                        </option>
+
+                    </select>
+
+
+                    <select id="sortFilter">
+
+                        <option value="latest">
+                            Latest First
+                        </option>
+
+                        <option value="oldest">
+                            Oldest First
+                        </option>
+
+                        <option value="highest">
+                            Highest Rating
+                        </option>
+
+                        <option value="lowest">
+                            Lowest Rating
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REVIEW HEADER
+            ================================================== -->
+            <div class="reviews-list-header">
+
+                <div>
+
+                    <h2>
+                        Student Reviews
+                    </h2>
+
+                    <span id="resultsCount">
+                        Showing 6 reviews
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="reply-pending-btn"
+                    id="showPendingBtn">
+
+                    <i class="fa-solid fa-reply"></i>
+
+                    Reviews Needing Reply
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 REVIEWS LIST
+            ================================================== -->
+            <div
+                class="reviews-list"
+                id="reviewsList">
+            </div>
+
+
+            <!-- =================================================
+                 LOAD MORE
+            ================================================== -->
+            <div class="load-more-wrapper">
+
+                <button
+                    class="load-more-btn"
+                    id="loadMoreBtn">
+
+                    Load More Reviews
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         REVIEW REPLY MODAL
+    ====================================================== -->
+    <div class="modal-overlay" id="replyModal">
+
+        <div class="reply-modal">
+
+            <button
+                class="modal-close"
+                id="closeReplyModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-review-preview">
+
+                <div
+                    class="modal-review-avatar"
+                    id="modalReviewAvatar">
+                    RD
+                </div>
+
+                <div>
+
+                    <strong id="modalReviewStudent">
+                        Rahul Das
+                    </strong>
+
+                    <div
+                        class="modal-review-stars"
+                        id="modalReviewStars">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="original-review">
+
+                <span>
+                    Student Review
+                </span>
+
+                <p id="modalReviewText">
+                    Very good PG and clean rooms.
+                </p>
+
+            </div>
+
+
+            <label for="replyInput">
+                Your Reply
+            </label>
+
+            <textarea
+                id="replyInput"
+                rows="5"
+                placeholder="Write a professional reply to the student...">
+            </textarea>
+
+
+            <div class="reply-actions">
+
+                <button
+                    class="cancel-modal-btn"
+                    id="cancelReplyBtn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    class="save-reply-btn"
+                    id="saveReplyBtn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Reply
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         REVIEW DETAILS MODAL
+    ====================================================== -->
+    <div class="modal-overlay" id="detailsModal">
+
+        <div class="details-modal">
+
+            <button
+                class="modal-close"
+                id="closeDetailsModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="details-header">
+
+                <div
+                    class="details-avatar"
+                    id="detailsAvatar">
+                    RD
+                </div>
+
+                <div>
+
+                    <h2 id="detailsStudentName">
+                        Rahul Das
+                    </h2>
+
+                    <span id="detailsDate">
+                        12 September 2026
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="details-rating"
+                id="detailsRating">
+            </div>
+
+
+            <div class="details-property">
+
+                <i class="fa-solid fa-building"></i>
+
+                <div>
+
+                    <span>
+                        Property
+                    </span>
+
+                    <strong id="detailsProperty">
+                        Green View PG
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="details-review-text">
+
+                <span>
+                    Review
+                </span>
+
+                <p id="detailsReviewText">
+                    Very good property.
+                </p>
+
+            </div>
+
+
+            <div
+                class="details-owner-reply"
+                id="detailsOwnerReply">
+            </div>
+
+
+            <button
+                class="modal-primary-btn"
+                id="detailsCloseBtn">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SEARCH MODAL
+    ====================================================== -->
+    <div class="modal-overlay" id="searchModal">
+
+        <div class="search-modal">
+
+            <button
+                class="modal-close"
+                id="closeSearchModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h2>
+                Search Reviews
+            </h2>
+
+            <div class="global-search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalReviewSearch"
+                    placeholder="Search students or properties..."
+                >
+
+            </div>
+
+            <div
+                class="global-search-results"
+                id="globalSearchResults">
+
+                <p>
+                    Start typing to search reviews.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATION MODAL
+    ====================================================== -->
+    <div
+        class="modal-overlay"
+        id="notificationModal">
+
+        <div class="notification-modal">
+
+            <button
+                class="modal-close"
+                id="closeNotificationModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="modal-title-row">
+
+                <div>
+
+                    <h2>
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent updates
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-bell"></i>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        New review received
+                    </strong>
+
+                    <span>
+                        Rahul gave your property 5 stars
+                    </span>
+
+                    <small>
+                        5 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-item-icon">
+                    <i class="fa-solid fa-message"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        New message
+                    </strong>
+
+                    <span>
+                        A student sent you a message
+                    </span>
+
+                    <small>
+                        1 hour ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <span id="toastMessage">
+                Action completed.
+            </span>
+
+        </div>
+
+        <button id="toastClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <script src="reviews.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+
+</html>

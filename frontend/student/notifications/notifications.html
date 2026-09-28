@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | RoomNest</title>
+
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MOBILE OVERLAY
+    ========================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <a href="../dashboard/dashboard.html" class="logo">
+
+                <span class="logo-icon">🏠</span>
+
+                <span>
+                    Room<span>Nest</span>
+                </span>
+
+            </a>
+
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- PROFILE -->
+        <div class="student-profile-mini">
+
+            <div class="mini-avatar">
+                SR
+            </div>
+
+            <div>
+                <strong>Subhadip Roy</strong>
+                <span>Student</span>
+            </div>
+
+        </div>
+
+
+        <!-- NAV -->
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="../dashboard/dashboard.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="../../public/search/search.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">🔍</span>
+                <span>Find PG / Room</span>
+            </a>
+
+
+            <p class="nav-title">
+                MY ACTIVITY
+            </p>
+
+
+            <a
+                href="../profile/profile.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">👤</span>
+                <span>My Profile</span>
+            </a>
+
+
+            <a
+                href="../saved/saved-pgs.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">❤️</span>
+                <span>Saved PGs</span>
+            </a>
+
+
+            <a
+                href="../inquiries/inquiries.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">📩</span>
+                <span>My Inquiries</span>
+            </a>
+
+
+            <a
+                href="../bookings/bookings.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">📅</span>
+                <span>My Bookings</span>
+            </a>
+
+
+            <a
+                href="../messages/messages.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">💬</span>
+                <span>Messages</span>
+                <span class="nav-badge">3</span>
+            </a>
+
+
+            <a
+                href="notifications.html"
+                class="nav-item active"
+            >
+                <span class="nav-icon">🔔</span>
+                <span>Notifications</span>
+
+                <span
+                    class="nav-badge"
+                    id="sidebarNotificationCount"
+                >
+                    4
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- BOTTOM -->
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">
+                    ?
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>We're here for you</p>
+                </div>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                >
+                    ☰
+                </button>
+
+                <div>
+
+                    <h1>
+                        Notifications
+                    </h1>
+
+                    <p>
+                        Stay updated with your RoomNest activity
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    class="top-icon-btn"
+                    title="Notifications"
+                >
+
+                    🔔
+
+                    <span
+                        class="notification-dot"
+                    ></span>
+
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong>
+                            Subhadip Roy
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                    <span class="profile-arrow">
+                        ⌄
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE
+        ========================== -->
+        <section class="notifications-page">
+
+
+            <!-- =========================
+                 PAGE HEADER
+            ========================== -->
+            <div class="page-header">
+
+                <div>
+
+                    <h2>
+                        Your Notifications
+                    </h2>
+
+                    <p>
+                        Important updates about your PG searches,
+                        inquiries and bookings.
+                    </p>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button
+                        class="mark-all-btn"
+                        id="markAllBtn"
+                    >
+                        ✓ Mark all as read
+                    </button>
+
+                    <button
+                        class="clear-btn"
+                        id="clearAllBtn"
+                    >
+                        Clear All
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 STATS
+            ========================== -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        🔔
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Notifications
+                        </span>
+
+                        <strong id="totalNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ✉️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Unread
+                        </span>
+
+                        <strong id="unreadNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Booking Updates
+                        </span>
+
+                        <strong id="bookingNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Messages
+                        </span>
+
+                        <strong id="messageNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FILTER BAR
+            ========================== -->
+            <div class="filter-card">
+
+                <div class="filter-tabs">
+
+                    <button
+                        class="filter-tab active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        class="filter-tab"
+                        data-filter="unread"
+                    >
+                        Unread
+                    </button>
+
+
+                    <button
+                        class="filter-tab"
+                        data-filter="booking"
+                    >
+                        Bookings
+                    </button>
+
+
+                    <button
+                        class="filter-tab"
+                        data-filter="inquiry"
+                    >
+                        Inquiries
+                    </button>
+
+
+                    <button
+                        class="filter-tab"
+                        data-filter="message"
+                    >
+                        Messages
+                    </button>
+
+
+                    <button
+                        class="filter-tab"
+                        data-filter="system"
+                    >
+                        System
+                    </button>
+
+                </div>
+
+
+                <div class="notification-search">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="notificationSearch"
+                        placeholder="Search notifications..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NOTIFICATION LIST
+            ========================== -->
+            <div
+                class="notification-list"
+                id="notificationList"
+            ></div>
+
+
+            <!-- =========================
+                 EMPTY STATE
+            ========================== -->
+            <div
+                class="empty-state"
+                id="emptyState"
+            >
+
+                <div class="empty-icon">
+                    🔔
+                </div>
+
+                <h3>
+                    No notifications found
+                </h3>
+
+                <p>
+                    You're all caught up!
+                </p>
+
+                <button
+                    id="resetNotificationsBtn"
+                >
+                    View All Notifications
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         NOTIFICATION DETAIL MODAL
+    ========================== -->
+    <div
+        class="modal-overlay"
+        id="notificationModal"
+    >
+
+        <div class="notification-modal">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+
+            <div
+                class="modal-icon"
+                id="modalIcon"
+            >
+                🔔
+            </div>
+
+
+            <span
+                class="modal-type"
+                id="modalType"
+            >
+                Notification
+            </span>
+
+
+            <h2 id="modalTitle">
+                Notification Title
+            </h2>
+
+
+            <p
+                class="modal-message"
+                id="modalMessage"
+            >
+                Notification message.
+            </p>
+
+
+            <div class="modal-time">
+                <span>🕒</span>
+                <span id="modalTime">
+                    Today
+                </span>
+            </div>
+
+
+            <button
+                class="modal-action"
+                id="modalAction"
+            >
+                Got it
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <span id="toastIcon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Action completed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="notifications.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

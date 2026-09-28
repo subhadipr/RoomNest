@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Messages | RoomNest Owner</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+<aside class="owner-sidebar" id="ownerSidebar">
+
+    <div class="sidebar-brand">
+        <div class="brand-icon">
+            <i class="fa-solid fa-house"></i>
+        </div>
+
+        <div class="brand-text">
+            <h2>RoomNest</h2>
+            <span>Owner Panel</span>
+        </div>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">MAIN MENU</p>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <i class="fa-solid fa-grid-2"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../properties/properties.html" class="nav-item">
+            <i class="fa-solid fa-building"></i>
+            <span>My Properties</span>
+        </a>
+
+        <a href="../add-property/add-property.html" class="nav-item">
+            <i class="fa-solid fa-plus-circle"></i>
+            <span>Add Property</span>
+        </a>
+
+        <a href="../inquiries/inquiries.html" class="nav-item">
+            <i class="fa-solid fa-question-circle"></i>
+            <span>Inquiries</span>
+        </a>
+
+        <a href="../bookings/bookings.html" class="nav-item">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Bookings</span>
+        </a>
+
+        <a href="messages.html" class="nav-item active">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+            <b class="nav-badge" id="sidebarUnreadCount">3</b>
+        </a>
+
+        <a href="../reviews/reviews.html" class="nav-item">
+            <i class="fa-solid fa-star"></i>
+            <span>Reviews</span>
+        </a>
+
+
+        <p class="nav-title second-title">ACCOUNT</p>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../settings/settings.html" class="nav-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="owner-mini-profile">
+
+            <div class="mini-avatar" id="sidebarAvatar">
+                SR
+            </div>
+
+            <div class="mini-info">
+                <strong id="sidebarOwnerName">Subhadip Roy</strong>
+                <span>Property Owner</span>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn" title="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+<main class="main-content">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+    <header class="topbar">
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <div class="topbar-left">
+            <h1>Messages</h1>
+            <p>Communicate with your students</p>
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button class="top-icon-btn" id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="top-icon-btn notification-btn" id="notificationBtn">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="top-profile" id="profileMenuBtn">
+
+                <div class="top-avatar" id="topAvatar">
+                    SR
+                </div>
+
+                <div class="top-profile-info">
+                    <strong id="topOwnerName">Subhadip Roy</strong>
+                    <span>Owner</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PAGE
+    ====================================================== -->
+    <section class="messages-page">
+
+
+        <!-- =================================================
+             MESSAGE STATS
+        ================================================== -->
+        <div class="message-stats">
+
+            <div class="message-stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <div>
+                    <span>Total Conversations</span>
+                    <strong id="totalConversations">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="message-stat-card">
+
+                <div class="stat-icon unread-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <span>Unread Messages</span>
+                    <strong id="unreadMessages">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="message-stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+
+                <div>
+                    <span>Active Students</span>
+                    <strong id="activeStudents">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="message-stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <span>Response Rate</span>
+                    <strong>96%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MESSAGES WRAPPER
+        ================================================== -->
+        <div class="messages-wrapper">
+
+
+            <!-- =============================================
+                 CONVERSATION SIDEBAR
+            ============================================== -->
+            <aside class="conversation-panel" id="conversationPanel">
+
+
+                <div class="conversation-header">
+
+                    <div>
+                        <h2>Conversations</h2>
+                        <span id="conversationCount">0 chats</span>
+                    </div>
+
+                    <button class="header-action-btn"
+                            id="markAllReadBtn"
+                            title="Mark all as read">
+
+                        <i class="fa-solid fa-check-double"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="conversation-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="conversationSearch"
+                        placeholder="Search conversations..."
+                    >
+
+                </div>
+
+
+                <!-- Filters -->
+                <div class="conversation-filters">
+
+                    <button class="conversation-filter active"
+                            data-filter="all">
+                        All
+                    </button>
+
+                    <button class="conversation-filter"
+                            data-filter="unread">
+                        Unread
+                        <span id="filterUnreadCount">3</span>
+                    </button>
+
+                    <button class="conversation-filter"
+                            data-filter="archived">
+                        Archived
+                    </button>
+
+                </div>
+
+
+                <!-- Conversation List -->
+                <div class="conversation-list" id="conversationList">
+                    <!-- JS -->
+                </div>
+
+            </aside>
+
+
+            <!-- =============================================
+                 CHAT AREA
+            ============================================== -->
+            <section class="chat-panel" id="chatPanel">
+
+
+                <!-- Empty Chat -->
+                <div class="chat-empty" id="chatEmpty">
+
+                    <div class="empty-chat-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <h2>Select a conversation</h2>
+
+                    <p>
+                        Choose a student from the conversation list
+                        to start chatting.
+                    </p>
+
+                </div>
+
+
+                <!-- Active Chat -->
+                <div class="active-chat" id="activeChat">
+
+
+                    <!-- =====================================
+                         CHAT HEADER
+                    ====================================== -->
+                    <div class="chat-header">
+
+
+                        <div class="chat-user-info">
+
+                            <button class="mobile-back-btn"
+                                    id="mobileBackBtn">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+
+
+                            <div class="chat-avatar" id="chatAvatar">
+                                SR
+                            </div>
+
+
+                            <div class="chat-user-text">
+
+                                <h3 id="chatStudentName">
+                                    Student Name
+                                </h3>
+
+                                <div class="online-status">
+
+                                    <span class="online-dot"></span>
+
+                                    <span id="chatStatus">
+                                        Online
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chat-actions">
+
+                            <button class="chat-action-btn"
+                                    id="studentInfoBtn"
+                                    title="Student information">
+
+                                <i class="fa-solid fa-circle-info"></i>
+
+                            </button>
+
+
+                            <button class="chat-action-btn"
+                                    id="markReadBtn"
+                                    title="Mark as read">
+
+                                <i class="fa-solid fa-check-double"></i>
+
+                            </button>
+
+
+                            <button class="chat-action-btn"
+                                    id="archiveBtn"
+                                    title="Archive">
+
+                                <i class="fa-solid fa-box-archive"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         PROPERTY CONTEXT
+                    ====================================== -->
+                    <div class="property-context">
+
+                        <div class="property-context-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <div class="property-context-info">
+
+                            <span>Enquiring about</span>
+
+                            <strong id="chatPropertyName">
+                                Green View PG
+                            </strong>
+
+                            <small id="chatBookingInfo">
+                                Room 204 • Booking #RN-BK-1001
+                            </small>
+
+                        </div>
+
+
+                        <button id="viewPropertyBtn">
+                            View Property
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         CHAT MESSAGES
+                    ====================================== -->
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- JS -->
+                    </div>
+
+
+                    <!-- =====================================
+                         TYPING
+                    ====================================== -->
+                    <div class="typing-indicator"
+                         id="typingIndicator">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <em>Student is typing...</em>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         MESSAGE COMPOSER
+                    ====================================== -->
+                    <div class="message-composer">
+
+
+                        <div class="composer-tools">
+
+                            <button class="composer-btn"
+                                    id="emojiBtn"
+                                    title="Emoji">
+
+                                <i class="fa-regular fa-face-smile"></i>
+
+                            </button>
+
+
+                            <button class="composer-btn"
+                                    id="attachmentBtn"
+                                    title="Attach file">
+
+                                <i class="fa-solid fa-paperclip"></i>
+
+                            </button>
+
+                            <input
+                                type="file"
+                                id="fileInput"
+                                hidden
+                            >
+
+                        </div>
+
+
+                        <textarea
+                            id="messageInput"
+                            placeholder="Write a message..."
+                            rows="1"
+                        ></textarea>
+
+
+                        <button class="send-message-btn"
+                                id="sendMessageBtn">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+
+                        <!-- Emoji Picker -->
+                        <div class="emoji-picker" id="emojiPicker">
+
+                            <button>😀</button>
+                            <button>😊</button>
+                            <button>🙂</button>
+                            <button>👍</button>
+                            <button>❤️</button>
+                            <button>😂</button>
+                            <button>🎉</button>
+                            <button>🏠</button>
+                            <button>📍</button>
+                            <button>💰</button>
+                            <button>📞</button>
+                            <button>✅</button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     STUDENT INFORMATION MODAL
+========================================================= -->
+<div class="modal-overlay" id="studentInfoModal">
+
+    <div class="student-info-modal">
+
+        <button class="modal-close" id="closeStudentInfo">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="student-modal-header">
+
+            <div class="large-student-avatar" id="modalStudentAvatar">
+                RD
+            </div>
+
+            <h2 id="modalStudentName">Rahul Das</h2>
+
+            <span class="student-active">
+                <i class="fa-solid fa-circle"></i>
+                Active Student
+            </span>
+
+        </div>
+
+
+        <div class="student-details">
+
+            <div class="detail-row">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <span>Email</span>
+                    <strong id="modalStudentEmail">
+                        rahul@example.com
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+                    <span>Phone</span>
+                    <strong id="modalStudentPhone">
+                        +91 98765 43210
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <span>College</span>
+                    <strong id="modalStudentCollege">
+                        MAKAUT
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <div>
+                    <span>Property</span>
+                    <strong id="modalStudentProperty">
+                        Green View PG
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+
+                <div>
+                    <span>Booking ID</span>
+                    <strong id="modalStudentBooking">
+                        RN-BK-1001
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="modal-primary-btn" id="modalCloseBtn">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
+<div class="modal-overlay" id="searchModal">
+
+    <div class="search-modal">
+
+        <button class="modal-close" id="closeSearchModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Search Messages</h2>
+
+        <div class="global-search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="globalMessageSearch"
+                placeholder="Search students or properties..."
+            >
+
+        </div>
+
+        <div class="global-search-results"
+             id="globalSearchResults">
+
+            <p>Start typing to search conversations.</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION MODAL
+========================================================= -->
+<div class="modal-overlay" id="notificationModal">
+
+    <div class="notification-modal">
+
+        <button class="modal-close" id="closeNotificationModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-title-row">
+
+            <div>
+                <h2>Notifications</h2>
+                <p>Recent updates</p>
+            </div>
+
+            <i class="fa-solid fa-bell"></i>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-item-icon">
+                <i class="fa-solid fa-message"></i>
+            </div>
+
+            <div>
+                <strong>New message received</strong>
+                <span>Rahul sent you a message</span>
+                <small>5 min ago</small>
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-item-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+                <strong>Booking update</strong>
+                <span>New booking request received</span>
+                <small>1 hour ago</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+<div class="toast" id="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div class="toast-content">
+
+        <strong id="toastTitle">Success</strong>
+
+        <span id="toastMessage">
+            Action completed successfully.
+        </span>
+
+    </div>
+
+    <button id="toastClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+
+<script src="messages.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

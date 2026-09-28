@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inquiries | RoomNest Admin</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/components.css">
+    <link rel="stylesheet" href="../../shared/css/responsive.css">
+
+    <link rel="stylesheet" href="inquiries.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="inquiry-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="inquiry-sidebar" id="inquirySidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div>
+                <h2>RoomNest</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../users/users.html" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <a href="../owners/owners.html" class="nav-item">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Owners</span>
+            </a>
+
+            <a href="../properties/properties.html" class="nav-item">
+                <i class="fa-solid fa-building"></i>
+                <span>Properties</span>
+            </a>
+
+            <a href="../pending/pending-properties.html" class="nav-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Pending Properties</span>
+                <span class="nav-badge">6</span>
+            </a>
+
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="inquiries.html" class="nav-item active">
+                <i class="fa-solid fa-message"></i>
+                <span>Inquiries</span>
+                <span class="nav-badge inquiry-badge">8</span>
+            </a>
+
+            <a href="../reviews/reviews.html" class="nav-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+            </a>
+
+            <a href="../reports/reports.html" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="../settings/settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-mini-profile">
+
+                <div class="admin-avatar">
+                    SR
+                </div>
+
+                <div class="admin-info">
+                    <strong>Super Admin</strong>
+                    <small>Administrator</small>
+                </div>
+
+            </div>
+
+
+            <button class="logout-btn" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="inquiry-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="inquiry-topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+
+                    <h1>Inquiries</h1>
+
+                    <p>
+                        Manage student property inquiries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="top-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search..."
+                    >
+
+                </div>
+
+
+                <button class="top-icon-btn" id="notificationBtn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong>Subhadip Roy</strong>
+
+                        <span>Super Admin</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="inquiry-content">
+
+
+            <!-- STATS -->
+
+            <div class="inquiry-stats">
+
+                <div class="inquiry-stat-card">
+
+                    <div class="stat-icon total">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Total Inquiries</span>
+
+                        <h2 id="totalInquiries">0</h2>
+
+                        <small>All inquiries</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-stat-card">
+
+                    <div class="stat-icon new">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+
+                        <span>New</span>
+
+                        <h2 id="newInquiries">0</h2>
+
+                        <small>Needs attention</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-stat-card">
+
+                    <div class="stat-icon progress">
+                        <i class="fa-solid fa-spinner"></i>
+                    </div>
+
+                    <div>
+
+                        <span>In Progress</span>
+
+                        <h2 id="progressInquiries">0</h2>
+
+                        <small>Being handled</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="inquiry-stat-card">
+
+                    <div class="stat-icon resolved">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Resolved</span>
+
+                        <h2 id="resolvedInquiries">0</h2>
+
+                        <small>Completed inquiries</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+
+            <div class="inquiry-toolbar">
+
+                <div class="toolbar-left">
+
+                    <div class="inquiry-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="inquirySearch"
+                            placeholder="Search student, property or message..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="statusFilter"
+                        class="inquiry-filter"
+                    >
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="new">
+                            New
+                        </option>
+
+                        <option value="progress">
+                            In Progress
+                        </option>
+
+                        <option value="resolved">
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="reset-btn"
+                    id="resetFilters"
+                >
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+
+            <!-- TABLE CARD -->
+
+            <div class="inquiry-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Inquiry Management</h3>
+
+                        <p>
+                            Review messages sent by students regarding properties.
+                        </p>
+
+                    </div>
+
+
+                    <span class="result-label">
+
+                        <strong id="resultCount">0</strong>
+                        inquiries
+
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="inquiry-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>STUDENT</th>
+
+                                <th>PROPERTY</th>
+
+                                <th>OWNER</th>
+
+                                <th>MESSAGE</th>
+
+                                <th>DATE</th>
+
+                                <th>STATUS</th>
+
+                                <th>ACTIONS</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="inquiryTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-inbox"></i>
+
+                    </div>
+
+                    <h3>
+                        No Inquiries Found
+                    </h3>
+
+                    <p>
+                        No inquiries match your current filters.
+                    </p>
+
+                </div>
+
+
+                <div class="pagination-wrapper">
+
+                    <span id="paginationInfo">
+                        Showing 0 inquiries
+                    </span>
+
+                    <div class="pagination">
+
+                        <button class="page-btn disabled">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="page-btn active">
+                            1
+                        </button>
+
+                        <button class="page-btn">
+                            2
+                        </button>
+
+                        <button class="page-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= VIEW MODAL ================= -->
+
+<div class="modal-overlay" id="viewOverlay">
+
+    <div class="view-modal">
+
+        <button class="modal-close" id="viewClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="viewContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= REPLY MODAL ================= -->
+
+<div class="modal-overlay" id="replyOverlay">
+
+    <div class="reply-modal">
+
+        <button class="modal-close" id="replyClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="reply-icon">
+
+            <i class="fa-solid fa-reply"></i>
+
+        </div>
+
+
+        <h2>Reply to Inquiry</h2>
+
+        <p id="replyStudent">
+            Send a response to the student.
+        </p>
+
+
+        <textarea
+            id="replyMessage"
+            placeholder="Write your reply..."
+        ></textarea>
+
+
+        <div class="reply-actions">
+
+            <button
+                class="cancel-btn"
+                id="cancelReply"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="send-reply-btn"
+                id="sendReply"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Reply
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="inquiry-toast" id="inquiryToast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Action completed.
+    </span>
+
+</div>
+
+
+<script src="inquiries.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!-- =========================================================
+     ROOMNEST — SHARED MODAL
+     File: modal.html
+========================================================= -->
+
+<div
+    class="rn-modal-overlay"
+    id="rnModalOverlay"
+    aria-hidden="true"
+>
+
+    <div
+        class="rn-modal rn-modal-md"
+        id="rnModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="rnModalTitle"
+    >
+
+        <!-- ================================================
+             HEADER
+        ================================================= -->
+
+        <div class="rn-modal-header">
+
+            <div class="rn-modal-title-wrap">
+
+                <h2
+                    class="rn-modal-title"
+                    id="rnModalTitle"
+                >
+                    RoomNest
+                </h2>
+
+                <p
+                    class="rn-modal-subtitle"
+                    id="rnModalSubtitle"
+                >
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="rn-modal-close"
+                id="rnModalClose"
+                aria-label="Close modal"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- ================================================
+             BODY
+        ================================================= -->
+
+        <div
+            class="rn-modal-body"
+            id="rnModalBody"
+        >
+
+            <!-- Dynamic content will appear here -->
+
+        </div>
+
+
+        <!-- ================================================
+             FOOTER
+        ================================================= -->
+
+        <div
+            class="rn-modal-footer"
+            id="rnModalFooter"
+        >
+
+            <button
+                type="button"
+                class="rn-modal-btn rn-modal-btn-secondary"
+                id="rnModalCancel"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="rn-modal-btn rn-modal-btn-primary"
+                id="rnModalConfirm"
+            >
+                Confirm
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CONFIRM MODAL TEMPLATE
+========================================================= -->
+
+<template id="rnConfirmModalTemplate">
+
+    <div class="rn-confirm-modal">
+
+        <div
+            class="rn-confirm-icon"
+            id="rnConfirmIcon"
+        >
+            ⚠️
+        </div>
+
+        <h3
+            class="rn-confirm-title"
+            id="rnConfirmTitle"
+        >
+            Are you sure?
+        </h3>
+
+        <p
+            class="rn-confirm-message"
+            id="rnConfirmMessage"
+        >
+            This action cannot be undone.
+        </p>
+
+    </div>
+
+</template>
+
+
+<!-- =========================================================
+     LOADING MODAL TEMPLATE
+========================================================= -->
+
+<template id="rnLoadingModalTemplate">
+
+    <div class="rn-modal-loading">
+
+        <div class="rn-modal-spinner"></div>
+
+        <span id="rnLoadingMessage">
+            Please wait...
+        </span>
+
+    </div>
+
+</template>

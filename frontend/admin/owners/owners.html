@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="RoomNest Admin - Manage Property Owners">
+
+    <title>RoomNest — Owners</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet"
+          href="../../shared/css/reset.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/variables.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/components.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/responsive.css">
+
+    <!-- Owners CSS -->
+    <link rel="stylesheet"
+          href="owners.css">
+
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">      
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="admin-sidebar"
+           id="adminSidebar">
+
+
+        <!-- Logo -->
+
+        <div class="sidebar-logo">
+
+            <a href="#"
+               class="logo-link">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+
+                <span class="logo-text">
+                    RoomNest
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- Admin Profile -->
+
+        <div class="sidebar-admin">
+
+            <div class="admin-avatar">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <div class="admin-info">
+
+                <h4>
+                    Administrator
+                </h4>
+
+                <span>
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Online
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="admin-navigation">
+
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a href="../dashboard/dashboard.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span class="nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="../users/users.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span class="nav-text">
+                    Users
+                </span>
+
+            </a>
+
+
+            <a href="../owners/owners.html"
+               class="admin-nav-link active">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </span>
+
+                <span class="nav-text">
+                    Owners
+                </span>
+
+            </a>
+
+
+            <a href="../properties/properties.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-building"></i>
+                </span>
+
+                <span class="nav-text">
+                    Properties
+                </span>
+
+            </a>
+
+
+            <a href="../pending/pending-properties.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+
+                <span class="nav-text">
+                    Pending Properties
+                </span>
+
+                <span class="nav-badge">
+                    8
+                </span>
+
+            </a>
+
+
+            <a href="../inquiries/inquiries.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <span class="nav-text">
+                    Inquiries
+                </span>
+
+                <span class="nav-badge">
+                    12
+                </span>
+
+            </a>
+
+
+            <a href="../reviews/reviews.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span class="nav-text">
+                    Reviews
+                </span>
+
+            </a>
+
+
+            <p class="nav-title nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a href="../reports/reports.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </span>
+
+                <span class="nav-text">
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a href="../settings/settings.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span class="nav-text">
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+
+            <a href="../../public/home/index.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </span>
+
+                <span class="nav-text">
+                    View Website
+                </span>
+
+            </a>
+
+
+            <button type="button"
+                    class="admin-nav-link logout-btn"
+                    id="logoutBtn">
+
+                <span class="nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span class="nav-text">
+                    Logout
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="admin-topbar">
+
+
+            <div class="topbar-left">
+
+
+                <button type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="page-heading">
+
+                    <h1>
+                        Owners
+                    </h1>
+
+                    <p>
+                        Manage RoomNest property owners
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <div class="admin-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="topSearch"
+                        placeholder="Search owners...">
+
+                </div>
+
+
+                <button type="button"
+                        class="topbar-action"
+                        id="notificationBtn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                    </div>
+
+
+                    <div class="topbar-user">
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Admin
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =====================================================
+             CONTENT
+        ====================================================== -->
+
+        <section class="owners-content">
+
+
+            <!-- Page Header -->
+
+            <div class="owners-page-header">
+
+
+                <div>
+
+                    <h2>
+                        Property Owners
+                    </h2>
+
+                    <p>
+                        Manage owners who list properties on RoomNest.
+                    </p>
+
+                </div>
+
+
+                <button type="button"
+                        class="add-owner-btn"
+                        id="addOwnerBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Owner
+
+                </button>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 OWNER STATISTICS
+            ================================================== -->
+
+            <div class="owner-stats">
+
+
+                <div class="owner-stat-card">
+
+                    <div class="owner-stat-icon total">
+
+                        <i class="fa-solid fa-user-tie"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Owners
+                        </span>
+
+                        <strong>
+                            348
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="owner-stat-card">
+
+                    <div class="owner-stat-icon active">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Active Owners
+                        </span>
+
+                        <strong>
+                            316
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="owner-stat-card">
+
+                    <div class="owner-stat-icon pending">
+
+                        <i class="fa-solid fa-user-clock"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Verification
+                        </span>
+
+                        <strong>
+                            21
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="owner-stat-card">
+
+                    <div class="owner-stat-icon suspended">
+
+                        <i class="fa-solid fa-user-slash"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Suspended
+                        </span>
+
+                        <strong>
+                            11
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 OWNER TABLE CARD
+            ================================================== -->
+
+            <div class="owners-card">
+
+
+                <!-- Toolbar -->
+
+                <div class="owners-toolbar">
+
+
+                    <div class="owner-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="ownerSearch"
+                            placeholder="Search by name, email or phone...">
+
+                    </div>
+
+
+                    <div class="owner-filters">
+
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="suspended">
+                                Suspended
+                            </option>
+
+                        </select>
+
+
+                        <select id="verificationFilter">
+
+                            <option value="all">
+                                Verification
+                            </option>
+
+                            <option value="verified">
+                                Verified
+                            </option>
+
+                            <option value="unverified">
+                                Unverified
+                            </option>
+
+                        </select>
+
+
+                        <button type="button"
+                                class="filter-btn"
+                                id="filterBtn">
+
+                            <i class="fa-solid fa-filter"></i>
+
+                            Filter
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     TABLE
+                ================================================== -->
+
+                <div class="owners-table-wrapper">
+
+
+                    <table class="owners-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+
+                                    <input
+                                        type="checkbox"
+                                        id="selectAll">
+
+                                </th>
+
+                                <th>
+                                    Owner
+                                </th>
+
+                                <th>
+                                    Contact
+                                </th>
+
+                                <th>
+                                    Properties
+                                </th>
+
+                                <th>
+                                    Joined
+                                </th>
+
+                                <th>
+                                    Verification
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="ownersTableBody">
+
+
+                            <!-- OWNER 1 -->
+
+                            <tr
+                                data-name="Rahul Sharma"
+                                data-email="rahul.sharma@example.com"
+                                data-phone="9876543210"
+                                data-status="active"
+                                data-verification="verified">
+
+
+                                <td>
+
+                                    <input
+                                        type="checkbox"
+                                        class="owner-checkbox">
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="owner-cell">
+
+                                        <div class="owner-avatar avatar-one">
+                                            RS
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Rahul Sharma
+                                            </strong>
+
+                                            <span>
+                                                Property Owner
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="contact-cell">
+
+                                        <strong>
+                                            rahul.sharma@example.com
+                                        </strong>
+
+                                        <span>
+                                            +91 98765 43210
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="property-count">
+                                        12
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    02 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="verification verified">
+
+                                        <i class="fa-solid fa-circle-check"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="owner-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button
+                                            class="action-btn view"
+                                            title="View">
+
+                                            <i class="fa-regular fa-eye"></i>
+
+                                        </button>
+
+
+                                        <button
+                                            class="action-btn edit"
+                                            title="Edit">
+
+                                            <i class="fa-regular fa-pen-to-square"></i>
+
+                                        </button>
+
+
+                                        <button
+                                            class="action-btn suspend"
+                                            title="Suspend">
+
+                                            <i class="fa-solid fa-user-slash"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+
+                            </tr>
+
+
+                            <!-- OWNER 2 -->
+
+                            <tr
+                                data-name="Priya Sen"
+                                data-email="priya.sen@example.com"
+                                data-phone="9123456789"
+                                data-status="active"
+                                data-verification="verified">
+
+
+                                <td>
+
+                                    <input
+                                        type="checkbox"
+                                        class="owner-checkbox">
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="owner-cell">
+
+                                        <div class="owner-avatar avatar-two">
+                                            PS
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Priya Sen
+                                            </strong>
+
+                                            <span>
+                                                Property Owner
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="contact-cell">
+
+                                        <strong>
+                                            priya.sen@example.com
+                                        </strong>
+
+                                        <span>
+                                            +91 91234 56789
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="property-count">
+                                        8
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    28 Aug, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="verification verified">
+
+                                        <i class="fa-solid fa-circle-check"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="owner-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn suspend">
+                                            <i class="fa-solid fa-user-slash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+
+                            </tr>
+
+
+                            <!-- OWNER 3 -->
+
+                            <tr
+                                data-name="Amit Kumar"
+                                data-email="amit.kumar@example.com"
+                                data-phone="9000011223"
+                                data-status="pending"
+                                data-verification="unverified">
+
+
+                                <td>
+
+                                    <input
+                                        type="checkbox"
+                                        class="owner-checkbox">
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="owner-cell">
+
+                                        <div class="owner-avatar avatar-three">
+                                            AK
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Amit Kumar
+                                            </strong>
+
+                                            <span>
+                                                Property Owner
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="contact-cell">
+
+                                        <strong>
+                                            amit.kumar@example.com
+                                        </strong>
+
+                                        <span>
+                                            +91 90000 11223
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="property-count">
+                                        3
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    25 Aug, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="verification unverified">
+
+                                        <i class="fa-solid fa-clock"></i>
+
+                                        Unverified
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="owner-status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn verify">
+                                            <i class="fa-solid fa-user-check"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+
+                            </tr>
+
+
+                            <!-- OWNER 4 -->
+
+                            <tr
+                                data-name="Sourav Das"
+                                data-email="sourav.das@example.com"
+                                data-phone="9333344556"
+                                data-status="suspended"
+                                data-verification="verified">
+
+
+                                <td>
+
+                                    <input
+                                        type="checkbox"
+                                        class="owner-checkbox">
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="owner-cell">
+
+                                        <div class="owner-avatar avatar-four">
+                                            SD
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Sourav Das
+                                            </strong>
+
+                                            <span>
+                                                Property Owner
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="contact-cell">
+
+                                        <strong>
+                                            sourav.das@example.com
+                                        </strong>
+
+                                        <span>
+                                            +91 93333 44556
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="property-count">
+                                        5
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    20 Aug, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="verification verified">
+
+                                        <i class="fa-solid fa-circle-check"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="owner-status suspended">
+                                        Suspended
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn activate">
+                                            <i class="fa-solid fa-user-check"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+
+                            </tr>
+
+
+                            <!-- OWNER 5 -->
+
+                            <tr
+                                data-name="Neha Roy"
+                                data-email="neha.roy@example.com"
+                                data-phone="9777788990"
+                                data-status="active"
+                                data-verification="verified">
+
+
+                                <td>
+
+                                    <input
+                                        type="checkbox"
+                                        class="owner-checkbox">
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="owner-cell">
+
+                                        <div class="owner-avatar avatar-five">
+                                            NR
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Neha Roy
+                                            </strong>
+
+                                            <span>
+                                                Property Owner
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="contact-cell">
+
+                                        <strong>
+                                            neha.roy@example.com
+                                        </strong>
+
+                                        <span>
+                                            +91 97777 88990
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="property-count">
+                                        6
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+                                    17 Aug, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="verification verified">
+
+                                        <i class="fa-solid fa-circle-check"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="owner-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn suspend">
+                                            <i class="fa-solid fa-user-slash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+                <!-- TABLE FOOTER -->
+
+                <div class="owners-table-footer">
+
+
+                    <span id="selectedCount">
+                        0 selected
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <button
+                            class="page-btn disabled">
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <button
+                            class="page-btn active">
+                            1
+                        </button>
+
+
+                        <button
+                            class="page-btn">
+                            2
+                        </button>
+
+
+                        <button
+                            class="page-btn">
+                            3
+                        </button>
+
+
+                        <span>
+                            ...
+                        </span>
+
+
+                        <button
+                            class="page-btn">
+                            9
+                        </button>
+
+
+                        <button
+                            class="page-btn">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="admin-footer">
+
+            <p>
+
+                © <span id="currentYear"></span>
+                RoomNest. All rights reserved.
+
+            </p>
+
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <a href="#">
+                    Help
+                </a>
+
+            </div>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- Overlay -->
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay">
+</div>
+
+
+<script src="owners.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

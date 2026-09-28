@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Properties | RoomNest Admin</title>
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/components.css">
+    <link rel="stylesheet" href="../../shared/css/responsive.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="./properties.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div>
+                <h2>RoomNest</h2>
+                <span>Admin Panel</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../users/users.html" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <a href="../owners/owners.html" class="nav-item">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Owners</span>
+            </a>
+
+            <a href="properties.html" class="nav-item active">
+                <i class="fa-solid fa-building"></i>
+                <span>Properties</span>
+            </a>
+
+            <a href="../pending/pending-properties.html" class="nav-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Pending Properties</span>
+                <span class="nav-badge">12</span>
+            </a>
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <i class="fa-solid fa-message"></i>
+                <span>Inquiries</span>
+            </a>
+
+            <a href="../reviews/reviews.html" class="nav-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+            </a>
+
+            <a href="../reports/reports.html" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <p class="nav-title">SYSTEM</p>
+
+            <a href="../settings/settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-mini-profile">
+
+                <div class="admin-avatar">
+                    <span>SR</span>
+                </div>
+
+                <div class="admin-info">
+                    <strong>Super Admin</strong>
+                    <small>Administrator</small>
+                </div>
+
+                <button class="sidebar-more" id="sidebarMore">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         OVERLAY
+    ========================================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+    <main class="admin-main">
+
+        <!-- TOPBAR -->
+        <header class="admin-topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h1>Properties</h1>
+                    <p>Manage all properties listed on RoomNest.</p>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="top-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search..."
+                    >
+                </div>
+
+                <button class="top-icon-btn notification-btn" id="notificationBtn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-profile-info">
+                        <strong>Subhadip Roy</strong>
+                        <span>Super Admin</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="properties-content">
+
+
+            <!-- =====================================
+                 STATS
+            ====================================== -->
+            <div class="property-stats">
+
+                <div class="property-stat-card">
+
+                    <div class="stat-icon total">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <div class="stat-data">
+                        <span>Total Properties</span>
+                        <h2 id="totalProperties">0</h2>
+                        <small>
+                            <i class="fa-solid fa-arrow-up"></i>
+                            8.4% this month
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="property-stat-card">
+
+                    <div class="stat-icon active">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="stat-data">
+                        <span>Active Properties</span>
+                        <h2 id="activeProperties">0</h2>
+                        <small>
+                            Currently listed
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="property-stat-card">
+
+                    <div class="stat-icon pending">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div class="stat-data">
+                        <span>Pending Approval</span>
+                        <h2 id="pendingProperties">0</h2>
+                        <small>
+                            Needs review
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="property-stat-card">
+
+                    <div class="stat-icon inactive">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+
+                    <div class="stat-data">
+                        <span>Inactive</span>
+                        <h2 id="inactiveProperties">0</h2>
+                        <small>
+                            Not currently listed
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 TOOLBAR
+            ====================================== -->
+            <div class="properties-toolbar">
+
+                <div class="toolbar-left">
+
+                    <div class="property-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="propertySearch"
+                            placeholder="Search property, owner or location..."
+                        >
+
+                    </div>
+
+
+                    <select id="statusFilter" class="property-filter">
+
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="inactive">Inactive</option>
+
+                    </select>
+
+
+                    <select id="typeFilter" class="property-filter">
+
+                        <option value="all">All Types</option>
+                        <option value="PG">PG</option>
+                        <option value="Hostel">Hostel</option>
+                        <option value="Flat">Flat</option>
+                        <option value="Room">Room</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="toolbar-right">
+
+                    <button class="secondary-btn" id="resetFilters">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset
+                    </button>
+
+                    <button class="primary-btn" id="addPropertyBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Property
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 TABLE CARD
+            ====================================== -->
+            <div class="properties-card">
+
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Property Listings</h3>
+                        <p>
+                            Manage properties available on RoomNest.
+                        </p>
+                    </div>
+
+
+                    <div class="selected-info" id="selectedInfo">
+                        0 selected
+                    </div>
+
+                </div>
+
+
+                <!-- BULK ACTION -->
+                <div class="bulk-bar" id="bulkBar">
+
+                    <span>
+                        <strong id="selectedCount">0</strong>
+                        properties selected
+                    </span>
+
+                    <div>
+
+                        <button id="bulkApprove">
+                            <i class="fa-solid fa-check"></i>
+                            Approve
+                        </button>
+
+                        <button id="bulkDeactivate">
+                            <i class="fa-solid fa-ban"></i>
+                            Deactivate
+                        </button>
+
+                        <button id="bulkDelete" class="danger">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="properties-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="checkbox-column">
+                                    <input type="checkbox" id="selectAll">
+                                </th>
+
+                                <th>PROPERTY</th>
+
+                                <th>OWNER</th>
+
+                                <th>LOCATION</th>
+
+                                <th>ROOMS</th>
+
+                                <th>MONTHLY RENT</th>
+
+                                <th>TYPE</th>
+
+                                <th>STATUS</th>
+
+                                <th>ACTIONS</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="propertiesTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-building-circle-xmark"></i>
+                    </div>
+
+                    <h3>No Properties Found</h3>
+
+                    <p>
+                        No property matches your current search or filters.
+                    </p>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="pagination-wrapper">
+
+                    <div class="pagination-info" id="paginationInfo">
+                        Showing 1–8 of 8 properties
+                    </div>
+
+                    <div class="pagination" id="pagination">
+
+                        <button class="page-btn disabled">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="page-btn active">
+                            1
+                        </button>
+
+                        <button class="page-btn">
+                            2
+                        </button>
+
+                        <button class="page-btn">
+                            3
+                        </button>
+
+                        <button class="page-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================
+     PROPERTY VIEW MODAL
+========================================== -->
+<div class="modal-overlay" id="propertyModal">
+
+    <div class="property-modal">
+
+        <button class="modal-close" id="modalClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+<div class="property-toast" id="propertyToast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Action completed.</span>
+</div>
+
+
+<script src="properties.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

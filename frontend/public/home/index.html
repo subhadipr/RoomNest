@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="RoomNest - Find PGs, rooms and student-friendly accommodation."
+    >
+
+    <title>RoomNest | Find a place that feels like home</title>
+
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Shared CSS -->
+<link rel="stylesheet" href="../../shared/navbar/navbar.css">
+<link rel="stylesheet" href="../../shared/footer/footer.css">
+<link rel="stylesheet" href="../../shared/toast/toast.css">
+<link rel="stylesheet" href="../../shared/loader/loader.css">
+<link rel="stylesheet" href="../../shared/css/variables.css">
+<link rel="stylesheet" href="../../shared/css/reset.css">
+<link rel="stylesheet" href="../../shared/css/components.css">
+<link rel="stylesheet" href="../../shared/css/responsive.css">
+<link rel="stylesheet" href="../../shared/css/cursor-common.css">
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🏠</span>
+            <span>RoomNest</span>
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="index.html" class="nav-link active">
+                Home
+            </a>
+
+            <a href="../search/search.html" class="nav-link">
+                Find PG
+            </a>
+
+            <a href="../property/property-details.html" class="nav-link">
+                List Property
+            </a>
+
+            <a href="../about/about.html" class="nav-link">
+                About
+            </a>
+
+            <a href="../contact/contact.html" class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <a href="../auth/login.html" class="login-button">
+                Login
+            </a>
+
+            <a href="../auth/register.html" class="signup-button">
+                Sign Up
+            </a>
+
+        </div>
+
+        <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="index.html" class="mobile-link active">
+            Home
+        </a>
+
+        <a href="../search/search.html" class="mobile-link">
+            Find PG
+        </a>
+
+        <a href="../property/property-details.html" class="mobile-link">
+            List Property
+        </a>
+
+        <a href="../about/about.html" class="mobile-link">
+            About
+        </a>
+
+        <a href="../contact/contact.html" class="mobile-link">
+            Contact
+        </a>
+
+        <div class="mobile-actions">
+
+            <a href="../auth/login.html">
+                Login
+            </a>
+
+            <a href="../auth/register.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="hero-small-title">
+                STUDENT ACCOMMODATION MADE SIMPLE
+            </span>
+
+            <h1>
+                Find a place
+                <br>
+                that feels like
+                <span>home</span>
+            </h1>
+
+            <p>
+                Search PGs, Rooms and Flats across your city.
+                Safe. Affordable. Student Friendly.
+            </p>
+
+
+            <!-- SEARCH BOX -->
+
+            <form class="search-box" id="homeSearch">
+
+                <div class="search-item">
+
+                    <span class="search-item-icon">
+                        📍
+                    </span>
+
+                    <div class="search-item-content">
+
+                        <label>
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="searchLocation"
+                            placeholder="Enter city or area"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-separator"></div>
+
+
+                <div class="search-item compact">
+
+                    <span class="search-item-icon">
+                        🏠
+                    </span>
+
+                    <div class="search-item-content">
+
+                        <label>
+                            Property
+                        </label>
+
+                        <select id="searchType">
+
+                            <option value="">
+                                PG
+                            </option>
+
+                            <option value="pg">
+                                PG
+                            </option>
+
+                            <option value="room">
+                                Room
+                            </option>
+
+                            <option value="flat">
+                                Flat
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-separator"></div>
+
+
+                <div class="search-item compact">
+
+                    <span class="search-item-icon">
+                        ₹
+                    </span>
+
+                    <div class="search-item-content">
+
+                        <label>
+                            Budget
+                        </label>
+
+                        <select id="searchBudget">
+
+                            <option value="">
+                                Budget
+                            </option>
+
+                            <option value="5000">
+                                ₹5,000
+                            </option>
+
+                            <option value="8000">
+                                ₹8,000
+                            </option>
+
+                            <option value="12000">
+                                ₹12,000
+                            </option>
+
+                            <option value="15000">
+                                ₹15,000
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-separator"></div>
+
+
+                <div class="search-item compact">
+
+                    <span class="search-item-icon">
+                        👥
+                    </span>
+
+                    <div class="search-item-content">
+
+                        <label>
+                            For
+                        </label>
+
+                        <select id="searchFor">
+
+                            <option value="anyone">
+                                Anyone
+                            </option>
+
+                            <option value="boys">
+                                Boys
+                            </option>
+
+                            <option value="girls">
+                                Girls
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="search-button"
+                >
+                    Search
+                </button>
+
+            </form>
+
+
+            <!-- TRUST ITEMS -->
+
+            <div class="trust-row">
+
+                <div class="trust-item">
+                    <span>✓</span>
+                    Verified Listings
+                </div>
+
+                <div class="trust-item">
+                    <span>◉</span>
+                    No Brokerage
+                </div>
+
+                <div class="trust-item">
+                    <span>★</span>
+                    Student Friendly
+                </div>
+
+                <div class="trust-item">
+                    <span>◌</span>
+                    Easy Contact
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=85"
+                alt="Comfortable student room"
+            >
+
+            <div class="hero-image-overlay"></div>
+
+            <div class="hero-image-text">
+
+                <span>
+                    YOUR NEXT HOME
+                </span>
+
+                <strong>
+                    Comfortable.
+                    <br>
+                    Affordable.
+                    <br>
+                    Yours.
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     POPULAR LOCATIONS
+========================================================= -->
+
+<section class="section locations-section">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">
+                    EXPLORE
+                </span>
+
+                <h2>
+                    Popular Locations
+                </h2>
+            </div>
+
+            <a
+                href="../search/search.html"
+                class="view-all"
+            >
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="locations-grid">
+
+            <a
+                href="../search/search.html?location=Kolkata"
+                class="location-card"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=600&q=80"
+                    alt="Kolkata"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-info">
+
+                    <strong>
+                        Kolkata
+                    </strong>
+
+                    <span>
+                        1,245+ listings
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="../search/search.html?location=Siliguri"
+                class="location-card"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=600&q=80"
+                    alt="Siliguri"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-info">
+
+                    <strong>
+                        Siliguri
+                    </strong>
+
+                    <span>
+                        320+ listings
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="../search/search.html?location=Durgapur"
+                class="location-card"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
+                    alt="Durgapur"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-info">
+
+                    <strong>
+                        Durgapur
+                    </strong>
+
+                    <span>
+                        280+ listings
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="../search/search.html?location=Delhi"
+                class="location-card"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=600&q=80"
+                    alt="Delhi"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-info">
+
+                    <strong>
+                        Delhi
+                    </strong>
+
+                    <span>
+                        2,100+ listings
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="../search/search.html?location=Bangalore"
+                class="location-card"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=600&q=80"
+                    alt="Bangalore"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-info">
+
+                    <strong>
+                        Bangalore
+                    </strong>
+
+                    <span>
+                        1,860+ listings
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="../search/search.html?location=Hyderabad"
+                class="location-card"
+            >
+
+                <img
+                    src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?auto=format&fit=crop&w=600&q=80"
+                    alt="Hyderabad"
+                >
+
+                <div class="location-overlay"></div>
+
+                <div class="location-info">
+
+                    <strong>
+                        Hyderabad
+                    </strong>
+
+                    <span>
+                        1,540+ listings
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURED PG
+========================================================= -->
+
+<section class="section featured-section">
+
+    <div class="section-container">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">
+                    HANDPICKED FOR YOU
+                </span>
+
+                <h2>
+                    Featured PGs
+                </h2>
+            </div>
+
+            <a
+                href="../search/search.html"
+                class="view-all"
+            >
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="property-grid">
+
+
+            <!-- PROPERTY 1 -->
+
+            <article class="property-card">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=700&q=85"
+                        alt="Green View PG"
+                    >
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        data-property="green-view-pg"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-title-row">
+
+                        <div>
+
+                            <span class="property-type">
+                                PG
+                            </span>
+
+                            <h3>
+                                Green View PG
+                            </h3>
+
+                        </div>
+
+                        <span class="verified-small">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <p class="property-location">
+                        Salt Lake, Kolkata
+                    </p>
+
+
+                    <div class="property-meta">
+
+                        <span>
+                            🛏 2 Sharing
+                        </span>
+
+                        <span>
+                            🚿 Bath
+                        </span>
+
+                        <span>
+                            📶 WiFi
+                        </span>
+
+                        <span>
+                            ❄ AC
+                        </span>
+
+                    </div>
+
+
+                    <div class="property-bottom">
+
+                        <div class="property-price">
+
+                            <strong>
+                                ₹7,500
+                            </strong>
+
+                            <span>
+                                / month
+                            </span>
+
+                        </div>
+
+                        <div class="property-rating">
+                            ⭐ 4.5
+                            <small>
+                                (120)
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="../property/property.html?id=1"
+                        class="property-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 2 -->
+
+            <article class="property-card">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=85"
+                        alt="Comfort Stay"
+                    >
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        data-property="comfort-stay"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-title-row">
+
+                        <div>
+
+                            <span class="property-type">
+                                PG
+                            </span>
+
+                            <h3>
+                                Comfort Stay
+                            </h3>
+
+                        </div>
+
+                        <span class="verified-small">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <p class="property-location">
+                        New Town, Kolkata
+                    </p>
+
+
+                    <div class="property-meta">
+
+                        <span>
+                            🛏 2 Sharing
+                        </span>
+
+                        <span>
+                            🍴 Food
+                        </span>
+
+                        <span>
+                            📶 WiFi
+                        </span>
+
+                        <span>
+                            ❄ AC
+                        </span>
+
+                    </div>
+
+
+                    <div class="property-bottom">
+
+                        <div class="property-price">
+
+                            <strong>
+                                ₹6,000
+                            </strong>
+
+                            <span>
+                                / month
+                            </span>
+
+                        </div>
+
+                        <div class="property-rating">
+                            ⭐ 4.2
+                            <small>
+                                (98)
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="../property/property.html?id=2"
+                        class="property-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 3 -->
+
+            <article class="property-card">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=700&q=85"
+                        alt="Students Home"
+                    >
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        data-property="students-home"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-title-row">
+
+                        <div>
+
+                            <span class="property-type">
+                                ROOM
+                            </span>
+
+                            <h3>
+                                Students Home
+                            </h3>
+
+                        </div>
+
+                        <span class="verified-small">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <p class="property-location">
+                        Garia, Kolkata
+                    </p>
+
+
+                    <div class="property-meta">
+
+                        <span>
+                            🛏 Single
+                        </span>
+
+                        <span>
+                            🚿 Bath
+                        </span>
+
+                        <span>
+                            📶 WiFi
+                        </span>
+
+                        <span>
+                            🅿 Parking
+                        </span>
+
+                    </div>
+
+
+                    <div class="property-bottom">
+
+                        <div class="property-price">
+
+                            <strong>
+                                ₹9,000
+                            </strong>
+
+                            <span>
+                                / month
+                            </span>
+
+                        </div>
+
+                        <div class="property-rating">
+                            ⭐ 4.7
+                            <small>
+                                (85)
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="../property/property.html?id=3"
+                        class="property-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 4 -->
+
+            <article class="property-card">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=700&q=85"
+                        alt="Shree PG"
+                    >
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        data-property="shree-pg"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-title-row">
+
+                        <div>
+
+                            <span class="property-type">
+                                PG
+                            </span>
+
+                            <h3>
+                                Shree PG
+                            </h3>
+
+                        </div>
+
+                        <span class="verified-small">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <p class="property-location">
+                        Ballygunge, Kolkata
+                    </p>
+
+
+                    <div class="property-meta">
+
+                        <span>
+                            🛏 2 Sharing
+                        </span>
+
+                        <span>
+                            🍴 Food
+                        </span>
+
+                        <span>
+                            📶 WiFi
+                        </span>
+
+                        <span>
+                            ❄ AC
+                        </span>
+
+                    </div>
+
+
+                    <div class="property-bottom">
+
+                        <div class="property-price">
+
+                            <strong>
+                                ₹8,000
+                            </strong>
+
+                            <span>
+                                / month
+                            </span>
+
+                        </div>
+
+                        <div class="property-rating">
+                            ⭐ 4.3
+                            <small>
+                                (76)
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="../property/property.html?id=4"
+                        class="property-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY ROOMNEST
+========================================================= -->
+
+<section class="why-section">
+
+    <div class="section-container">
+
+        <div class="why-content">
+
+            <div>
+
+                <span class="section-label">
+                    WHY ROOMNEST
+                </span>
+
+                <h2>
+                    A better way to
+                    <span>find your stay.</span>
+                </h2>
+
+                <p>
+                    We bring students and property owners together
+                    with simple search, transparent information and
+                    easy communication.
+                </p>
+
+            </div>
+
+
+            <div class="why-features">
+
+                <div class="why-feature">
+
+                    <span class="why-icon">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Verified Listings
+                        </strong>
+
+                        <p>
+                            Better property information
+                            for easier decisions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="why-feature">
+
+                    <span class="why-icon">
+                        ₹
+                    </span>
+
+                    <div>
+                        <strong>
+                            No Brokerage
+                        </strong>
+
+                        <p>
+                            Discover properties without
+                            unnecessary middlemen.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="why-feature">
+
+                    <span class="why-icon">
+                        💬
+                    </span>
+
+                    <div>
+                        <strong>
+                            Easy Contact
+                        </strong>
+
+                        <p>
+                            Connect with property owners
+                            directly.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="why-feature">
+
+                    <span class="why-icon">
+                        🎓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Student Friendly
+                        </strong>
+
+                        <p>
+                            Search based on your budget
+                            and accommodation needs.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="section-container">
+
+        <div class="cta-card">
+
+            <div class="cta-text">
+
+                <span>
+                    READY TO FIND YOUR PLACE?
+                </span>
+
+                <h2>
+                    Your next home
+                    <br>
+                    is waiting for you.
+                </h2>
+
+                <p>
+                    Search thousands of PGs and rooms
+                    and find the one that fits you.
+                </p>
+
+                <a
+                    href="../search/search.html"
+                    class="cta-button"
+                >
+                    Explore Properties →
+                </a>
+
+            </div>
+
+
+            <div class="cta-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=85"
+                    alt="Modern accommodation"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="section-container footer-top">
+
+        <div class="footer-about">
+
+            <a href="index.html" class="logo footer-logo">
+
+                <span class="logo-icon">
+                    🏠
+                </span>
+
+                <span>
+                    RoomNest
+                </span>
+
+            </a>
+
+            <p>
+                Find comfortable, affordable and
+                student-friendly accommodation.
+            </p>
+
+            <div class="socials">
+
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    in
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="../search/search.html">
+                Find PG
+            </a>
+
+            <a href="../about/about.html">
+                About
+            </a>
+
+            <a href="../contact/contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Students
+            </h3>
+
+            <a href="../auth/register.html">
+                Create Account
+            </a>
+
+            <a href="../auth/login.html">
+                Login
+            </a>
+
+            <a href="../search/search.html">
+                Browse PGs
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Owners
+            </h3>
+
+            <a href="../property/property-details.html">
+                List Property
+            </a>
+
+            <a href="../auth/login.html">
+                Owner Login
+            </a>
+
+            <a href="../contact/contact.html">
+                Support
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="section-container footer-bottom-inner">
+
+            <p>
+                © 2026 RoomNest. All rights reserved.
+            </p>
+
+            <div>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="toast" id="toast">
+
+    <span class="toast-icon">
+        ✓
+    </span>
+
+    <div>
+        <strong id="toastTitle">
+            Saved
+        </strong>
+
+        <p id="toastMessage">
+            Property saved successfully.
+        </p>
+    </div>
+
+</div>
+
+
+<script src="home.js"></script>
+
+
+<!-- Shared JS -->
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/navbar/navbar.js"></script>
+<script src="../../shared/footer/footer.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Login to your RoomNest account and manage your PG and room searches."
+    >
+
+    <title>Login | RoomNest</title>
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SMALL HOME BUTTON
+========================================================= -->
+
+<a
+    href="../home/index.html"
+    class="small-home-button"
+>
+    🏠 Home
+</a>
+
+
+<!-- =========================================================
+     PAGE
+========================================================= -->
+
+<div class="auth-page">
+
+
+    <!-- =====================================================
+         LEFT SIDE
+    ====================================================== -->
+
+    <section class="auth-visual">
+
+        <div class="visual-overlay"></div>
+
+        <div class="visual-content">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../home/index.html"
+                class="logo"
+            >
+                <span class="logo-icon">🏠</span>
+                <span>RoomNest</span>
+            </a>
+
+
+            <!-- MAIN VISUAL CONTENT -->
+
+            <div class="visual-main">
+
+                <span class="visual-badge">
+                    🏠 FIND YOUR PERFECT STAY
+                </span>
+
+
+                <h1>
+                    Your next
+                    <span>home</span>
+                    is waiting.
+                </h1>
+
+
+                <p>
+                    Login to RoomNest and discover comfortable,
+                    affordable and student-friendly PGs and rooms.
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="visual-features">
+
+
+                    <div class="visual-feature">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Verified Properties
+                            </strong>
+
+                            <small>
+                                Browse trusted listings
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="visual-feature">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Direct Owner Contact
+                            </strong>
+
+                            <small>
+                                Connect without unnecessary hassle
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="visual-feature">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Save Your Favorites
+                            </strong>
+
+                            <small>
+                                Keep your preferred properties handy
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="visual-bottom">
+                © 2026 RoomNest
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RIGHT SIDE
+    ====================================================== -->
+
+    <section class="auth-form-section">
+
+
+        <div class="auth-form-container">
+
+
+            <!-- =================================================
+                 MOBILE LOGO
+            ================================================== -->
+
+            <a
+                href="../home/index.html"
+                class="mobile-logo"
+            >
+                <span class="logo-icon">🏠</span>
+                <span>RoomNest</span>
+            </a>
+
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <div class="form-header">
+
+                <span class="welcome-label">
+                    WELCOME BACK
+                </span>
+
+
+                <h2>
+                    Login to your account
+                </h2>
+
+
+                <p>
+                    Enter your details to continue to RoomNest.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                class="login-form"
+                novalidate
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+
+                    <small
+                        class="error-message"
+                        id="emailError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+
+                    <div class="label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                        >
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+
+                    <small
+                        class="error-message"
+                        id="passwordError"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- REMEMBER ME -->
+
+                <div class="form-options">
+
+                    <label class="remember-label">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-submit"
+                    id="loginSubmit"
+                >
+
+                    <span id="loginButtonText">
+                        Login
+                    </span>
+
+
+                    <span
+                        class="button-loader"
+                        id="buttonLoader"
+                    ></span>
+
+                </button>
+
+
+
+                <!-- DIVIDER -->
+
+                <div class="divider">
+
+                    <span></span>
+
+                    <strong>
+                        OR
+                    </strong>
+
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- GOOGLE LOGIN -->
+
+                <div class="social-login">
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        id="googleLogin"
+                    >
+
+                        <span class="google-icon">
+                            G
+                        </span>
+
+                        Continue with Google
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+
+            <!-- =================================================
+                 REGISTER
+            ================================================== -->
+
+            <div class="register-text">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 OWNER
+            ================================================== -->
+
+            <div class="owner-login-box">
+
+
+                <div class="owner-icon">
+                    🏢
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Are you a property owner?
+                    </strong>
+
+
+                    <p>
+                        List your PG or room on RoomNest.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="register.html?role=owner"
+                >
+                    Join
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FOOTER LINKS
+            ================================================== -->
+
+            <div class="auth-footer">
+
+                <a href="../home/index.html">
+                    Home
+                </a>
+
+                <span>•</span>
+
+                <a href="../about/about.html">
+                    About
+                </a>
+
+                <span>•</span>
+
+                <a href="../contact/contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     FORGOT PASSWORD MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="forgotModal"
+>
+
+
+    <div class="forgot-modal">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-icon">
+            🔐
+        </div>
+
+
+        <h2>
+            Forgot your password?
+        </h2>
+
+
+        <p>
+            Enter your registered email address and
+            we'll help you reset your password.
+        </p>
+
+
+        <form id="forgotForm">
+
+
+            <div class="form-group">
+
+                <label for="resetEmail">
+                    Email Address
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ✉
+                    </span>
+
+
+                    <input
+                        type="email"
+                        id="resetEmail"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="reset-button"
+            >
+                Send Reset Link
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+
+    <span class="toast-icon">
+        ✓
+    </span>
+
+
+    <div>
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+
+        <p id="toastMessage">
+            Done successfully.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="login.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+
+</body>
+
+</html>

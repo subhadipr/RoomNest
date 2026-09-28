@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Property | RoomNest</title>
+
+    <link rel="stylesheet" href="add-property.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="ownerSidebar">
+
+    <div class="sidebar-header">
+
+        <a href="../dashboard/dashboard.html" class="logo">
+            <span class="logo-icon">🏠</span>
+            <span>Room<span>Nest</span></span>
+        </a>
+
+        <button class="sidebar-close" id="sidebarClose">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="owner-mini-profile">
+
+        <div class="owner-avatar" id="sidebarAvatar">
+            AR
+        </div>
+
+        <div class="owner-mini-info">
+
+            <strong id="sidebarOwnerName">
+                Arindam Roy
+            </strong>
+
+            <span>
+                Property Owner
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-section-title">
+            MAIN MENU
+        </div>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../properties/properties.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>My Properties</span>
+            <span class="nav-count">4</span>
+        </a>
+
+        <a href="add-property.html" class="nav-item active">
+            <span class="nav-icon">➕</span>
+            <span>Add Property</span>
+        </a>
+
+        <a href="../inquiries/inquiries.html" class="nav-item">
+            <span class="nav-icon">💬</span>
+            <span>Inquiries</span>
+            <span class="nav-count green">6</span>
+        </a>
+
+        <a href="../bookings/bookings.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Bookings</span>
+            <span class="nav-count blue">3</span>
+        </a>
+
+        <a href="../messages/messages.html" class="nav-item">
+            <span class="nav-icon">✉️</span>
+            <span>Messages</span>
+            <span class="nav-count red">2</span>
+        </a>
+
+
+        <div class="nav-section-title">
+            MANAGEMENT
+        </div>
+
+        <a href="../reviews/reviews.html" class="nav-item">
+            <span class="nav-icon">⭐</span>
+            <span>Reviews</span>
+        </a>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../settings/settings.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+
+            <div class="help-icon">
+                💡
+            </div>
+
+            <strong>
+                Need Help?
+            </strong>
+
+            <p>
+                Our support team is ready to help you.
+            </p>
+
+            <button id="supportBtn">
+                Contact Support
+            </button>
+
+        </div>
+
+
+        <button class="logout-btn" id="logoutBtn">
+            <span>🚪</span>
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </button>
+
+            <div>
+
+                <h1>
+                    Add Property
+                </h1>
+
+                <p>
+                    Create a new PG, room or flat listing.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button class="topbar-btn" id="searchBtn">
+                🔍
+            </button>
+
+            <button class="topbar-btn notification-btn" id="notificationBtn">
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+
+            <div class="topbar-profile" id="profileMenuBtn">
+
+                <div class="top-avatar" id="topAvatar">
+                    AR
+                </div>
+
+                <div class="top-profile-info">
+
+                    <strong id="topOwnerName">
+                        Arindam Roy
+                    </strong>
+
+                    <span>
+                        Owner
+                    </span>
+
+                </div>
+
+                <span class="profile-arrow">
+                    ▾
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE -->
+
+    <section class="page-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PROPERTY LISTING
+                </span>
+
+                <h2>
+                    Add New Property
+                </h2>
+
+                <p>
+                    Provide accurate property details to help students find your listing.
+                </p>
+
+            </div>
+
+
+            <a
+                href="../properties/properties.html"
+                class="back-btn"
+            >
+                ← Back to Properties
+            </a>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-card">
+
+            <div class="progress-step active">
+
+                <span>
+                    1
+                </span>
+
+                <div>
+                    <strong>
+                        Basic Information
+                    </strong>
+
+                    <small>
+                        Property details
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span>
+                    2
+                </span>
+
+                <div>
+                    <strong>
+                        Location & Amenities
+                    </strong>
+
+                    <small>
+                        Facilities and location
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span>
+                    3
+                </span>
+
+                <div>
+                    <strong>
+                        Photos & Pricing
+                    </strong>
+
+                    <small>
+                        Complete listing
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="propertyForm" novalidate>
+
+
+            <!-- =================================================
+                 BASIC INFORMATION
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        🏠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Basic Property Information
+                        </h3>
+
+                        <p>
+                            Tell students about your property.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group full">
+
+                        <label for="propertyTitle">
+                            Property Name
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="propertyTitle"
+                            placeholder="e.g. Green View Premium PG"
+                            required
+                        >
+
+                        <small class="field-error" id="titleError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="propertyType">
+                            Property Type
+                            <span>*</span>
+                        </label>
+
+                        <select id="propertyType" required>
+
+                            <option value="">
+                                Select property type
+                            </option>
+
+                            <option value="PG">
+                                PG
+                            </option>
+
+                            <option value="Room">
+                                Room
+                            </option>
+
+                            <option value="Flat">
+                                Flat
+                            </option>
+
+                        </select>
+
+                        <small class="field-error" id="typeError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="gender">
+                            Suitable For
+                            <span>*</span>
+                        </label>
+
+                        <select id="gender" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="Boys">
+                                Boys
+                            </option>
+
+                            <option value="Girls">
+                                Girls
+                            </option>
+
+                            <option value="Both">
+                                Boys & Girls
+                            </option>
+
+                            <option value="Family">
+                                Family
+                            </option>
+
+                        </select>
+
+                        <small class="field-error" id="genderError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="totalRooms">
+                            Total Rooms
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="totalRooms"
+                            min="1"
+                            placeholder="e.g. 12"
+                            required
+                        >
+
+                        <small class="field-error" id="roomsError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="availableRooms">
+                            Available Rooms
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="availableRooms"
+                            min="0"
+                            placeholder="e.g. 4"
+                            required
+                        >
+
+                        <small class="field-error" id="availableError"></small>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="description">
+                            Property Description
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="description"
+                            rows="5"
+                            maxlength="500"
+                            placeholder="Describe your property, rooms, environment and nearby facilities..."
+                            required
+                        ></textarea>
+
+                        <div class="textarea-footer">
+
+                            <small class="field-error" id="descriptionError"></small>
+
+                            <span id="characterCount">
+                                0 / 500
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOCATION
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Location Details
+                        </h3>
+
+                        <p>
+                            Help students understand where your property is located.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="e.g. Kolkata"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="area">
+                            Area / Locality
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="area"
+                            placeholder="e.g. Salt Lake"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="address">
+                            Full Address
+                            <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="address"
+                            rows="3"
+                            placeholder="House/Building, Street, Locality..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            PIN Code
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            maxlength="6"
+                            placeholder="e.g. 700091"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="landmark">
+                            Nearby Landmark
+                        </label>
+
+                        <input
+                            type="text"
+                            id="landmark"
+                            placeholder="e.g. Near Metro Station"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 AMENITIES
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Amenities & Facilities
+                        </h3>
+
+                        <p>
+                            Select facilities available at your property.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="amenities-grid">
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Wi-Fi"
+                        >
+
+                        <span class="amenity-box">
+                            📶
+                        </span>
+
+                        <span>
+                            Wi-Fi
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Food"
+                        >
+
+                        <span class="amenity-box">
+                            🍛
+                        </span>
+
+                        <span>
+                            Food
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="AC"
+                        >
+
+                        <span class="amenity-box">
+                            ❄️
+                        </span>
+
+                        <span>
+                            AC
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Parking"
+                        >
+
+                        <span class="amenity-box">
+                            🅿️
+                        </span>
+
+                        <span>
+                            Parking
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Laundry"
+                        >
+
+                        <span class="amenity-box">
+                            🧺
+                        </span>
+
+                        <span>
+                            Laundry
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Security"
+                        >
+
+                        <span class="amenity-box">
+                            🔐
+                        </span>
+
+                        <span>
+                            Security
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="CCTV"
+                        >
+
+                        <span class="amenity-box">
+                            📹
+                        </span>
+
+                        <span>
+                            CCTV
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Power Backup"
+                        >
+
+                        <span class="amenity-box">
+                            🔋
+                        </span>
+
+                        <span>
+                            Power Backup
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Attached Bathroom"
+                        >
+
+                        <span class="amenity-box">
+                            🚿
+                        </span>
+
+                        <span>
+                            Attached Bathroom
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Housekeeping"
+                        >
+
+                        <span class="amenity-box">
+                            🧹
+                        </span>
+
+                        <span>
+                            Housekeeping
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Common Kitchen"
+                        >
+
+                        <span class="amenity-box">
+                            🍳
+                        </span>
+
+                        <span>
+                            Common Kitchen
+                        </span>
+
+                    </label>
+
+
+                    <label class="amenity-item">
+
+                        <input
+                            type="checkbox"
+                            name="amenities"
+                            value="Study Area"
+                        >
+
+                        <span class="amenity-box">
+                            📚
+                        </span>
+
+                        <span>
+                            Study Area
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRICING
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Pricing & Booking
+                        </h3>
+
+                        <p>
+                            Set your monthly rent and booking details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="rent">
+                            Monthly Rent
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>
+                                ₹
+                            </span>
+
+                            <input
+                                type="number"
+                                id="rent"
+                                min="0"
+                                placeholder="e.g. 8500"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="securityDeposit">
+                            Security Deposit
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>
+                                ₹
+                            </span>
+
+                            <input
+                                type="number"
+                                id="securityDeposit"
+                                min="0"
+                                placeholder="e.g. 5000"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="maintenance">
+                            Maintenance / Month
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>
+                                ₹
+                            </span>
+
+                            <input
+                                type="number"
+                                id="maintenance"
+                                min="0"
+                                placeholder="e.g. 500"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bookingAmount">
+                            Booking Amount
+                        </label>
+
+                        <div class="input-prefix">
+
+                            <span>
+                                ₹
+                            </span>
+
+                            <input
+                                type="number"
+                                id="bookingAmount"
+                                min="0"
+                                placeholder="e.g. 1000"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="availabilityDate">
+                            Available From
+                        </label>
+
+                        <input
+                            type="date"
+                            id="availabilityDate"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="noticePeriod">
+                            Notice Period
+                        </label>
+
+                        <select id="noticePeriod">
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="15 Days">
+                                15 Days
+                            </option>
+
+                            <option value="30 Days">
+                                30 Days
+                            </option>
+
+                            <option value="60 Days">
+                                60 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PHOTOS
+            ================================================= -->
+
+            <div class="form-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        📸
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Property Photos
+                        </h3>
+
+                        <p>
+                            Upload clear photos of your property.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="upload-area" id="uploadArea">
+
+                    <input
+                        type="file"
+                        id="propertyImages"
+                        accept="image/*"
+                        multiple
+                        hidden
+                    >
+
+                    <div class="upload-icon">
+                        📷
+                    </div>
+
+                    <h4>
+                        Upload Property Photos
+                    </h4>
+
+                    <p>
+                        Drag & drop images here or click to browse
+                    </p>
+
+                    <span>
+                        JPG, PNG or WEBP · Maximum 5 images
+                    </span>
+
+                    <button
+                        type="button"
+                        class="upload-btn"
+                        id="chooseImagesBtn"
+                    >
+                        Choose Images
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="image-preview-grid"
+                    id="imagePreviewGrid"
+                ></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REVIEW
+            ================================================= -->
+
+            <div class="form-card review-card">
+
+                <div class="review-check">
+
+                    <input
+                        type="checkbox"
+                        id="termsCheck"
+                    >
+
+                    <label for="termsCheck">
+
+                        I confirm that the information provided above is accurate
+                        and I agree to the RoomNest property listing terms.
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FORM ACTIONS
+            ================================================= -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="saveDraftBtn"
+                >
+                    💾 Save as Draft
+                </button>
+
+                <button
+                    type="reset"
+                    class="cancel-btn"
+                    id="resetBtn"
+                >
+                    Reset
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Submit Property
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+        <!-- FOOTER -->
+
+        <footer class="page-footer">
+
+            <span>
+                © 2026 RoomNest. All rights reserved.
+            </span>
+
+            <div>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Help</a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     SEARCH MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="searchModal">
+
+    <div class="modal search-modal">
+
+        <button
+            class="modal-close"
+            data-close="searchModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-heading">
+
+            <span>🔍</span>
+
+            <div>
+
+                <h3>
+                    Search RoomNest
+                </h3>
+
+                <p>
+                    Quickly find something in your dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+        <input
+            type="text"
+            id="globalSearch"
+            class="modal-input"
+            placeholder="Search..."
+        >
+
+        <div
+            class="search-results"
+            id="globalSearchResults"
+        >
+            Start typing to search.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NOTIFICATION MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="notificationModal">
+
+    <div class="modal notification-modal">
+
+        <button
+            class="modal-close"
+            data-close="notificationModal"
+        >
+            ×
+        </button>
+
+        <div class="modal-heading">
+
+            <span>
+                🔔
+            </span>
+
+            <div>
+
+                <h3>
+                    Notifications
+                </h3>
+
+                <p>
+                    Recent RoomNest updates.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-list">
+
+            <div class="notification-item unread">
+
+                <span>✓</span>
+
+                <div>
+
+                    <strong>
+                        Property verification
+                    </strong>
+
+                    <p>
+                        Your property verification is ready.
+                    </p>
+
+                    <small>
+                        2 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <span>💬</span>
+
+                <div>
+
+                    <strong>
+                        New inquiry
+                    </strong>
+
+                    <p>
+                        A student sent an inquiry.
+                    </p>
+
+                    <small>
+                        5 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <span>📅</span>
+
+                <div>
+
+                    <strong>
+                        Booking request
+                    </strong>
+
+                    <p>
+                        You received a new booking request.
+                    </p>
+
+                    <small>
+                        Yesterday
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="successModal">
+
+    <div class="modal success-modal">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h3>
+            Property Submitted
+        </h3>
+
+        <p>
+            Your property has been submitted successfully
+            and is now waiting for admin approval.
+        </p>
+
+        <button
+            class="primary-btn"
+            id="successOkBtn"
+        >
+            Go to My Properties
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast" id="toast">
+
+    <div class="toast-icon" id="toastIcon">
+        ✓
+    </div>
+
+    <div class="toast-content">
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Operation completed.
+        </p>
+
+    </div>
+
+    <button id="toastClose">
+        ×
+    </button>
+
+</div>
+
+
+<script src="add-property.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

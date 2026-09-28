@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Messages | RoomNest</title>
+
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MOBILE OVERLAY
+    ========================== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <a href="../dashboard/dashboard.html" class="logo">
+                <span class="logo-icon">🏠</span>
+                <span>Room<span>Nest</span></span>
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="student-profile-mini">
+
+            <div class="mini-avatar">
+                SR
+            </div>
+
+            <div>
+                <strong>Subhadip Roy</strong>
+                <span>Student</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="../../public/search/search.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span>Find PG / Room</span>
+            </a>
+
+
+            <p class="nav-title">MY ACTIVITY</p>
+
+            <a href="../profile/profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="../saved/saved-pgs.html" class="nav-item">
+                <span class="nav-icon">❤️</span>
+                <span>Saved PGs</span>
+            </a>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <span class="nav-icon">📩</span>
+                <span>My Inquiries</span>
+            </a>
+
+            <a href="../bookings/bookings.html" class="nav-item">
+                <span class="nav-icon">📅</span>
+                <span>My Bookings</span>
+            </a>
+
+            <a href="messages.html" class="nav-item active">
+                <span class="nav-icon">💬</span>
+                <span>Messages</span>
+                <span class="nav-badge" id="sidebarUnread">3</span>
+            </a>
+
+            <a href="../notifications/notifications.html" class="nav-item">
+                <span class="nav-icon">🔔</span>
+                <span>Notifications</span>
+                <span class="nav-badge">2</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+
+                <div class="help-icon">?</div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>We're here for you</p>
+                </div>
+
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+
+        <!-- =========================
+             TOPBAR
+        ========================== -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+                <div>
+                    <h1>Messages</h1>
+                    <p>Chat with PG & room owners</p>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="top-icon-btn" title="Notifications">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        SR
+                    </div>
+
+                    <div class="top-profile-info">
+                        <strong>Subhadip Roy</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <span class="profile-arrow">⌄</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE
+        ========================== -->
+        <section class="messages-page">
+
+
+            <!-- =========================
+                 STATS
+            ========================== -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        💬
+                    </div>
+
+                    <div>
+                        <span>Total Conversations</span>
+                        <strong id="totalConversations">6</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        🟢
+                    </div>
+
+                    <div>
+                        <span>Active Conversations</span>
+                        <strong id="activeConversations">4</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ✉️
+                    </div>
+
+                    <div>
+                        <span>Unread Messages</span>
+                        <strong id="unreadMessages">3</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        🗂️
+                    </div>
+
+                    <div>
+                        <span>Archived</span>
+                        <strong id="archivedConversations">2</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CHAT APPLICATION
+            ========================== -->
+            <div class="chat-wrapper">
+
+
+                <!-- =========================
+                     CONVERSATION SIDEBAR
+                ========================== -->
+                <aside class="conversation-panel" id="conversationPanel">
+
+                    <div class="conversation-header">
+
+                        <div>
+                            <h2>Conversations</h2>
+                            <p>Your recent chats</p>
+                        </div>
+
+                        <button class="new-message-btn" id="newMessageBtn" title="New Message">
+                            ＋
+                        </button>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+                    <div class="conversation-search">
+
+                        <span>🔍</span>
+
+                        <input
+                            type="text"
+                            id="conversationSearch"
+                            placeholder="Search conversations..."
+                        >
+
+                    </div>
+
+
+                    <!-- FILTER -->
+                    <div class="conversation-tabs">
+
+                        <button class="conversation-tab active" data-filter="all">
+                            All
+                        </button>
+
+                        <button class="conversation-tab" data-filter="unread">
+                            Unread
+                        </button>
+
+                        <button class="conversation-tab" data-filter="archived">
+                            Archived
+                        </button>
+
+                    </div>
+
+
+                    <!-- CONVERSATION LIST -->
+                    <div class="conversation-list" id="conversationList"></div>
+
+
+                    <!-- EMPTY -->
+                    <div class="conversation-empty" id="conversationEmpty">
+
+                        <div>💬</div>
+
+                        <h3>No conversations</h3>
+
+                        <p>
+                            Your conversations will appear here.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- =========================
+                     CHAT AREA
+                ========================== -->
+                <section class="chat-area" id="chatArea">
+
+
+                    <!-- CHAT HEADER -->
+                    <div class="chat-header">
+
+                        <button class="back-conversations" id="backConversations">
+                            ←
+                        </button>
+
+
+                        <div class="chat-owner-avatar" id="chatOwnerAvatar">
+                            GV
+                        </div>
+
+
+                        <div class="chat-owner-info">
+
+                            <h3 id="chatOwnerName">
+                                Green View Premium PG
+                            </h3>
+
+                            <div class="chat-status">
+
+                                <span class="online-dot"></span>
+
+                                <span id="chatOwnerStatus">
+                                    Online
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chat-header-actions">
+
+                            <button
+                                class="chat-action-btn"
+                                id="ownerInfoBtn"
+                                title="Owner Information"
+                            >
+                                ⓘ
+                            </button>
+
+                            <button
+                                class="chat-action-btn"
+                                id="archiveBtn"
+                                title="Archive"
+                            >
+                                🗂️
+                            </button>
+
+                            <button
+                                class="chat-action-btn"
+                                id="chatMoreBtn"
+                                title="More"
+                            >
+                                ⋮
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROPERTY REFERENCE -->
+                    <div class="property-reference">
+
+                        <div class="property-reference-icon">
+                            🏠
+                        </div>
+
+                        <div class="property-reference-info">
+
+                            <strong id="chatPropertyName">
+                                Green View Premium PG
+                            </strong>
+
+                            <span id="chatPropertyLocation">
+                                Suri, Birbhum
+                            </span>
+
+                        </div>
+
+                        <button id="viewPropertyBtn">
+                            View Property
+                        </button>
+
+                    </div>
+
+
+                    <!-- MESSAGES -->
+                    <div class="messages-container" id="messagesContainer">
+
+                        <!-- Messages inserted by JS -->
+
+                    </div>
+
+
+                    <!-- TYPING -->
+                    <div class="typing-indicator" id="typingIndicator">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <small>Owner is typing...</small>
+
+                    </div>
+
+
+                    <!-- MESSAGE INPUT -->
+                    <div class="message-composer">
+
+                        <div class="composer-tools">
+
+                            <button
+                                class="composer-btn"
+                                id="emojiBtn"
+                                title="Emoji"
+                            >
+                                😊
+                            </button>
+
+                            <button
+                                class="composer-btn"
+                                id="attachmentBtn"
+                                title="Attachment"
+                            >
+                                📎
+                            </button>
+
+                            <input
+                                type="file"
+                                id="fileInput"
+                                hidden
+                            >
+
+                        </div>
+
+
+                        <textarea
+                            id="messageInput"
+                            rows="1"
+                            placeholder="Type your message..."
+                        ></textarea>
+
+
+                        <button
+                            class="send-btn"
+                            id="sendBtn"
+                            title="Send Message"
+                        >
+                            ➤
+                        </button>
+
+                    </div>
+
+
+                    <div class="composer-note">
+                        Press <strong>Enter</strong> to send •
+                        <span>Shift + Enter</span> for new line
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     NO CHAT SELECTED
+                ========================== -->
+                <section class="no-chat" id="noChat">
+
+                    <div class="no-chat-icon">
+                        💬
+                    </div>
+
+                    <h2>Select a conversation</h2>
+
+                    <p>
+                        Choose a conversation from the left to start chatting.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         OWNER INFO MODAL
+    ========================== -->
+    <div class="modal-overlay" id="ownerModal">
+
+        <div class="modal">
+
+            <button class="modal-close" data-close-modal>
+                ×
+            </button>
+
+            <div class="modal-owner-avatar" id="modalOwnerAvatar">
+                GV
+            </div>
+
+            <h2 id="modalOwnerName">
+                Green View Premium PG
+            </h2>
+
+            <p class="modal-role">
+                Property Owner
+            </p>
+
+
+            <div class="owner-details">
+
+                <div>
+                    <span>📞</span>
+                    <strong>Phone</strong>
+                    <p id="modalPhone">+91 98765 43210</p>
+                </div>
+
+                <div>
+                    <span>✉️</span>
+                    <strong>Email</strong>
+                    <p id="modalEmail">owner@greenview.com</p>
+                </div>
+
+                <div>
+                    <span>📍</span>
+                    <strong>Location</strong>
+                    <p id="modalLocation">Suri, Birbhum</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         EMOJI PICKER
+    ========================== -->
+    <div class="emoji-picker" id="emojiPicker">
+
+        <button>😊</button>
+        <button>😂</button>
+        <button>😍</button>
+        <button>👍</button>
+        <button>❤️</button>
+        <button>🙏</button>
+        <button>😄</button>
+        <button>😁</button>
+        <button>🤝</button>
+        <button>🏠</button>
+        <button>📍</button>
+        <button>✨</button>
+
+    </div>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+    <div class="toast" id="toast">
+
+        <span id="toastIcon">✓</span>
+
+        <div>
+            <strong id="toastTitle">Success</strong>
+            <p id="toastMessage">Action completed.</p>
+        </div>
+
+    </div>
+
+
+    <script src="messages.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

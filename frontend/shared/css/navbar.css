@@ -1,0 +1,727 @@
+/* =========================================================
+   ROOMNEST — SHARED NAVBAR
+   File: navbar.css
+   Premium Green / White Theme
+========================================================= */
+
+
+/* =========================================================
+   01. ROOT
+========================================================= */
+
+:root {
+    --rn-primary: #12a889;
+    --rn-primary-dark: #0d9277;
+    --rn-primary-light: #e9f8f4;
+
+    --rn-text: #172126;
+    --rn-text-light: #68747b;
+
+    --rn-white: #ffffff;
+    --rn-border: #e7ecef;
+
+    --rn-shadow: 0 8px 30px rgba(18, 168, 137, 0.08);
+
+    --rn-navbar-height: 74px;
+}
+
+
+/* =========================================================
+   02. NAVBAR
+========================================================= */
+
+.rn-navbar {
+    width: 100%;
+    height: var(--rn-navbar-height);
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--rn-border);
+
+    position: relative;
+    z-index: 1000;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Sticky mode */
+
+.rn-navbar.rn-sticky {
+    position: sticky;
+    top: 0;
+
+    box-shadow: var(--rn-shadow);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   03. CONTAINER
+========================================================= */
+
+.rn-navbar-container {
+    width: min(1200px, calc(100% - 40px));
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   04. LOGO
+========================================================= */
+
+.rn-logo {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+
+.rn-logo-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--rn-primary-light);
+
+    border-radius: 11px;
+
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.rn-logo:hover .rn-logo-icon {
+    transform: translateY(-2px) rotate(-3deg);
+}
+
+
+.rn-logo-text {
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    color: var(--rn-text);
+}
+
+
+.rn-logo-text span {
+    color: var(--rn-primary);
+}
+
+
+/* =========================================================
+   05. NAVIGATION
+========================================================= */
+
+.rn-nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: auto;
+}
+
+
+.rn-nav-link {
+    position: relative;
+
+    padding: 10px 14px;
+
+    color: var(--rn-text-light);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.rn-nav-link:hover {
+    color: var(--rn-primary);
+
+    background: var(--rn-primary-light);
+}
+
+
+.rn-nav-link.active {
+    color: var(--rn-primary);
+}
+
+
+.rn-nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+
+    bottom: 2px;
+
+    height: 2px;
+
+    background: var(--rn-primary);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   06. ACTION AREA
+========================================================= */
+
+.rn-nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   07. GUEST ACTIONS
+========================================================= */
+
+.rn-guest-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.rn-login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    padding: 0 17px;
+
+    color: var(--rn-text);
+
+    border: 1px solid var(--rn-border);
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    background: var(--rn-white);
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.rn-login-btn:hover {
+    color: var(--rn-primary);
+
+    border-color: var(--rn-primary);
+
+    background: var(--rn-primary-light);
+}
+
+
+.rn-signup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    color: var(--rn-white);
+
+    background: var(--rn-primary);
+
+    border: 1px solid var(--rn-primary);
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.rn-signup-btn:hover {
+    background: var(--rn-primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 18px rgba(18, 168, 137, 0.22);
+}
+
+
+/* =========================================================
+   08. USER AREA
+========================================================= */
+
+.rn-user-area {
+    display: none;
+
+    position: relative;
+}
+
+
+.rn-user-area.show {
+    display: block;
+}
+
+
+.rn-user-btn {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 4px 10px 4px 5px;
+
+    background: var(--rn-white);
+
+    border: 1px solid var(--rn-border);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.rn-user-btn:hover {
+    border-color: var(--rn-primary);
+
+    background: var(--rn-primary-light);
+}
+
+
+.rn-user-avatar,
+.rn-dropdown-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--rn-primary);
+
+    color: var(--rn-white);
+
+    font-weight: 800;
+
+    border-radius: 50%;
+}
+
+
+.rn-user-avatar {
+    width: 32px;
+    height: 32px;
+
+    font-size: 13px;
+}
+
+
+.rn-user-name {
+    max-width: 110px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: var(--rn-text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.rn-user-arrow {
+    color: var(--rn-text-light);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   09. USER DROPDOWN
+========================================================= */
+
+.rn-user-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 255px;
+
+    padding: 10px;
+
+    background: var(--rn-white);
+
+    border: 1px solid var(--rn-border);
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 45px rgba(23, 33, 38, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-6px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.rn-user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* User info */
+
+.rn-dropdown-user {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 8px;
+}
+
+
+.rn-dropdown-avatar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+}
+
+
+.rn-dropdown-user strong {
+    display: block;
+
+    color: var(--rn-text);
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+
+.rn-dropdown-user small {
+    display: block;
+
+    color: var(--rn-text-light);
+
+    font-size: 11px;
+
+    max-width: 160px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Divider */
+
+.rn-dropdown-divider {
+    height: 1px;
+
+    margin: 7px 0;
+
+    background: var(--rn-border);
+}
+
+
+/* Dropdown item */
+
+.rn-dropdown-item {
+    width: 100%;
+
+    min-height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 10px;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: var(--rn-text);
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.rn-dropdown-item:hover {
+    color: var(--rn-primary);
+
+    background: var(--rn-primary-light);
+}
+
+
+/* =========================================================
+   10. MOBILE TOGGLE
+========================================================= */
+
+.rn-mobile-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background: var(--rn-white);
+
+    border: 1px solid var(--rn-border);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+}
+
+
+.rn-mobile-toggle span {
+    width: 19px;
+    height: 2px;
+
+    background: var(--rn-text);
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.rn-mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+
+.rn-mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+
+.rn-mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   11. RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .rn-nav-menu {
+        gap: 0;
+    }
+
+    .rn-nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .rn-user-name {
+        max-width: 80px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .rn-navbar-container {
+        width: min(100% - 30px, 700px);
+
+        gap: 15px;
+    }
+
+    .rn-nav-menu {
+        position: absolute;
+
+        top: var(--rn-navbar-height);
+
+        left: 15px;
+        right: 15px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+
+        padding: 12px;
+
+        background: var(--rn-white);
+
+        border: 1px solid var(--rn-border);
+
+        border-radius: 13px;
+
+        box-shadow: 0 15px 40px rgba(23, 33, 38, 0.1);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    .rn-nav-menu.open {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .rn-nav-link {
+        padding: 12px;
+
+        border-radius: 8px;
+    }
+
+
+    .rn-nav-link.active::after {
+        display: none;
+    }
+
+
+    .rn-mobile-toggle {
+        display: flex;
+    }
+
+
+    .rn-guest-actions {
+        display: none;
+    }
+
+
+    .rn-user-area.show {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    :root {
+        --rn-navbar-height: 68px;
+    }
+
+
+    .rn-navbar-container {
+        width: calc(100% - 24px);
+    }
+
+
+    .rn-logo-icon {
+        width: 36px;
+        height: 36px;
+
+        font-size: 18px;
+    }
+
+
+    .rn-logo-text {
+        font-size: 20px;
+    }
+
+
+    .rn-nav-menu {
+        top: var(--rn-navbar-height);
+
+        left: 12px;
+        right: 12px;
+    }
+}

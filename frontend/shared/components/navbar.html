@@ -1,0 +1,135 @@
+<!-- =========================================================
+     ROOMNEST — SHARED NAVBAR
+     File: navbar.html
+========================================================= -->
+
+<header class="rn-navbar" id="rnNavbar">
+
+    <div class="rn-navbar-container">
+
+        <!-- Logo -->
+        <a href="#" class="rn-logo" data-route="home">
+            <span class="rn-logo-icon">🏠</span>
+            <span class="rn-logo-text">
+                Room<span>Nest</span>
+            </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="rn-nav-menu" id="rnNavMenu">
+
+            <a href="#" class="rn-nav-link" data-route="home">
+                Home
+            </a>
+
+            <a href="#" class="rn-nav-link" data-route="search">
+                Find PG / Room
+            </a>
+
+            <a href="#" class="rn-nav-link" data-route="list-property">
+                List Property
+            </a>
+
+            <a href="#" class="rn-nav-link" data-route="about">
+                About
+            </a>
+
+            <a href="#" class="rn-nav-link" data-route="contact">
+                Contact
+            </a>
+
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="rn-nav-actions" id="rnNavActions">
+
+            <!-- Guest -->
+            <div class="rn-guest-actions" id="rnGuestActions">
+
+                <a href="#" class="rn-login-btn" data-route="login">
+                    Login
+                </a>
+
+                <a href="#" class="rn-signup-btn" data-route="register">
+                    Sign Up
+                </a>
+
+            </div>
+
+            <!-- Logged User -->
+            <div class="rn-user-area" id="rnUserArea">
+
+                <button class="rn-user-btn" id="rnUserBtn">
+
+                    <span class="rn-user-avatar" id="rnUserAvatar">
+                        U
+                    </span>
+
+                    <span class="rn-user-name" id="rnUserName">
+                        User
+                    </span>
+
+                    <span class="rn-user-arrow">
+                        ▾
+                    </span>
+
+                </button>
+
+                <div class="rn-user-dropdown" id="rnUserDropdown">
+
+                    <div class="rn-dropdown-user">
+
+                        <span class="rn-dropdown-avatar" id="rnDropdownAvatar">
+                            U
+                        </span>
+
+                        <div>
+                            <strong id="rnDropdownName">
+                                User
+                            </strong>
+
+                            <small id="rnDropdownEmail">
+                                user@example.com
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <div class="rn-dropdown-divider"></div>
+
+                    <a href="#" class="rn-dropdown-item" data-route="dashboard">
+                        <span>📊</span>
+                        Dashboard
+                    </a>
+
+                    <a href="#" class="rn-dropdown-item" data-route="profile">
+                        <span>👤</span>
+                        My Profile
+                    </a>
+
+                    <button class="rn-dropdown-item rn-logout-btn" id="rnLogoutBtn">
+                        <span>🚪</span>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <button
+                class="rn-mobile-toggle"
+                id="rnMobileToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Properties | RoomNest</title>
+
+    <link rel="stylesheet" href="properties.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="ownerSidebar">
+
+        <div class="sidebar-header">
+            <a href="../dashboard/dashboard.html" class="logo">
+                <span class="logo-icon">🏠</span>
+                <span>Room<span>Nest</span></span>
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                ×
+            </button>
+        </div>
+
+        <div class="owner-mini-profile">
+            <div class="owner-avatar">AR</div>
+
+            <div class="owner-mini-info">
+                <strong id="sidebarOwnerName">Arindam Roy</strong>
+                <span>Property Owner</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section-title">
+                MAIN MENU
+            </div>
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="properties.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span>My Properties</span>
+                <span class="nav-count" id="propertyNavCount">4</span>
+            </a>
+
+            <a href="../add-property/add-property.html" class="nav-item">
+                <span class="nav-icon">➕</span>
+                <span>Add Property</span>
+            </a>
+
+            <a href="../inquiries/inquiries.html" class="nav-item">
+                <span class="nav-icon">💬</span>
+                <span>Inquiries</span>
+                <span class="nav-count green">6</span>
+            </a>
+
+            <a href="../bookings/bookings.html" class="nav-item">
+                <span class="nav-icon">📅</span>
+                <span>Bookings</span>
+                <span class="nav-count blue">3</span>
+            </a>
+
+            <a href="../messages/messages.html" class="nav-item">
+                <span class="nav-icon">✉️</span>
+                <span>Messages</span>
+                <span class="nav-count red">2</span>
+            </a>
+
+            <div class="nav-section-title">
+                MANAGEMENT
+            </div>
+
+            <a href="../reviews/reviews.html" class="nav-item">
+                <span class="nav-icon">⭐</span>
+                <span>Reviews</span>
+            </a>
+
+            <a href="../profile/profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="../settings/settings.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <div class="help-icon">💡</div>
+
+                <strong>Need Help?</strong>
+
+                <p>
+                    Our support team is ready to help you.
+                </p>
+
+                <button id="supportBtn">
+                    Contact Support
+                </button>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <span>🚪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= OVERLAY ================= -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main-content">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+                <div>
+                    <h1>My Properties</h1>
+                    <p>
+                        Manage your PGs and rooms from one place.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="topbar-btn" id="searchBtn" title="Search">
+                    🔍
+                </button>
+
+                <button class="topbar-btn notification-btn"
+                        id="notificationBtn"
+                        title="Notifications">
+
+                    🔔
+                    <span class="notification-dot"></span>
+
+                </button>
+
+                <div class="topbar-profile" id="profileMenuBtn">
+
+                    <div class="top-avatar">
+                        AR
+                    </div>
+
+                    <div class="top-profile-info">
+                        <strong id="topOwnerName">
+                            Arindam Roy
+                        </strong>
+
+                        <span>
+                            Owner
+                        </span>
+                    </div>
+
+                    <span class="profile-arrow">
+                        ▾
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE ================= -->
+        <section class="page-content">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">
+                        PROPERTY MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Your Properties
+                    </h2>
+
+                    <p>
+                        Add, edit and manage your listed PGs and rooms.
+                    </p>
+                </div>
+
+                <button class="primary-btn" id="addPropertyBtn">
+                    <span>＋</span>
+                    Add New Property
+                </button>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        🏠
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Total Properties</span>
+                        <strong id="totalProperties">0</strong>
+                        <small>
+                            All your listings
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Active Listings</span>
+                        <strong id="activeProperties">0</strong>
+                        <small class="positive">
+                            Currently visible
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ⏳
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Pending Approval</span>
+                        <strong id="pendingProperties">0</strong>
+                        <small>
+                            Under review
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon gray">
+                        ○
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Inactive</span>
+                        <strong id="inactiveProperties">0</strong>
+                        <small>
+                            Not currently listed
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TOOLBAR ================= -->
+            <div class="property-toolbar">
+
+                <div class="toolbar-search">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="propertySearch"
+                        placeholder="Search properties..."
+                    >
+
+                </div>
+
+
+                <div class="toolbar-filters">
+
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="PG">PG</option>
+                        <option value="Room">Room</option>
+                        <option value="Flat">Flat</option>
+                    </select>
+
+
+                    <select id="locationFilter">
+                        <option value="all">All Locations</option>
+                    </select>
+
+
+                    <select id="sortFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="rent-low">Rent: Low to High</option>
+                        <option value="rent-high">Rent: High to Low</option>
+                        <option value="rating">Highest Rating</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RESULTS INFO ================= -->
+            <div class="results-row">
+
+                <div>
+                    Showing
+                    <strong id="resultCount">0</strong>
+                    properties
+                </div>
+
+                <button class="clear-filter-btn" id="clearFiltersBtn">
+                    Clear Filters
+                </button>
+
+            </div>
+
+
+            <!-- ================= PROPERTY GRID ================= -->
+            <div class="property-grid" id="propertyGrid">
+                <!-- JS generated -->
+            </div>
+
+
+            <!-- ================= EMPTY STATE ================= -->
+            <div class="empty-state" id="emptyState">
+
+                <div class="empty-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    No Properties Found
+                </h3>
+
+                <p>
+                    Try changing your filters or add a new property.
+                </p>
+
+                <button class="primary-btn" id="emptyAddBtn">
+                    ＋ Add Property
+                </button>
+
+            </div>
+
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="page-footer">
+
+                <span>
+                    © 2026 RoomNest. All rights reserved.
+                </span>
+
+                <div>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Help</a>
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= PROPERTY DETAILS MODAL ================= -->
+    <div class="modal-overlay" id="propertyModal">
+
+        <div class="modal large-modal">
+
+            <button class="modal-close" data-close="propertyModal">
+                ×
+            </button>
+
+            <div id="propertyModalContent">
+                <!-- JS -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DELETE MODAL ================= -->
+    <div class="modal-overlay" id="deleteModal">
+
+        <div class="modal small-modal">
+
+            <div class="confirm-icon">
+                🗑️
+            </div>
+
+            <h3>
+                Delete Property?
+            </h3>
+
+            <p>
+                Are you sure you want to delete
+                <strong id="deletePropertyName"></strong>?
+                This action cannot be undone.
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="secondary-btn" data-close="deleteModal">
+                    Cancel
+                </button>
+
+                <button class="danger-btn" id="confirmDeleteBtn">
+                    Delete Property
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SEARCH MODAL ================= -->
+    <div class="modal-overlay" id="searchModal">
+
+        <div class="modal search-modal">
+
+            <button class="modal-close" data-close="searchModal">
+                ×
+            </button>
+
+            <div class="modal-heading">
+                <span>🔍</span>
+                <div>
+                    <h3>Search RoomNest</h3>
+                    <p>Quickly find anything in your dashboard.</p>
+                </div>
+            </div>
+
+            <input
+                type="text"
+                id="globalSearch"
+                class="modal-input"
+                placeholder="Search properties, inquiries, bookings..."
+            >
+
+            <div class="search-results" id="globalSearchResults">
+                <div class="search-placeholder">
+                    Start typing to search.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= NOTIFICATION MODAL ================= -->
+    <div class="modal-overlay" id="notificationModal">
+
+        <div class="modal notification-modal">
+
+            <button class="modal-close" data-close="notificationModal">
+                ×
+            </button>
+
+            <div class="modal-heading">
+
+                <span>🔔</span>
+
+                <div>
+                    <h3>Notifications</h3>
+                    <p>Recent updates for your properties.</p>
+                </div>
+
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+                    <span>✓</span>
+                    <div>
+                        <strong>Property approved</strong>
+                        <p>Your PG listing has been approved.</p>
+                        <small>2 hours ago</small>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <span>💬</span>
+                    <div>
+                        <strong>New inquiry</strong>
+                        <p>A student sent a new inquiry.</p>
+                        <small>5 hours ago</small>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <span>📅</span>
+                    <div>
+                        <strong>Booking request</strong>
+                        <p>You received a new booking request.</p>
+                        <small>Yesterday</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon" id="toastIcon">
+            ✓
+        </div>
+
+        <div class="toast-content">
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed.
+            </p>
+        </div>
+
+        <button id="toastClose">
+            ×
+        </button>
+
+    </div>
+
+
+    <script src="properties.js"></script>
+
+    <script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

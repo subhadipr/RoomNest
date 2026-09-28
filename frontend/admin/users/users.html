@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="RoomNest Admin - Manage Users">
+
+    <title>RoomNest — Users</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet"
+          href="../../shared/css/reset.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/variables.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/components.css">
+
+    <link rel="stylesheet"
+          href="../../shared/css/responsive.css">
+
+    
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+    
+          <!-- Page CSS -->
+    <link rel="stylesheet"
+          href="users.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="admin-app">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="#" class="logo-link">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+
+                <span class="logo-text">
+                    RoomNest
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- Admin -->
+        <div class="sidebar-admin">
+
+            <div class="admin-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="admin-info">
+
+                <h4>Administrator</h4>
+
+                <span>
+                    <i class="fa-solid fa-circle"></i>
+                    Online
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="admin-navigation">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="../dashboard/dashboard.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span class="nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a href="../users/users.html"
+               class="admin-nav-link active">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span class="nav-text">
+                    Users
+                </span>
+
+            </a>
+
+
+            <a href="../owners/owners.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </span>
+
+                <span class="nav-text">
+                    Owners
+                </span>
+
+            </a>
+
+
+            <a href="../properties/properties.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-building"></i>
+                </span>
+
+                <span class="nav-text">
+                    Properties
+                </span>
+
+            </a>
+
+
+            <a href="../pending/pending-properties.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+
+                <span class="nav-text">
+                    Pending Properties
+                </span>
+
+                <span class="nav-badge">
+                    8
+                </span>
+
+            </a>
+
+
+            <a href="../inquiries/inquiries.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <span class="nav-text">
+                    Inquiries
+                </span>
+
+                <span class="nav-badge">
+                    12
+                </span>
+
+            </a>
+
+
+            <a href="../reviews/reviews.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span class="nav-text">
+                    Reviews
+                </span>
+
+            </a>
+
+
+            <p class="nav-title nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a href="../reports/reports.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </span>
+
+                <span class="nav-text">
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a href="../settings/settings.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span class="nav-text">
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Bottom -->
+        <div class="sidebar-bottom">
+
+            <a href="../../public/home/index.html"
+               class="admin-nav-link">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
+
+                <span class="nav-text">
+                    View Website
+                </span>
+
+            </a>
+
+
+            <button type="button"
+                    class="admin-nav-link logout-btn"
+                    id="logoutBtn">
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </span>
+
+                <span class="nav-text">
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="admin-main">
+
+        <!-- TOPBAR -->
+
+        <header class="admin-topbar">
+
+            <div class="topbar-left">
+
+                <button type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="page-heading">
+
+                    <h1>
+                        Users
+                    </h1>
+
+                    <p>
+                        Manage all registered RoomNest users
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="admin-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="topSearch"
+                        placeholder="Search users...">
+
+                </div>
+
+
+                <button class="topbar-action"
+                        id="notificationBtn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="topbar-user">
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Admin
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="users-content">
+
+
+            <!-- Page Header -->
+
+            <div class="users-page-header">
+
+                <div>
+
+                    <h2>
+                        All Users
+                    </h2>
+
+                    <p>
+                        View and manage registered students and users.
+                    </p>
+
+                </div>
+
+
+                <button class="add-user-btn"
+                        id="addUserBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add User
+
+                </button>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="user-stats">
+
+                <div class="user-stat-card">
+
+                    <div class="user-stat-icon total">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Users
+                        </span>
+
+                        <strong>
+                            2,486
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="user-stat-card">
+
+                    <div class="user-stat-icon active">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Active Users
+                        </span>
+
+                        <strong>
+                            2,341
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="user-stat-card">
+
+                    <div class="user-stat-icon new">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            New This Month
+                        </span>
+
+                        <strong>
+                            186
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="user-stat-card">
+
+                    <div class="user-stat-icon blocked">
+                        <i class="fa-solid fa-user-lock"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Blocked Users
+                        </span>
+
+                        <strong>
+                            37
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 USER TABLE CARD
+            ================================================== -->
+
+            <div class="users-card">
+
+
+                <!-- Filters -->
+
+                <div class="users-toolbar">
+
+                    <div class="toolbar-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="userSearch"
+                            placeholder="Search by name or email...">
+
+                    </div>
+
+
+                    <div class="toolbar-filters">
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="blocked">
+                                Blocked
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                        </select>
+
+
+                        <select id="sortFilter">
+
+                            <option value="newest">
+                                Newest First
+                            </option>
+
+                            <option value="oldest">
+                                Oldest First
+                            </option>
+
+                            <option value="name">
+                                Name A-Z
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            type="button"
+                            class="filter-btn"
+                            id="filterBtn">
+
+                            <i class="fa-solid fa-filter"></i>
+
+                            Filter
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Table -->
+
+                <div class="users-table-wrapper">
+
+                    <table class="users-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    <input
+                                        type="checkbox"
+                                        id="selectAll">
+                                </th>
+
+                                <th>
+                                    User
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Phone
+                                </th>
+
+                                <th>
+                                    Joined
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="usersTableBody">
+
+
+                            <!-- USER 1 -->
+
+                            <tr
+                                data-name="Riya Sen"
+                                data-email="riya@example.com"
+                                data-status="active">
+
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="user-checkbox">
+                                </td>
+
+
+                                <td>
+
+                                    <div class="user-cell">
+
+                                        <div class="user-avatar avatar-one">
+                                            RS
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Riya Sen
+                                            </strong>
+
+                                            <span>
+                                                Student
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    riya@example.com
+                                </td>
+
+
+                                <td>
+                                    +91 98765 43210
+                                </td>
+
+
+                                <td>
+                                    15 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="user-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button
+                                            class="action-btn view"
+                                            title="View User">
+
+                                            <i class="fa-regular fa-eye"></i>
+
+                                        </button>
+
+                                        <button
+                                            class="action-btn edit"
+                                            title="Edit User">
+
+                                            <i class="fa-regular fa-pen-to-square"></i>
+
+                                        </button>
+
+                                        <button
+                                            class="action-btn delete"
+                                            title="Delete User">
+
+                                            <i class="fa-regular fa-trash-can"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USER 2 -->
+
+                            <tr
+                                data-name="Ankit Kumar"
+                                data-email="ankit@example.com"
+                                data-status="active">
+
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="user-checkbox">
+                                </td>
+
+
+                                <td>
+
+                                    <div class="user-cell">
+
+                                        <div class="user-avatar avatar-two">
+                                            AK
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Ankit Kumar
+                                            </strong>
+
+                                            <span>
+                                                Student
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    ankit@example.com
+                                </td>
+
+
+                                <td>
+                                    +91 91234 56789
+                                </td>
+
+
+                                <td>
+                                    14 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="user-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USER 3 -->
+
+                            <tr
+                                data-name="Sayan Paul"
+                                data-email="sayan@example.com"
+                                data-status="pending">
+
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="user-checkbox">
+                                </td>
+
+
+                                <td>
+
+                                    <div class="user-cell">
+
+                                        <div class="user-avatar avatar-three">
+                                            SP
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Sayan Paul
+                                            </strong>
+
+                                            <span>
+                                                Student
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    sayan@example.com
+                                </td>
+
+
+                                <td>
+                                    +91 90000 11223
+                                </td>
+
+
+                                <td>
+                                    13 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="user-status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USER 4 -->
+
+                            <tr
+                                data-name="Arjun Das"
+                                data-email="arjun@example.com"
+                                data-status="blocked">
+
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="user-checkbox">
+                                </td>
+
+
+                                <td>
+
+                                    <div class="user-cell">
+
+                                        <div class="user-avatar avatar-four">
+                                            AD
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Arjun Das
+                                            </strong>
+
+                                            <span>
+                                                Student
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    arjun@example.com
+                                </td>
+
+
+                                <td>
+                                    +91 93333 44556
+                                </td>
+
+
+                                <td>
+                                    10 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="user-status blocked">
+                                        Blocked
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USER 5 -->
+
+                            <tr
+                                data-name="Sneha Roy"
+                                data-email="sneha@example.com"
+                                data-status="active">
+
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="user-checkbox">
+                                </td>
+
+
+                                <td>
+
+                                    <div class="user-cell">
+
+                                        <div class="user-avatar avatar-five">
+                                            SR
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Sneha Roy
+                                            </strong>
+
+                                            <span>
+                                                Student
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    sneha@example.com
+                                </td>
+
+
+                                <td>
+                                    +91 97777 88990
+                                </td>
+
+
+                                <td>
+                                    08 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="user-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USER 6 -->
+
+                            <tr
+                                data-name="Rahul Roy"
+                                data-email="rahul@example.com"
+                                data-status="active">
+
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="user-checkbox">
+                                </td>
+
+
+                                <td>
+
+                                    <div class="user-cell">
+
+                                        <div class="user-avatar avatar-six">
+                                            RR
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Rahul Roy
+                                            </strong>
+
+                                            <span>
+                                                Student
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    rahul@example.com
+                                </td>
+
+
+                                <td>
+                                    +91 96666 77889
+                                </td>
+
+
+                                <td>
+                                    05 Sep, 2026
+                                </td>
+
+
+                                <td>
+
+                                    <span class="user-status active">
+                                        Active
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-buttons">
+
+                                        <button class="action-btn view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =================================================
+                     TABLE FOOTER
+                ================================================== -->
+
+                <div class="users-table-footer">
+
+                    <div class="selected-info">
+
+                        <span id="selectedCount">
+                            0 selected
+                        </span>
+
+                    </div>
+
+
+                    <div class="pagination">
+
+                        <button
+                            class="page-btn disabled"
+                            id="prevPage">
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+                        <button class="page-btn active">
+                            1
+                        </button>
+
+                        <button class="page-btn">
+                            2
+                        </button>
+
+                        <button class="page-btn">
+                            3
+                        </button>
+
+                        <span>
+                            ...
+                        </span>
+
+                        <button class="page-btn">
+                            11
+                        </button>
+
+                        <button
+                            class="page-btn"
+                            id="nextPage">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="admin-footer">
+
+            <p>
+                © <span id="currentYear"></span>
+                RoomNest. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <a href="#">
+                    Help
+                </a>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- Overlay -->
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay">
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="users.js"></script>
+
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

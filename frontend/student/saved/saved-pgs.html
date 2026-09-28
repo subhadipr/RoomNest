@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saved PGs | RoomNest</title>
+
+    <link rel="stylesheet" href="saved-pgs.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     MOBILE OVERLAY
+===================================================== -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">🏠</div>
+
+        <div>
+            <h2>RoomNest</h2>
+            <span>Student Panel</span>
+        </div>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">MAIN</p>
+
+        <a href="../dashboard/dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="../../public/search/search.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find PG / Room</span>
+        </a>
+
+
+        <p class="nav-title">MY ACCOUNT</p>
+
+        <a href="../profile/profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span>My Profile</span>
+        </a>
+
+        <a href="saved-pgs.html" class="nav-item active">
+            <span class="nav-icon">❤️</span>
+            <span>Saved PGs</span>
+            <span class="nav-badge" id="sidebarSavedCount">6</span>
+        </a>
+
+        <a href="../inquiries/inquiries.html" class="nav-item">
+            <span class="nav-icon">📩</span>
+            <span>My Inquiries</span>
+        </a>
+
+        <a href="../bookings/bookings.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>My Bookings</span>
+        </a>
+
+        <a href="../messages/messages.html" class="nav-item">
+            <span class="nav-icon">💬</span>
+            <span>Messages</span>
+        </a>
+
+        <a href="../notifications/notifications.html" class="nav-item">
+            <span class="nav-icon">🔔</span>
+            <span>Notifications</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-card">
+            <div class="help-icon">💡</div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <p>We're here for you.</p>
+            </div>
+        </div>
+
+        <button class="logout-btn" id="logoutBtn">
+            <span>🚪</span>
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+<main class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <div class="topbar-left">
+            <h1>Saved PGs</h1>
+            <p>Properties you've saved for later</p>
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button class="top-icon-btn" title="Notifications">
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="user-profile">
+
+                <div class="user-avatar">
+                    S
+                </div>
+
+                <div class="user-info">
+                    <strong>Subhadip Roy</strong>
+                    <span>Student</span>
+                </div>
+
+                <span class="user-arrow">⌄</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================== -->
+    <section class="page-content">
+
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+
+            <div>
+                <h2>My Saved Properties</h2>
+                <p>
+                    Keep track of PGs and rooms you are interested in.
+                </p>
+            </div>
+
+            <a href="../../public/search/search.html" class="find-btn">
+                <span>🔍</span>
+                Find More PGs
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             STAT CARDS
+        ================================================== -->
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ❤️
+                </div>
+
+                <div>
+                    <span>Total Saved</span>
+                    <strong id="totalSaved">6</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    🏠
+                </div>
+
+                <div>
+                    <span>PGs</span>
+                    <strong id="pgCount">4</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    🚪
+                </div>
+
+                <div>
+                    <span>Rooms</span>
+                    <strong id="roomCount">2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    💰
+                </div>
+
+                <div>
+                    <span>Avg. Rent</span>
+                    <strong id="averageRent">₹7,250</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTER BAR
+        ================================================== -->
+        <div class="filter-card">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search saved properties..."
+                >
+
+            </div>
+
+
+            <select id="locationFilter">
+
+                <option value="all">All Locations</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Hyderabad">Hyderabad</option>
+
+            </select>
+
+
+            <select id="typeFilter">
+
+                <option value="all">All Types</option>
+                <option value="PG">PG</option>
+                <option value="Room">Room</option>
+
+            </select>
+
+
+            <select id="sortFilter">
+
+                <option value="recent">Recently Saved</option>
+                <option value="low">Rent: Low to High</option>
+                <option value="high">Rent: High to Low</option>
+                <option value="rating">Highest Rated</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- RESULT HEADER -->
+        <div class="result-header">
+
+            <div>
+                <strong id="resultCount">6</strong>
+                <span>saved properties</span>
+            </div>
+
+            <button class="clear-btn" id="clearAllBtn">
+                Clear All
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             PROPERTY GRID
+        ================================================== -->
+        <div class="property-grid" id="propertyGrid">
+
+
+            <!-- PROPERTY 1 -->
+            <article class="property-card"
+                data-id="1"
+                data-name="Green View Premium PG"
+                data-location="Kolkata"
+                data-type="PG"
+                data-rent="7500"
+                data-rating="4.8"
+                data-date="6">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
+                        alt="Green View Premium PG"
+                    >
+
+                    <span class="property-type">PG</span>
+
+                    <button
+                        class="heart-btn saved"
+                        data-id="1"
+                        title="Remove from saved">
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-location">
+                        📍 Salt Lake, Kolkata
+                    </div>
+
+                    <h3>Green View Premium PG</h3>
+
+                    <div class="rating">
+                        <span>★</span>
+                        <strong>4.8</strong>
+                        <small>(124 reviews)</small>
+                    </div>
+
+
+                    <div class="property-features">
+
+                        <span>🛏️ Twin Sharing</span>
+                        <span>🍽️ Food Included</span>
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+
+                    <div class="property-footer">
+
+                        <div class="rent">
+                            <strong>₹7,500</strong>
+                            <span>/month</span>
+                        </div>
+
+                        <a
+                            href="../../public/property/property-details.html"
+                            class="view-btn">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 2 -->
+            <article class="property-card"
+                data-id="2"
+                data-name="Urban Nest Student PG"
+                data-location="Bengaluru"
+                data-type="PG"
+                data-rent="6500"
+                data-rating="4.6"
+                data-date="5">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+                        alt="Urban Nest Student PG"
+                    >
+
+                    <span class="property-type">PG</span>
+
+                    <button
+                        class="heart-btn saved"
+                        data-id="2"
+                        title="Remove from saved">
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-location">
+                        📍 Koramangala, Bengaluru
+                    </div>
+
+                    <h3>Urban Nest Student PG</h3>
+
+                    <div class="rating">
+                        <span>★</span>
+                        <strong>4.6</strong>
+                        <small>(98 reviews)</small>
+                    </div>
+
+                    <div class="property-features">
+
+                        <span>🛏️ Triple Sharing</span>
+                        <span>🍽️ Food</span>
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+                    <div class="property-footer">
+
+                        <div class="rent">
+                            <strong>₹6,500</strong>
+                            <span>/month</span>
+                        </div>
+
+                        <a
+                            href="../../public/property/property-details.html"
+                            class="view-btn">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 3 -->
+            <article class="property-card"
+                data-id="3"
+                data-name="Comfort Stay PG"
+                data-location="Delhi"
+                data-type="PG"
+                data-rent="8000"
+                data-rating="4.7"
+                data-date="4">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80"
+                        alt="Comfort Stay PG"
+                    >
+
+                    <span class="property-type">PG</span>
+
+                    <button
+                        class="heart-btn saved"
+                        data-id="3"
+                        title="Remove from saved">
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-location">
+                        📍 Laxmi Nagar, Delhi
+                    </div>
+
+                    <h3>Comfort Stay PG</h3>
+
+                    <div class="rating">
+                        <span>★</span>
+                        <strong>4.7</strong>
+                        <small>(76 reviews)</small>
+                    </div>
+
+                    <div class="property-features">
+
+                        <span>🛏️ Double Sharing</span>
+                        <span>🛡️ Security</span>
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+                    <div class="property-footer">
+
+                        <div class="rent">
+                            <strong>₹8,000</strong>
+                            <span>/month</span>
+                        </div>
+
+                        <a
+                            href="../../public/property/property-details.html"
+                            class="view-btn">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 4 -->
+            <article class="property-card"
+                data-id="4"
+                data-name="Lake View Student Residence"
+                data-location="Hyderabad"
+                data-type="Room"
+                data-rent="7000"
+                data-rating="4.5"
+                data-date="3">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=900&q=80"
+                        alt="Lake View Student Residence"
+                    >
+
+                    <span class="property-type room">Room</span>
+
+                    <button
+                        class="heart-btn saved"
+                        data-id="4"
+                        title="Remove from saved">
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-location">
+                        📍 Madhapur, Hyderabad
+                    </div>
+
+                    <h3>Lake View Student Residence</h3>
+
+                    <div class="rating">
+                        <span>★</span>
+                        <strong>4.5</strong>
+                        <small>(64 reviews)</small>
+                    </div>
+
+                    <div class="property-features">
+
+                        <span>🛏️ Single Room</span>
+                        <span>🚿 Attached Bath</span>
+                        <span>📶 Wi-Fi</span>
+
+                    </div>
+
+                    <div class="property-footer">
+
+                        <div class="rent">
+                            <strong>₹7,000</strong>
+                            <span>/month</span>
+                        </div>
+
+                        <a
+                            href="../../public/property/property-details.html"
+                            class="view-btn">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 5 -->
+            <article class="property-card"
+                data-id="5"
+                data-name="Student Comfort Home"
+                data-location="Kolkata"
+                data-type="Room"
+                data-rent="6000"
+                data-rating="4.4"
+                data-date="2">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80"
+                        alt="Student Comfort Home"
+                    >
+
+                    <span class="property-type room">Room</span>
+
+                    <button
+                        class="heart-btn saved"
+                        data-id="5"
+                        title="Remove from saved">
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-location">
+                        📍 Garia, Kolkata
+                    </div>
+
+                    <h3>Student Comfort Home</h3>
+
+                    <div class="rating">
+                        <span>★</span>
+                        <strong>4.4</strong>
+                        <small>(51 reviews)</small>
+                    </div>
+
+                    <div class="property-features">
+
+                        <span>🛏️ Single Room</span>
+                        <span>🍳 Kitchen</span>
+                        <span>🚿 Attached Bath</span>
+
+                    </div>
+
+                    <div class="property-footer">
+
+                        <div class="rent">
+                            <strong>₹6,000</strong>
+                            <span>/month</span>
+                        </div>
+
+                        <a
+                            href="../../public/property/property-details.html"
+                            class="view-btn">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROPERTY 6 -->
+            <article class="property-card"
+                data-id="6"
+                data-name="Campus Connect PG"
+                data-location="Bengaluru"
+                data-type="PG"
+                data-rent="9000"
+                data-rating="4.9"
+                data-date="1">
+
+                <div class="property-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=900&q=80"
+                        alt="Campus Connect PG"
+                    >
+
+                    <span class="property-type">PG</span>
+
+                    <button
+                        class="heart-btn saved"
+                        data-id="6"
+                        title="Remove from saved">
+                        ♥
+                    </button>
+
+                </div>
+
+
+                <div class="property-body">
+
+                    <div class="property-location">
+                        📍 HSR Layout, Bengaluru
+                    </div>
+
+                    <h3>Campus Connect PG</h3>
+
+                    <div class="rating">
+                        <span>★</span>
+                        <strong>4.9</strong>
+                        <small>(143 reviews)</small>
+                    </div>
+
+                    <div class="property-features">
+
+                        <span>🛏️ Double Sharing</span>
+                        <span>🍽️ Food Included</span>
+                        <span>🛡️ Security</span>
+
+                    </div>
+
+                    <div class="property-footer">
+
+                        <div class="rent">
+                            <strong>₹9,000</strong>
+                            <span>/month</span>
+                        </div>
+
+                        <a
+                            href="../../public/property/property-details.html"
+                            class="view-btn">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- =================================================
+             EMPTY STATE
+        ================================================== -->
+        <div class="empty-state" id="emptyState">
+
+            <div class="empty-icon">
+                ❤️
+            </div>
+
+            <h3>No Saved Properties</h3>
+
+            <p>
+                You haven't saved any PG or room yet.
+                Start exploring properties and save your favourites.
+            </p>
+
+            <a
+                href="../../public/search/search.html"
+                class="find-btn">
+                🔍 Explore PGs
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+
+    <span class="toast-icon">✓</span>
+
+    <div>
+        <strong id="toastTitle">Saved</strong>
+        <p id="toastMessage">Property updated.</p>
+    </div>
+
+</div>
+
+
+<script src="saved-pgs.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/sidebar/sidebar.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

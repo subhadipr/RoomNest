@@ -1,0 +1,539 @@
+/* =========================================================
+   ROOMNEST — SHARED FOOTER
+   File: footer.css
+   Premium Green / White Theme
+========================================================= */
+
+
+/* =========================================================
+   01. ROOT
+========================================================= */
+
+:root {
+
+    --rn-footer-primary: #12a889;
+    --rn-footer-primary-dark: #0d9277;
+
+    --rn-footer-bg: #10191c;
+    --rn-footer-bg-light: #172326;
+
+    --rn-footer-text: #ffffff;
+    --rn-footer-muted: #a5b0b4;
+
+    --rn-footer-border: rgba(255, 255, 255, 0.09);
+
+}
+
+
+/* =========================================================
+   02. FOOTER
+========================================================= */
+
+.rn-footer {
+
+    width: 100%;
+
+    background: var(--rn-footer-bg);
+
+    color: var(--rn-footer-text);
+
+    margin-top: auto;
+
+}
+
+
+/* =========================================================
+   03. MAIN CONTAINER
+========================================================= */
+
+.rn-footer-container {
+
+    width: min(1200px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 70px 0 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.7fr
+        1fr
+        1fr
+        1fr
+        1.2fr;
+
+    gap: 40px;
+
+}
+
+
+/* =========================================================
+   04. BRAND
+========================================================= */
+
+.rn-footer-brand {
+
+    max-width: 320px;
+
+}
+
+
+.rn-footer-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--rn-footer-text);
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.rn-footer-logo span span {
+
+    color: var(--rn-footer-primary);
+
+}
+
+
+.rn-footer-logo-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(18, 168, 137, 0.12);
+
+    border:
+        1px solid rgba(18, 168, 137, 0.25);
+
+    border-radius: 11px;
+
+    font-size: 20px;
+
+}
+
+
+.rn-footer-description {
+
+    margin: 20px 0 22px;
+
+    color: var(--rn-footer-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   05. SOCIAL
+========================================================= */
+
+.rn-footer-social {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+
+.rn-footer-social a {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--rn-footer-border);
+
+    border-radius: 9px;
+
+    color: var(--rn-footer-muted);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.rn-footer-social a:hover {
+
+    color: #ffffff;
+
+    background:
+        var(--rn-footer-primary);
+
+    border-color:
+        var(--rn-footer-primary);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   06. FOOTER COLUMNS
+========================================================= */
+
+.rn-footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.rn-footer-column h3 {
+
+    margin: 0 0 19px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+}
+
+
+.rn-footer-column a {
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    color: var(--rn-footer-muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.rn-footer-column a:hover {
+
+    color:
+        var(--rn-footer-primary);
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* =========================================================
+   07. CONTACT
+========================================================= */
+
+.rn-footer-contact {
+
+    gap: 0;
+
+}
+
+
+.rn-contact-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.rn-contact-item span {
+
+    width: 23px;
+
+    flex-shrink: 0;
+
+    font-size: 14px;
+
+}
+
+
+.rn-contact-item p {
+
+    margin: 0;
+
+    color: var(--rn-footer-muted);
+
+    font-size: 12.5px;
+
+    line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   08. FOOTER BOTTOM
+========================================================= */
+
+.rn-footer-bottom {
+
+    border-top:
+        1px solid var(--rn-footer-border);
+
+}
+
+
+.rn-footer-bottom-container {
+
+    width: min(1200px, calc(100% - 40px));
+
+    min-height: 70px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.rn-footer-bottom p {
+
+    margin: 0;
+
+    color: #7f8b8f;
+
+    font-size: 12px;
+
+}
+
+
+.rn-footer-bottom-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.rn-footer-bottom-links a {
+
+    color: #8d999d;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.rn-footer-bottom-links a:hover {
+
+    color:
+        var(--rn-footer-primary);
+
+}
+
+
+.rn-footer-bottom-links span {
+
+    color: #566266;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   09. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .rn-footer-container {
+
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr
+            1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .rn-footer-brand {
+
+        grid-column: span 2;
+
+        max-width: 430px;
+
+    }
+
+
+    .rn-footer-contact {
+
+        grid-column: span 2;
+
+    }
+
+}
+
+
+/* =========================================================
+   10. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .rn-footer-container {
+
+        width: calc(100% - 30px);
+
+        padding:
+            50px 0 40px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            35px 25px;
+
+    }
+
+
+    .rn-footer-brand {
+
+        grid-column:
+            span 2;
+
+        max-width: none;
+
+    }
+
+
+    .rn-footer-contact {
+
+        grid-column:
+            span 2;
+
+    }
+
+
+    .rn-footer-bottom-container {
+
+        width: calc(100% - 30px);
+
+        padding: 20px 0;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   11. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .rn-footer-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .rn-footer-brand,
+    .rn-footer-contact {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .rn-footer-bottom-links {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+}

@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="RoomNest - Search PGs, rooms and flats."
+    >
+
+    <title>Find PG | RoomNest</title>
+
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="../../shared/css/cursor-common.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="../home/index.html" class="logo">
+            <span class="logo-icon">🏠</span>
+            <span>RoomNest</span>
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="../home/index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="search.html" class="nav-link active">
+                Find PG
+            </a>
+
+            <a href="../property/property-details.html" class="nav-link">
+                List Property
+            </a>
+
+            <a href="../about/about.html" class="nav-link">
+                About
+            </a>
+
+            <a href="../contact/contact.html" class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <a href="../auth/login.html" class="login-button">
+                Login
+            </a>
+
+            <a href="../auth/register.html" class="signup-button">
+                Sign Up
+            </a>
+
+        </div>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="../home/index.html" class="mobile-link">
+            Home
+        </a>
+
+        <a href="search.html" class="mobile-link active">
+            Find PG
+        </a>
+
+        <a href="../property/property-details.html" class="mobile-link">
+            List Property
+        </a>
+
+        <a href="../about/about.html" class="mobile-link">
+            About
+        </a>
+
+        <a href="../contact/contact.html" class="mobile-link">
+            Contact
+        </a>
+
+        <div class="mobile-actions">
+
+            <a href="../auth/login.html">
+                Login
+            </a>
+
+            <a href="../auth/register.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     SEARCH HEADER
+========================================================= -->
+
+<section class="search-header">
+
+    <div class="page-container">
+
+        <div class="breadcrumb">
+
+            <a href="../home/index.html">
+                Home
+            </a>
+
+            <span>›</span>
+
+            <strong>
+                Find PG
+            </strong>
+
+        </div>
+
+
+        <div class="search-main">
+
+            <div>
+
+                <span class="search-label">
+                    FIND YOUR STAY
+                </span>
+
+                <h1>
+                    Find your perfect
+                    <span>place to stay</span>
+                </h1>
+
+                <p>
+                    Search verified PGs, rooms and flats
+                    according to your budget and preferences.
+                </p>
+
+            </div>
+
+
+            <form class="top-search" id="topSearch">
+
+                <div class="top-search-field">
+
+                    <span>📍</span>
+
+                    <input
+                        type="text"
+                        id="topLocation"
+                        placeholder="City or area"
+                    >
+
+                </div>
+
+
+                <div class="top-search-field">
+
+                    <span>🏠</span>
+
+                    <select id="topType">
+
+                        <option value="">
+                            All Types
+                        </option>
+
+                        <option value="PG">
+                            PG
+                        </option>
+
+                        <option value="Room">
+                            Room
+                        </option>
+
+                        <option value="Flat">
+                            Flat
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MAIN SEARCH AREA
+========================================================= -->
+
+<main class="page-container search-layout">
+
+
+    <!-- =====================================================
+         FILTER SIDEBAR
+    ====================================================== -->
+
+    <aside class="filter-sidebar" id="filterSidebar">
+
+        <div class="filter-header">
+
+            <div>
+
+                <h2>
+                    Filters
+                </h2>
+
+                <span id="filterSummary">
+                    Refine your search
+                </span>
+
+            </div>
+
+            <button
+                type="button"
+                id="resetFilters"
+                class="reset-button"
+            >
+                Reset All
+            </button>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="filter-section">
+
+            <h3>
+                Location
+            </h3>
+
+            <div class="location-input">
+
+                <span>📍</span>
+
+                <input
+                    type="text"
+                    id="locationFilter"
+                    placeholder="Enter location"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BUDGET -->
+
+        <div class="filter-section">
+
+            <h3>
+                Budget (per month)
+            </h3>
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="budget"
+                    value="0-5000"
+                >
+
+                <span>
+                    ₹0 – ₹5,000
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="budget"
+                    value="5000-8000"
+                >
+
+                <span>
+                    ₹5,000 – ₹8,000
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="budget"
+                    value="8000-12000"
+                >
+
+                <span>
+                    ₹8,000 – ₹12,000
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="budget"
+                    value="12000+"
+                >
+
+                <span>
+                    ₹12,000+
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <!-- PROPERTY TYPE -->
+
+        <div class="filter-section">
+
+            <h3>
+                Property Type
+            </h3>
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="propertyType"
+                    value="PG"
+                >
+
+                <span>
+                    PG
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="propertyType"
+                    value="Single Room"
+                >
+
+                <span>
+                    Single Room
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="propertyType"
+                    value="Shared Room"
+                >
+
+                <span>
+                    Shared Room
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="propertyType"
+                    value="Flat"
+                >
+
+                <span>
+                    Flat / Apartment
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <!-- FOR -->
+
+        <div class="filter-section">
+
+            <h3>
+                For
+            </h3>
+
+            <label class="radio-row">
+
+                <input
+                    type="radio"
+                    name="gender"
+                    value="Anyone"
+                    checked
+                >
+
+                <span>
+                    Anyone
+                </span>
+
+            </label>
+
+
+            <label class="radio-row">
+
+                <input
+                    type="radio"
+                    name="gender"
+                    value="Boys"
+                >
+
+                <span>
+                    Boys
+                </span>
+
+            </label>
+
+
+            <label class="radio-row">
+
+                <input
+                    type="radio"
+                    name="gender"
+                    value="Girls"
+                >
+
+                <span>
+                    Girls
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <!-- FACILITIES -->
+
+        <div class="filter-section">
+
+            <h3>
+                Facilities
+            </h3>
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="facility"
+                    value="WiFi"
+                >
+
+                <span>
+                    WiFi
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="facility"
+                    value="Food"
+                >
+
+                <span>
+                    Food
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="facility"
+                    value="AC"
+                >
+
+                <span>
+                    AC
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="facility"
+                    value="Parking"
+                >
+
+                <span>
+                    Parking
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="facility"
+                    value="Attached Bathroom"
+                >
+
+                <span>
+                    Attached Bathroom
+                </span>
+
+            </label>
+
+
+            <label class="check-row">
+
+                <input
+                    type="checkbox"
+                    name="facility"
+                    value="Washing Machine"
+                >
+
+                <span>
+                    Washing Machine
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="apply-filter-button"
+            id="applyFilters"
+        >
+            Apply Filters
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         RESULTS
+    ====================================================== -->
+
+    <section class="results-area">
+
+
+        <!-- MOBILE FILTER BUTTON -->
+
+        <div class="mobile-filter-bar">
+
+            <button
+                type="button"
+                id="mobileFilterButton"
+            >
+                ☰ Filters
+            </button>
+
+            <span id="mobileResultCount">
+                12 Properties
+            </span>
+
+        </div>
+
+
+        <!-- RESULTS HEADER -->
+
+        <div class="results-header">
+
+            <div>
+
+                <span class="results-small">
+                    ROOMNEST LISTINGS
+                </span>
+
+                <h2>
+                    <span id="resultCount">
+                        12
+                    </span>
+                    Properties Found
+                </h2>
+
+            </div>
+
+
+            <div class="sort-box">
+
+                <label>
+                    Sort By
+                </label>
+
+                <select id="sortSelect">
+
+                    <option value="latest">
+                        Latest
+                    </option>
+
+                    <option value="price-low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="price-high">
+                        Price: High to Low
+                    </option>
+
+                    <option value="rating">
+                        Highest Rated
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIVE FILTERS -->
+
+        <div
+            class="active-filters"
+            id="activeFilters"
+        ></div>
+
+
+        <!-- PROPERTY GRID -->
+
+        <div
+            class="property-grid"
+            id="propertyGrid"
+        ></div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+            class="empty-state"
+            id="emptyState"
+        >
+
+            <div class="empty-icon">
+                🏠
+            </div>
+
+            <h3>
+                No properties found
+            </h3>
+
+            <p>
+                Try changing your filters or search
+                for another location.
+            </p>
+
+            <button
+                type="button"
+                id="emptyResetButton"
+            >
+                Clear Filters
+            </button>
+
+        </div>
+
+
+        <!-- PAGINATION -->
+
+        <div
+            class="pagination"
+            id="pagination"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FILTER OVERLAY
+========================================================= -->
+
+<div
+    class="filter-overlay"
+    id="filterOverlay"
+></div>
+
+
+<!-- =========================================================
+     PROPERTY DETAILS MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="propertyModal"
+>
+
+    <div class="property-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+        >
+            ×
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="toast" id="toast">
+
+    <span class="toast-icon">
+        ✓
+    </span>
+
+    <div>
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <p id="toastMessage">
+            Done successfully.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="page-container footer-grid">
+
+        <div class="footer-about">
+
+            <a
+                href="../home/index.html"
+                class="logo footer-logo"
+            >
+
+                <span class="logo-icon">
+                    🏠
+                </span>
+
+                RoomNest
+
+            </a>
+
+            <p>
+                Find comfortable, affordable and
+                student-friendly accommodation.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="../home/index.html">
+                Home
+            </a>
+
+            <a href="search.html">
+                Find PG
+            </a>
+
+            <a href="../about/about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Students
+            </h3>
+
+            <a href="../auth/register.html">
+                Sign Up
+            </a>
+
+            <a href="../auth/login.html">
+                Login
+            </a>
+
+            <a href="search.html">
+                Browse Properties
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Owners
+            </h3>
+
+            <a href="../property/property-details.html">
+                List Property
+            </a>
+
+            <a href="../auth/login.html">
+                Owner Login
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="page-container">
+
+            © 2026 RoomNest. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="search.js"></script>
+
+<script src="../../shared/js/utils.js"></script>
+<script src="../../shared/js/auth.js"></script>
+<script src="../../shared/js/api.js"></script>
+<script src="../../shared/js/notifications.js"></script>
+
+<script src="../../shared/navbar/navbar.js"></script>
+<script src="../../shared/footer/footer.js"></script>
+<script src="../../shared/toast/toast.js"></script>
+<script src="../../shared/loader/loader.js"></script>
+
+</body>
+</html>

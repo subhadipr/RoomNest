@@ -1,0 +1,654 @@
+/* =========================================================
+   ROOMNEST — GLOBAL COMPONENTS
+   File: components.css
+========================================================= */
+
+
+/* =========================================================
+   01. BUTTON
+========================================================= */
+
+.rn-btn {
+
+    min-height: 40px;
+
+    padding:
+        0 16px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        var(--rn-radius-md);
+
+    font-family:
+        var(--rn-font);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        var(--rn-transition);
+
+}
+
+
+.rn-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.rn-btn-primary {
+
+    color:
+        var(--rn-white);
+
+    background:
+        var(--rn-primary);
+
+    border-color:
+        var(--rn-primary);
+
+}
+
+
+.rn-btn-primary:hover {
+
+    background:
+        var(--rn-primary-dark);
+
+    border-color:
+        var(--rn-primary-dark);
+
+    box-shadow:
+        var(--rn-shadow-primary);
+
+}
+
+
+.rn-btn-secondary {
+
+    color:
+        var(--rn-text);
+
+    background:
+        var(--rn-white);
+
+    border-color:
+        var(--rn-border);
+
+}
+
+
+.rn-btn-secondary:hover {
+
+    color:
+        var(--rn-primary);
+
+    border-color:
+        var(--rn-primary);
+
+    background:
+        var(--rn-primary-light);
+
+}
+
+
+.rn-btn-danger {
+
+    color:
+        var(--rn-white);
+
+    background:
+        var(--rn-danger);
+
+    border-color:
+        var(--rn-danger);
+
+}
+
+
+.rn-btn-success {
+
+    color:
+        var(--rn-white);
+
+    background:
+        var(--rn-success);
+
+    border-color:
+        var(--rn-success);
+
+}
+
+
+.rn-btn-sm {
+
+    min-height: 34px;
+
+    padding:
+        0 12px;
+
+    font-size: 11px;
+
+}
+
+
+.rn-btn-lg {
+
+    min-height: 46px;
+
+    padding:
+        0 21px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   02. CARD
+========================================================= */
+
+.rn-card {
+
+    background:
+        var(--rn-card);
+
+    border:
+        1px solid var(--rn-border);
+
+    border-radius:
+        var(--rn-radius-xl);
+
+    box-shadow:
+        var(--rn-shadow-xs);
+
+}
+
+
+.rn-card-padding {
+
+    padding:
+        var(--rn-space-6);
+
+}
+
+
+.rn-card-hover {
+
+    transition:
+        transform var(--rn-transition),
+        box-shadow var(--rn-transition),
+        border-color var(--rn-transition);
+
+}
+
+
+.rn-card-hover:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--rn-shadow-md);
+
+    border-color:
+        rgba(18, 168, 137, 0.25);
+
+}
+
+
+/* =========================================================
+   03. BADGE
+========================================================= */
+
+.rn-badge {
+
+    min-height: 24px;
+
+    padding:
+        3px 9px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius:
+        var(--rn-radius-pill);
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+}
+
+
+.rn-badge-success {
+
+    color:
+        var(--rn-success);
+
+    background:
+        var(--rn-success-light);
+
+}
+
+
+.rn-badge-warning {
+
+    color:
+        var(--rn-warning);
+
+    background:
+        var(--rn-warning-light);
+
+}
+
+
+.rn-badge-danger {
+
+    color:
+        var(--rn-danger);
+
+    background:
+        var(--rn-danger-light);
+
+}
+
+
+.rn-badge-info {
+
+    color:
+        var(--rn-info);
+
+    background:
+        var(--rn-info-light);
+
+}
+
+
+.rn-badge-primary {
+
+    color:
+        var(--rn-primary-dark);
+
+    background:
+        var(--rn-primary-light);
+
+}
+
+
+/* =========================================================
+   04. FORM GROUP
+========================================================= */
+
+.rn-form-group {
+
+    margin-bottom:
+        var(--rn-space-4);
+
+}
+
+
+.rn-label {
+
+    display: block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--rn-text);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.rn-input,
+.rn-select,
+.rn-textarea {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding:
+        10px 12px;
+
+    color:
+        var(--rn-text);
+
+    background:
+        var(--rn-white);
+
+    border:
+        1px solid var(--rn-border);
+
+    border-radius:
+        var(--rn-radius-md);
+
+    font-family:
+        var(--rn-font);
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color var(--rn-transition),
+        box-shadow var(--rn-transition);
+
+}
+
+
+.rn-input:focus,
+.rn-select:focus,
+.rn-textarea:focus {
+
+    border-color:
+        var(--rn-primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(18, 168, 137, 0.08);
+
+}
+
+
+.rn-textarea {
+
+    min-height:
+        110px;
+
+    resize:
+        vertical;
+
+}
+
+
+/* =========================================================
+   05. AVATAR
+========================================================= */
+
+.rn-avatar {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--rn-primary);
+
+    color:
+        var(--rn-white);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+.rn-avatar-sm {
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 11px;
+
+}
+
+
+.rn-avatar-lg {
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   06. DIVIDER
+========================================================= */
+
+.rn-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        var(--rn-border);
+
+    margin:
+        var(--rn-space-4) 0;
+
+}
+
+
+/* =========================================================
+   07. EMPTY STATE
+========================================================= */
+
+.rn-empty {
+
+    padding:
+        50px 20px;
+
+    text-align: center;
+
+}
+
+
+.rn-empty-icon {
+
+    width: 60px;
+    height: 60px;
+
+    margin:
+        0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        var(--rn-primary-light);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+}
+
+
+.rn-empty h3 {
+
+    margin-bottom: 6px;
+
+    color:
+        var(--rn-text);
+
+    font-size: 17px;
+
+}
+
+
+.rn-empty p {
+
+    max-width: 400px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--rn-text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   08. LOADING
+========================================================= */
+
+.rn-spinner {
+
+    width: 28px;
+    height: 28px;
+
+    border:
+        3px solid #e5efec;
+
+    border-top-color:
+        var(--rn-primary);
+
+    border-radius: 50%;
+
+    animation:
+        rnGlobalSpin 0.8s linear infinite;
+
+}
+
+
+@keyframes rnGlobalSpin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   09. TEXT HELPERS
+========================================================= */
+
+.rn-text-primary {
+
+    color:
+        var(--rn-primary) !important;
+
+}
+
+
+.rn-text-muted {
+
+    color:
+        var(--rn-text-muted) !important;
+
+}
+
+
+.rn-text-danger {
+
+    color:
+        var(--rn-danger) !important;
+
+}
+
+
+.rn-text-success {
+
+    color:
+        var(--rn-success) !important;
+
+}
+
+
+/* =========================================================
+   10. VISIBILITY
+========================================================= */
+
+.rn-hidden {
+
+    display: none !important;
+
+}
+
+
+.rn-visible {
+
+    display: block !important;
+
+}
+
+
+/* =========================================================
+   11. WIDTH
+========================================================= */
+
+.rn-w-full {
+
+    width: 100% !important;
+
+}
+
+
+/* =========================================================
+   12. CURSOR
+========================================================= */
+
+.rn-pointer {
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   13. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .rn-card-padding {
+
+        padding:
+            var(--rn-space-4);
+
+    }
+
+
+    .rn-btn {
+
+        min-height: 42px;
+
+    }
+
+}
