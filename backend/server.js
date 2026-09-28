@@ -89,6 +89,7 @@ app.use(
 app.get(
     "/",
     (req, res) => {
+
         res.status(200).json({
             success: true,
             message:
@@ -96,6 +97,7 @@ app.get(
             environment:
                 env.NODE_ENV
         });
+
     }
 );
 
@@ -107,6 +109,7 @@ app.get(
 app.get(
     "/api/health",
     (req, res) => {
+
         res.status(200).json({
             success: true,
             message:
@@ -114,6 +117,7 @@ app.get(
             timestamp:
                 new Date().toISOString()
         });
+
     }
 );
 
@@ -128,11 +132,13 @@ app.use(
     require("./routes/authRoutes")
 );
 
+
 // Users
 app.use(
     "/api/users",
     require("./routes/userRoutes")
 );
+
 
 // Properties
 app.use(
@@ -140,11 +146,13 @@ app.use(
     require("./routes/propertyRoutes")
 );
 
+
 // Rooms
 app.use(
     "/api/rooms",
     require("./routes/roomRoutes")
 );
+
 
 // Bookings
 app.use(
@@ -152,11 +160,13 @@ app.use(
     require("./routes/bookingRoutes")
 );
 
+
 // Favorites
 app.use(
     "/api/favorites",
     require("./routes/favoriteRoutes")
 );
+
 
 // Inquiries
 app.use(
@@ -164,17 +174,20 @@ app.use(
     require("./routes/inquiryRoutes")
 );
 
+
 // Messages
 app.use(
     "/api/messages",
     require("./routes/messageRoutes")
 );
 
+
 // Reviews
 app.use(
     "/api/reviews",
     require("./routes/reviewRoutes")
 );
+
 
 // Admin
 app.use(
@@ -208,9 +221,14 @@ app.use(
 const PORT =
     env.PORT || 5000;
 
+const HOST =
+    "0.0.0.0";
+
+
 const server =
     app.listen(
         PORT,
+        HOST,
         () => {
 
             console.log(
@@ -222,15 +240,15 @@ const server =
             );
 
             console.log(
-                `📡 Server: http://localhost:${PORT}`
+                `📡 Server listening on port: ${PORT}`
             );
 
             console.log(
-                `🔗 API: http://localhost:${PORT}/api`
+                "🔗 API: /api"
             );
 
             console.log(
-                `❤️ Health: http://localhost:${PORT}/api/health`
+                "❤️ Health: /api/health"
             );
 
             console.log(
@@ -240,6 +258,7 @@ const server =
             console.log(
                 "========================================"
             );
+
         }
     );
 
@@ -258,11 +277,15 @@ process.on(
 
         console.error(error);
 
+
         server.close(
             () => {
+
                 process.exit(1);
+
             }
         );
+
     }
 );
 
@@ -282,5 +305,6 @@ process.on(
         console.error(error);
 
         process.exit(1);
+
     }
 );
