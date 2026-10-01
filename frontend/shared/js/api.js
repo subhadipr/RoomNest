@@ -10,7 +10,7 @@ const RoomNestAPI = (() => {
     // =====================================================
 
     const BASE_URL =
-        "http://localhost:5000/api";
+        "https://roomnest-bs42.onrender.com/api";
 
 
     // =====================================================
@@ -18,6 +18,7 @@ const RoomNestAPI = (() => {
     // =====================================================
 
     function getToken() {
+
         return (
             localStorage.getItem(
                 "roomnestAuthToken"
@@ -27,6 +28,7 @@ const RoomNestAPI = (() => {
             ) ||
             ""
         );
+
     }
 
 
@@ -45,8 +47,10 @@ const RoomNestAPI = (() => {
         const token = getToken();
 
         if (token) {
+
             headers.Authorization =
                 `Bearer ${token}`;
+
         }
 
         return headers;
@@ -69,11 +73,13 @@ const RoomNestAPI = (() => {
         } = options;
 
         const config = {
+
             method,
 
             headers: getHeaders({
                 ...headers
             })
+
         };
 
 
@@ -92,6 +98,7 @@ const RoomNestAPI = (() => {
 
             config.body =
                 JSON.stringify(body);
+
         }
 
 
@@ -107,9 +114,11 @@ const RoomNestAPI = (() => {
 
             // Browser নিজে Content-Type
             // + boundary set করবে
+
             delete config.headers[
                 "Content-Type"
             ];
+
         }
 
 
@@ -132,6 +141,7 @@ const RoomNestAPI = (() => {
             throw new Error(
                 "Unable to connect to RoomNest server."
             );
+
         }
 
 
@@ -149,13 +159,17 @@ const RoomNestAPI = (() => {
         } catch (error) {
 
             data = {
+
                 success:
                     response.ok,
+
                 message:
                     response.ok
                         ? "Request successful."
                         : "Server returned an invalid response."
+
             };
+
         }
 
 
@@ -199,6 +213,7 @@ const RoomNestAPI = (() => {
                 method: "GET"
             }
         );
+
     }
 
 
@@ -218,6 +233,7 @@ const RoomNestAPI = (() => {
                 body
             }
         );
+
     }
 
 
@@ -237,6 +253,7 @@ const RoomNestAPI = (() => {
                 body
             }
         );
+
     }
 
 
@@ -256,6 +273,7 @@ const RoomNestAPI = (() => {
                 body
             }
         );
+
     }
 
 
@@ -273,6 +291,7 @@ const RoomNestAPI = (() => {
                 method: "DELETE"
             }
         );
+
     }
 
 
@@ -293,6 +312,7 @@ const RoomNestAPI = (() => {
                 body: formData
             }
         );
+
     }
 
 
@@ -308,6 +328,7 @@ const RoomNestAPI = (() => {
                 method: "GET"
             }
         );
+
     }
 
 
@@ -323,6 +344,7 @@ const RoomNestAPI = (() => {
             "/auth/register",
             userData
         );
+
     }
 
 
@@ -334,6 +356,7 @@ const RoomNestAPI = (() => {
             "/auth/login",
             credentials
         );
+
     }
 
 
@@ -342,6 +365,7 @@ const RoomNestAPI = (() => {
         return get(
             "/auth/me"
         );
+
     }
 
 
@@ -359,7 +383,9 @@ const RoomNestAPI = (() => {
                 "Logout API error:",
                 error.message
             );
+
         }
+
 
         localStorage.removeItem(
             "roomnestAuthToken"
@@ -372,6 +398,7 @@ const RoomNestAPI = (() => {
         localStorage.removeItem(
             "roomnestUser"
         );
+
     }
 
 
@@ -399,6 +426,7 @@ const RoomNestAPI = (() => {
         login,
         getMe,
         logout
+
     };
 
 })();
