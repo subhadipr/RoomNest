@@ -1,13 +1,13 @@
+
 const mongoose = require("mongoose");
 
 // =========================================================
 // USER SCHEMA
 // =========================================================
+
 const userSchema = new mongoose.Schema(
     {
-        // -------------------------------------------------
         // BASIC INFORMATION
-        // -------------------------------------------------
         name: {
             type: String,
             required: [true, "Name is required."],
@@ -24,9 +24,25 @@ const userSchema = new mongoose.Schema(
             trim: true
         },
 
+        // GOOGLE IDENTITY
+        // Google accounts are identified by Google's unique "sub" ID.
+        googleId: {
+            type: String,
+            unique: true,
+            sparse: true,
+            trim: true
+        },
+
+        authProvider: {
+            type: String,
+            enum: ["local", "google"],
+            default: "local"
+        },
+
+        // Optional for Google-only accounts.
+        // Local registration must still require a password in the controller.
         password: {
             type: String,
-            required: [true, "Password is required."],
             minlength: 6,
             select: false
         },
@@ -37,35 +53,21 @@ const userSchema = new mongoose.Schema(
             default: ""
         },
 
-        // -------------------------------------------------
         // ROLE
-        // -------------------------------------------------
         role: {
             type: String,
-            enum: [
-                "student",
-                "owner",
-                "admin"
-            ],
+            enum: ["student", "owner", "admin"],
             default: "student"
         },
 
-        // -------------------------------------------------
         // ACCOUNT STATUS
-        // -------------------------------------------------
         status: {
             type: String,
-            enum: [
-                "active",
-                "inactive",
-                "blocked"
-            ],
+            enum: ["active", "inactive", "blocked"],
             default: "active"
         },
 
-        // -------------------------------------------------
         // PROFILE INFORMATION
-        // -------------------------------------------------
         profileImage: {
             type: String,
             default: ""
@@ -73,12 +75,7 @@ const userSchema = new mongoose.Schema(
 
         gender: {
             type: String,
-            enum: [
-                "male",
-                "female",
-                "other",
-                ""
-            ],
+            enum: ["male", "female", "other", ""],
             default: ""
         },
 
@@ -105,9 +102,7 @@ const userSchema = new mongoose.Schema(
             default: ""
         },
 
-        // -------------------------------------------------
         // STUDENT INFORMATION
-        // -------------------------------------------------
         college: {
             type: String,
             trim: true,
@@ -120,22 +115,14 @@ const userSchema = new mongoose.Schema(
             default: ""
         },
 
-        // -------------------------------------------------
         // OWNER INFORMATION
-        // -------------------------------------------------
         ownerType: {
             type: String,
-            enum: [
-                "individual",
-                "business",
-                ""
-            ],
+            enum: ["individual", "business", ""],
             default: ""
         },
 
-        // -------------------------------------------------
         // ACCOUNT VERIFICATION
-        // -------------------------------------------------
         isEmailVerified: {
             type: Boolean,
             default: false
@@ -153,9 +140,7 @@ const userSchema = new mongoose.Schema(
             select: false
         },
 
-        // -------------------------------------------------
         // PASSWORD RESET
-        // -------------------------------------------------
         passwordResetToken: {
             type: String,
             default: null,
@@ -168,9 +153,7 @@ const userSchema = new mongoose.Schema(
             select: false
         },
 
-        // -------------------------------------------------
         // LAST LOGIN
-        // -------------------------------------------------
         lastLogin: {
             type: Date,
             default: null
@@ -181,27 +164,17 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-
 // =========================================================
 // INDEXES
 // =========================================================
-userSchema.index({
-    role: 1
-});
 
-userSchema.index({
-    status: 1
-});
-
-
-
+userSchema.index({ role: 1 });
+userSchema.index({ status: 1 });
 
 // =========================================================
 // MODEL
 // =========================================================
-const User = mongoose.model(
-    "User",
-    userSchema
-);
+
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;

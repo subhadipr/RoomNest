@@ -578,141 +578,179 @@ registerForm.addEventListener("submit", async event => {
     }
 
 
-    /* =========================
-       BUTTON LOADING
-    ========================== */
+    /* PRODUCTION REGISTRATION */
 
     registerBtn.disabled = true;
 
-    registerBtn.querySelector(".btn-text")
-        .style.display = "none";
+    registerBtn.querySelector(".btn-text").style.display = "none";
+    registerBtn.querySelector(".btn-arrow").style.display = "none";
+    registerBtn.querySelector(".btn-loader").style.display = "inline";
 
-    registerBtn.querySelector(".btn-arrow")
-        .style.display = "none";
+    try {
+        const response = await window.RoomNestAPI.register({
+            name: fullName.value.trim(),
+            email: email.value.trim().toLowerCase(),
+            phone: phone.value.trim(),
+            password: password.value,
+            role: selectedRole.value
+        });
 
-    registerBtn.querySelector(".btn-loader")
-        .style.display = "inline";
+        if (!response.success || !response.token || !response.user) {
+            throw new Error(response.message || "Registration failed.");
+        }
 
+        localStorage.setItem("roomnestAuthToken", response.token);
+        localStorage.setItem("roomnestUser", JSON.stringify(response.user));
 
-    /* =========================
-       DEMO REGISTRATION
-       Backend will be connected later
-    ========================== */
+        showToast(
+            "Registration successful!",
+            `Welcome to RoomNest, ${response.user.name}.`,
+            "✓"
+        );
 
-    await delay(900);
+        await delay(900);
 
+        if (response.user.role === "owner") {
+            window.location.href = "../../owner/dashboard/dashboard.html";
+        } else {
+            window.location.href = "../../student/dashboard/dashboard.html";
+        }
 
-    const role =
-        selectedRole.value;
+    } catch (error) {
+        showToast(
+            "Registration failed",
+            error.message || "Please try again.",
+            "!"
+        );
 
-    const user = {
-
-        id:
-            "user-" +
-            Date.now(),
-
-        name:
-            fullName.value.trim(),
-
-        email:
-            email.value.trim().toLowerCase(),
-
-        phone:
-            phone.value.trim(),
-
-        role:
-            role,
-
-        registeredAt:
-            new Date().toISOString()
-
-    };
-
-
-    /* =========================
-       SAVE REGISTERED USERS
-    ========================== */
-
-    let registeredUsers =
-        JSON.parse(
-            localStorage.getItem(
-                "roomnestRegisteredUsers"
-            )
-        ) || [];
-
-
-    registeredUsers.push({
-
-        ...user,
-
-        password:
-            password.value
-
-    });
-
-
-    localStorage.setItem(
-        "roomnestRegisteredUsers",
-        JSON.stringify(registeredUsers)
-    );
-
-
-    /* =========================
-       ACTIVE USER
-    ========================== */
-
-    localStorage.setItem(
-        "roomnestUser",
-        JSON.stringify(user)
-    );
-
-
-    /* =========================
-       SUCCESS
-    ========================== */
-
-    showToast(
-        "Account created!",
-        `Welcome to RoomNest, ${user.name}.`,
-        "✓"
-    );
-
-
-    await delay(900);
-
-
-    /* =========================
-       ROLE REDIRECT
-    ========================== */
-
-    if (role === "owner") {
-
-        window.location.href =
-            "../../owner/dashboard/dashboard.html";
-
-    } else {
-
-        window.location.href =
-            "../../student/dashboard/dashboard.html";
-
+        registerBtn.disabled = false;
+        registerBtn.querySelector(".btn-text").style.display = "inline";
+        registerBtn.querySelector(".btn-arrow").style.display = "inline";
+        registerBtn.querySelector(".btn-loader").style.display = "none";
     }
-
 });
 
 
 /* =========================================================
-   GOOGLE BUTTON
+   GOOGLE SIGN-IN — ROOMNEST
 ========================================================= */
 
-googleBtn.addEventListener("click", () => {
+const GOOGLE_CLIENT_ID =
+    "PASTE_YOUR_CLIENT_ID_HERE";
 
-    showToast(
-        "Google Sign Up",
-        "Google authentication will be connected later.",
-        "i"
+async function handleGoogleCredential(response) {
+    try {
+        if (!response || !response.credential) {
+            throw new Error("Google credential was not received.");
+        }
+
+        if (!window.RoomNestAPI) {
+            throw new Error("RoomNest API service is unavailable.");
+        }
+
+        const result = await window.RoomNestAPI.post(
+            "/auth/google",
+            {
+                credential: response.credential,
+                role: selectedRole.value || "student"
+            }
+        );
+
+        if (!result.success || !result.token || !result.user) {
+            throw new Error(
+                result.message || "Google Sign-In failed."
+            );
+        }
+
+        localStorage.setItem(
+            "roomnestAuthToken",
+            result.token
+        );
+
+        localStorage.setItem(
+            "roomnestUser",
+            JSON.stringify(result.user)
+        );
+
+        showToast(
+            "Google Sign-In Successful",
+            `Welcome to RoomNest, ${result.user.name}!`,
+            "✓"
+        );
+
+        await delay(700);
+
+        if (result.user.role === "owner") {
+            window.location.href =
+                "../../owner/dashboard/dashboard.html";
+        } else {
+            window.location.href =
+                "../../student/dashboard/dashboard.html";
+        }
+
+    } catch (error) {
+        showToast(
+            "Google Sign-In Failed",
+            error.message || "Please try again.",
+            "!"
+        );
+    }
+}
+
+function initializeGoogleSignIn() {
+    if (
+        !window.google ||
+        !window.google.accounts ||
+        !window.google.accounts.id
+    ) {
+        showToast(
+            "Google Sign-In Unavailable",
+            "Google Sign-In could not load. Please refresh the page.",
+            "!"
+        );
+        return;
+    }
+
+    if (
+        !GOOGLE_CLIENT_ID ||
+        GOOGLE_CLIENT_ID === "PASTE_YOUR_CLIENT_ID_HERE"
+    ) {
+        showToast(
+            "Google Setup Incomplete",
+            "Please configure your Google Client ID.",
+            "!"
+        );
+        return;
+    }
+
+    window.google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleGoogleCredential,
+        auto_select: false
+    });
+
+    googleBtn.replaceChildren();
+
+    const buttonWidth = Math.min(
+        400,
+        Math.max(180, googleBtn.clientWidth || 320)
     );
 
-});
+    window.google.accounts.id.renderButton(
+        googleBtn,
+        {
+            type: "standard",
+            theme: "outline",
+            size: "large",
+            text: "continue_with",
+            shape: "rectangular",
+            logo_alignment: "left",
+            width: buttonWidth
+        }
+    );
+}
+
+initializeGoogleSignIn();
 
 
 /* =========================================================

@@ -411,14 +411,13 @@
 
 
                 <!-- Google -->
-                <button
-                    type="button"
+                <!-- Google Sign-In Container -->
+                <div
                     class="google-btn"
                     id="googleBtn"
-                >
-                    <span class="google-icon">G</span>
-                    <span>Continue with Google</span>
-                </button>
+                    role="group"
+                    aria-label="Continue with Google"
+                ></div>
 
 
                 <!-- Login -->
@@ -522,6 +521,10 @@
 <script src="../../shared/js/api.js"></script>
 <script src="../../shared/toast/toast.js"></script>
 <script src="../../shared/loader/loader.js"></script>
+
+<!-- Google Identity Services -->
+<script src="https://accounts.google.com/gsi/client"></script>
+
 <script src="register.js"></script>
 
 </body>

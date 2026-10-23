@@ -1,8 +1,10 @@
+
 const express = require("express");
 
 const {
     register,
     login,
+    googleLogin,
     getMe,
     logout
 } = require("../controllers/authController");
@@ -13,36 +15,19 @@ const {
 
 const router = express.Router();
 
+// Normal registration
+router.post("/register", register);
 
-// =========================================================
-// AUTH ROUTES
-// =========================================================
+// Normal login
+router.post("/login", login);
 
-// Register
-router.post(
-    "/register",
-    register
-);
-
-// Login
-router.post(
-    "/login",
-    login
-);
+// Google Sign-In
+router.post("/google", googleLogin);
 
 // Current logged-in user
-router.get(
-    "/me",
-    protect,
-    getMe
-);
+router.get("/me", protect, getMe);
 
 // Logout
-router.post(
-    "/logout",
-    protect,
-    logout
-);
-
+router.post("/logout", protect, logout);
 
 module.exports = router;
