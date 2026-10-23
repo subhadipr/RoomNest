@@ -636,7 +636,7 @@ registerForm.addEventListener("submit", async event => {
 ========================================================= */
 
 const GOOGLE_CLIENT_ID =
-    "PASTE_YOUR_CLIENT_ID_HERE";
+    "756177696993-cjvbnrb4vo30n71jmok795tpi55obmq6.apps.googleusercontent.com";
 
 async function handleGoogleCredential(response) {
     try {
